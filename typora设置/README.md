@@ -1,10 +1,9 @@
 ---
 title: typora设置
 date: 2021-12-28 21:03:36
-tags: 
+tag: 
 - typora
 - 设置
-categories: 
 id: 1640696616325121700
 ---
 # 概述
