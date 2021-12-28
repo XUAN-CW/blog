@@ -1,0 +1,22 @@
+<application>
+  <component name="FileTypeManager" version="18">
+    <extensionMap>
+      <mapping ext="space.kts" type="Kotlin" />
+      <mapping ext="gradle.kts" type="Kotlin" />
+      <mapping ext="main.kts" type="Kotlin" />
+      <mapping ext="mp4" type="Native" />
+      <mapping pattern="1222222222222222222222222" type="PLAIN_TEXT" />
+      <mapping pattern="11111111111111111111111111111111111" type="PLAIN_TEXT" />
+      <mapping pattern="Dokerfile" type="PLAIN_TEXT" />
+      <mapping pattern="utils" type="PLAIN_TEXT" />
+      <mapping pattern="Dockerfile-2" type="PLAIN_TEXT" />
+      <mapping pattern="1111111111111111111111111111111111111111111111111" type="PLAIN_TEXT" />
+      <mapping ext="xml " type="PLAIN_TEXT" />
+      <mapping ext="!qb" type="PLAIN_TEXT" />
+      <removed_mapping ext="apk" approved="true" type="ARCHIVE" />
+      <removed_mapping ext="markdown" approved="true" type="Markdown" />
+      <removed_mapping ext="md" approved="true" type="Markdown" />
+      <removed_mapping ext="psd" approved="true" type="Image" />
+    </extensionMap>
+  </component>
+</application>
