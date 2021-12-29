@@ -1,0 +1,114 @@
+---
+title: 使用docker打包发布vue项目
+tags: 
+- docker
+- vue
+- 打包
+- 发布
+date: 2021-12-30 02:16:42
+id: 1640801802082817100
+---
+# 概述
+
+
+
+# 环境准备
+
+## 虚拟机
+
+- Ubuntu 18.04.5 LTS
+
+## docker
+
+- Docker version 20.10.12, build e91ed57
+
+## nodejs
+
+```sh
+# 下载
+wget https://nodejs.org/dist/v16.13.1/node-v16.13.1-linux-x64.tar.xz
+# 解压
+tar xf node-v16.13.1-linux-x64.tar.xz -C /usr/local/
+# 创建软连接，使其全局可用
+ln -s /usr/local/node-v16.13.1-linux-x64/bin/node /usr/local/bin
+ln -s /usr/local/node-v16.13.1-linux-x64/bin/npm /usr/local/bin
+```
+
+## vue
+
+```sh
+npm install vue
+npm install -g @vue/cli
+# 创建软连接，使其全局可用
+ln -s /usr/local/node-v16.13.1-linux-x64/bin/vue /usr/local/bin
+```
+
+# 实现步骤
+
+## 创建项目
+
+```sh
+# 执行后一路回车即可
+vue create deploy-vue-by-docker
+```
+
+创建项目后记得先测试一下看看能不能用，如果不行，下面的也别做了
+
+## build
+
+```sh
+# 进入项目
+cd deploy-vue-by-docker
+# 项目打包
+npm run build
+```
+
+## Dokerfile
+
+```
+FROM nginx:1.19.3-alpine
+COPY dist/ /usr/share/nginx/html/
+```
+
+## docker build
+
+```
+docker build -t deploy-vue-by-docker:1.0 .
+```
+
+```
+docker pull nginx:1.19.3-alpine
+```
+
+## docker run
+
+```
+docker run --name deploy-vue-by-docker -p 80:80 -d deploy-vue-by-docker:1.0
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
