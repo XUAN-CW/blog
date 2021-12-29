@@ -1,6 +1,6 @@
 ---
 title: typora设置
-tag: 
+tags: 
 - typora
 - 设置
 date: 2021-12-28 21:03:36

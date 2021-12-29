@@ -1,6 +1,6 @@
 ---
 title: IDEA设置
-tag: 
+tags: 
 - IDEA
 - 设置
 date: 2021-12-28 20:56:46
