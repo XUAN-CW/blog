@@ -1,5 +1,5 @@
 ---
-title: vue打包发布
+title: vue打包部署
 tags: 
 - vue
 - 打包
