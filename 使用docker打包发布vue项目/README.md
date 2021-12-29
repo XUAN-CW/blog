@@ -65,24 +65,22 @@ npm run build
 
 ## Dokerfile
 
-```
+在项目下创建 Dokerfile ：
+
+```dockerfile
 FROM nginx:1.19.3-alpine
 COPY dist/ /usr/share/nginx/html/
 ```
 
 ## docker build
 
-```
+```sh
 docker build -t deploy-vue-by-docker:1.0 .
-```
-
-```
-docker pull nginx:1.19.3-alpine
 ```
 
 ## docker run
 
-```
+```sh
 docker run --name deploy-vue-by-docker -p 80:80 -d deploy-vue-by-docker:1.0
 ```
 
