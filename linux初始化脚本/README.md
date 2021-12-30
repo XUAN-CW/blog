@@ -5,6 +5,7 @@ tags:
 - centOS
 - Ubuntu
 - Ubuntu18
+- docker
 date: 2021-12-30 20:01:59
 id: 1640865719620490200
 ---
