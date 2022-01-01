@@ -46,5 +46,26 @@ done
 
  [Linux离线安装docker的过程.html](assets/references/Linux离线安装docker的过程.html) 
 
+# 交互式
 
+```
+#!/bin/bash
+
+echo "What is your favourite OS?"
+select var in "Linux" "Gnu Hurd" "Free BSD" "Other"; do
+  break;
+done
+echo "You have selected $var"
+
+```
+
+```
+
+
+select var in $(docker image ls | awk 'NR>1 {print $1 $2 }'); do
+  break;
+done
+echo "You have selected $var"
+
+```
 

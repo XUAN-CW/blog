@@ -104,3 +104,4 @@ sudo systemctl restart sshd
 # 提示
 
 - docker-save-all 脚本
+- xshell 免密登录
