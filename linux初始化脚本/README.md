@@ -104,4 +104,4 @@ sudo systemctl restart sshd
 # 提示
 
 - docker-save-all 脚本
-- xshell 免密登录 ( **id_rsa.pub** 保存到 **~/.ssh/authorized_keys** )
+- xshell 免密登录 ( **id_rsa_2048.pub** 保存到 **~/.ssh/authorized_keys** ) 
