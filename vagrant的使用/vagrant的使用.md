@@ -81,15 +81,15 @@ Welcome to Ubuntu 18.04.5 LTS (GNU/Linux 4.15.0-142-generic x86_64)
 
 ```
 Vagrant.configure("2") do |config|
-  
-  config.vm.box = "bionic-server-cloudimg-amd64-vagrant"
-
+  # ip 地址
   config.vm.network "private_network", ip: "192.168.18.10"
-
   config.vm.provider "virtualbox" do |vb|
+    # 8G 内存
     vb.memory = "8192"
+    # 2 核 CPU
+    vb.cpus = 2
   end
-  
+ 
 end
 ```
 
