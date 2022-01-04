@@ -8,8 +8,9 @@ id: 1641290443790725200
 
 ```sh
 # yum自动下载 vim RPM 包及其所有依赖的包至 /rpm/vim 目录：
-yum install --downloadonly --downloaddir=/root/vim vim
-# 切换到下载目录rpm中批量安装 vim
+yum install --downloadonly --downloaddir=/rpm/vim vim
+# 切换到下载目录中批量安装 vim
+cd /rpm/vim
 rpm -ivh * 
 ```
 
