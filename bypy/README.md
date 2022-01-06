@@ -71,7 +71,7 @@ https://p3terx.com/archives/docker-aria2-pro.html 
 bypy需要python3，这里我使用 `centOS8.2` ，它内置 `Python 3.6.8` 。安装步骤如下：
 
 ```sh
-pip3 install bypy==1.7.8
+pip3 install bypy==1.7.12
 python3 -m bypy info
 ##########这个地方需要根据链接获取授权码,然后输入##########
 ```
