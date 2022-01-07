@@ -26,19 +26,38 @@ docker load -i mysql.tar
 保存所有镜像
 
 ```sh
-docker_images=`docker images | awk 'NR>1'`
 
-REPOSITORY_TAG_TAR=`echo "$docker_images" | awk '{print $1"_"$2}' | sed 's/[\x2F]/./g' | awk '{print $1".docker_image.tar"}'`
-IMAGE=`echo "$docker_images" | awk '{print $1":"$2}'`
-number=`echo "$docker_images" | awk 'END {print NR}'`
+option_array=$(docker image ls | awk 'NR>1 {print $1"_"$2"_"$3 }')
 
-for((i=1;i<=$number;i=i+1))
-do
-    current_REPOSITORY_TAG_TAR=`echo "$REPOSITORY_TAG_TAR" | head -n "$i" | tail -n 1`
-    current_IMAGE_ID=`echo "$IMAGE" | head -n "$i" | tail -n 1`
-    echo "$i/$number 保存 $current_IMAGE_ID 到 $current_REPOSITORY_TAG_TAR 中..."
-    docker save -o $current_REPOSITORY_TAG_TAR $current_IMAGE_ID
+select var in $option_array; do
+  echo "You have selected ${var}"
+  echo ${var} | od -c
+  
+  #判断字符串是否相等
+  if [ "" != "$var" ];then
+    IMAGE_ID=${var: 0-12}
+
+
+
+    # 保存镜像
+    docker_images=`docker images | awk 'NR>1' | grep $IMAGE_ID `
+    REPOSITORY_TAG_TAR=`echo "$docker_images" | awk '{print $1"_"$2}' | sed 's/[\x2F]/./g' | awk '{print $1".docker_image.tar"}'`
+    IMAGE=`echo "$docker_images" | awk '{print $1":"$2}'`
+    number=`echo "$docker_images" | awk 'END {print NR}'`
+    for((i=1;i<=$number;i=i+1))
+    do
+      current_REPOSITORY_TAG_TAR=`echo "$REPOSITORY_TAG_TAR" | head -n "$i" | tail -n 1`
+      current_IMAGE_ID=`echo "$IMAGE" | head -n "$i" | tail -n 1`
+      echo "$i/$number 保存 $current_IMAGE_ID 到 $current_REPOSITORY_TAG_TAR 中..."
+      docker save -o $current_REPOSITORY_TAG_TAR $current_IMAGE_ID
+    done
+
+
+
+  fi 
 done
+
+
 
 ```
 
@@ -63,5 +82,24 @@ select var in $(docker image ls | awk 'NR>1 {print $1 $2 }'); do
 done
 echo "You have selected $var"
 
+```
+
+
+
+
+
+```
+option_array=$(docker image ls | awk 'NR>1 {print $1"_"$2"_"$3 }')
+
+select var in $option_array; do
+  break;
+done
+echo "You have selected ${var}"
+
+select=${var: 0-12}
+
+#select=${select:-""}
+
+docker image ls | grep $select
 ```
 
