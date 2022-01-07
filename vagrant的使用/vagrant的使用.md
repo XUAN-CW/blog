@@ -121,7 +121,7 @@ vagrant box add %box-name% temp --force
 ## 导入
 
 1.  [参考 vagrant 安装虚拟机](#vagrant安装虚拟机) 
-2. 在 `vagrant up`  之前，需要编辑 **Vagrantfile** ，我添加配置：
+2. 在 `vagrant up`  之前，需要编辑 **Vagrantfile** ，添加配置：
 
 ```
   config.ssh.username = 'vagrant'
