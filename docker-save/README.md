@@ -23,17 +23,9 @@ docker load -i mysql.tar
 
 # docker-save 脚本
 
-
-
- 
-
 ```
 sudo vi /usr/local/bin/docker-save
 ```
-
- 
-
-
 
 ```sh
 
