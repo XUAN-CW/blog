@@ -23,7 +23,7 @@ docker load -i mysql.tar
 
 # 脚本
 
-保存所有镜像
+保存镜像
 
 ```sh
 
