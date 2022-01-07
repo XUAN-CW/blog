@@ -4,6 +4,7 @@ tags:
 - ubuntu
 - vagrant
 - virtualbox
+- 导出
 date: 2021-12-20 21:03:45
 id: 1640005425026157100
 ---
@@ -73,7 +74,52 @@ Welcome to Ubuntu 18.04.5 LTS (GNU/Linux 4.15.0-142-generic x86_64)
 ... ...
 ```
 
-# 导出自定义虚拟机
+# 修改配置
+
+编辑 **Vagrantfile** 后使用 `vagrant reload` 才能生效
+
+# 自定义虚拟机的导出与导入
+
+## 导出
+
+### 查找要导出的虚拟机
+
+1. 找到 VirtualBox 的安装位置，我的 VirtualBox 安装在 [C:\Program Files\Oracle\VirtualBox](C:\Program Files\Oracle\VirtualBox) 
+2. cmd 进入 VirtualBox 的安装位置，我这里是  [C:\Program Files\Oracle\VirtualBox](C:\Program Files\Oracle\VirtualBox) 
+3. 列表展示已经安装的虚拟机
+
+```
+C:\Program Files\Oracle\VirtualBox>vboxmanage list vms
+"ubuntu18-default_default_1640180873578_92882" {71dea74c-5ca8-4592-bac4-401bb6dfa5d1}
+"breezewin10-edge_default_1640510960981_76647" {7e8b01d8-b0ff-4cb9-8d75-5c1e780fc152}
+"k8s-master_default_1641209965459_75982" {bd71013d-9f52-4313-94a0-b87bf06eb55b}
+"k8s-node1_default_1641214667453_95654" {82267e7a-ef20-449a-aa0b-bff005ae5c24}
+"k8s-node2_default_1641214679386_32935" {89122452-885a-4083-a48f-46fcfca4823b}
+```
+
+### 上传公钥
+
+如果不执行这一步，导入后启动会出现 ssh 登录失败。密钥对自行创建，创建好后上传公钥到虚拟机的 **~/.ssh/authorized_keys** 
+
+###  [导出](https://www.vagrantup.com/docs/cli/package) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
  [Vagrant之工作环境的迁移.html](assets\references\Vagrant之工作环境的迁移.html) 
 
