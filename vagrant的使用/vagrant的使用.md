@@ -137,15 +137,13 @@ vagrant box add %box-name% temp --force
 
 ```ruby
 Vagrant.configure("2") do |config|
-  config.vm.box = "my-b"
+  config.vm.box = "my-box"
   # 用户名
   config.ssh.username = 'root'
   config.ssh.password = 'root'
   config.ssh.insert_key = false
   # ip 地址
   config.vm.network "private_network", ip: "192.168.18.10"
-  # 私钥
-  config.ssh.private_key_path='C:\Users\33719\.ssh\id_rsa_2048'
   # 虚拟机配置
   config.vm.provider "virtualbox" do |vb|
     # 8G 内存
