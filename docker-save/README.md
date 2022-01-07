@@ -63,45 +63,11 @@ done
 
 ```
 
-# 交互式
-
-```
-#!/bin/bash
-
-echo "What is your favourite OS?"
-select var in "Linux" "Gnu Hurd" "Free BSD" "Other"; do
-  break;
-done
-echo "You have selected $var"
-
-```
-
-```
-
-
-select var in $(docker image ls | awk 'NR>1 {print $1 $2 }'); do
-  break;
-done
-echo "You have selected $var"
-
-```
 
 
 
 
 
-```
-option_array=$(docker image ls | awk 'NR>1 {print $1"_"$2"_"$3 }')
 
-select var in $option_array; do
-  break;
-done
-echo "You have selected ${var}"
 
-select=${var: 0-12}
-
-#select=${select:-""}
-
-docker image ls | grep $select
-```
 
