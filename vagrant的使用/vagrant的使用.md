@@ -118,6 +118,7 @@ set base-on="centOS7_default_1641580115970_82889"
 set box-name="centOS7-basic"
 vagrant package --base %base-on% --output temp
 vagrant box add %box-name% temp --force
+
 ```
 
 ## 导入
