@@ -50,7 +50,7 @@ echo -e "root\nroot" | sudo passwd root
 # 3.2 允许使用 root 登录
 sudo sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
 # 3.3 使用密码登录 
-# sudo sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/' /etc/ssh/sshd_config
+ sudo sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/' /etc/ssh/sshd_config
 # 刷新
 sudo systemctl restart sshd
 ```
