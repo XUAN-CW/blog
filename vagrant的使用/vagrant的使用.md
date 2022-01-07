@@ -117,8 +117,7 @@ vagrant package --base ubuntu18-default_default_1640180873578_92882 --output pac
 set base-on="centOS7_default_1641580115970_82889"
 set box-name="centOS7-basic"
 vagrant package --base %base-on% --output temp
-vagrant box remove %box-name%
-vagrant box add %box-name% temp
+vagrant box add %box-name% temp --force
 ```
 
 ## 导入
