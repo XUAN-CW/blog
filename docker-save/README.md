@@ -21,9 +21,7 @@ id: 1640804213979022300
 docker load -i mysql.tar
 ```
 
-# 脚本
-
-保存镜像
+# docker-save 脚本
 
 ```sh
 
