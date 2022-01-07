@@ -97,11 +97,6 @@ C:\Program Files\Oracle\VirtualBox>vboxmanage list vms
 "k8s-node2_default_1641214679386_32935" {89122452-885a-4083-a48f-46fcfca4823b}
 ```
 
-### 创建密钥对并上传公钥
-
-- 如果不执行这一步，导入后启动会出现 ssh 登录失败
-- 密钥对自行创建，创建好后公钥上传到虚拟机的 **~/.ssh/authorized_keys** ，记得测试一下能不能使用 ssh 登录
-
 ###  [package](https://www.vagrantup.com/docs/cli/package)  
 
 如果我想导出 `ubuntu18-default_default_1640180873578_92882` 为 `package-name` 那么：
@@ -113,7 +108,7 @@ vagrant package --base ubuntu18-default_default_1640180873578_92882 --output pac
 ### 总结
 
 ```bat
-r windows 下
+rem windows 下
 set base-on="centOS7_default_1641581613402_13934"
 set box-name="centOS7-basic"
 vagrant package --base %base-on% --output temp
