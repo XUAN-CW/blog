@@ -72,6 +72,7 @@ sudo sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh
 sudo sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/' /etc/ssh/sshd_config
 # 刷新
 sudo systemctl restart sshd
+
 ```
 
 ```sh
