@@ -115,7 +115,7 @@ vagrant package --base ubuntu18-default_default_1640180873578_92882 --output pac
 2. 在 `vagrant up`  之前，需要编辑 **Vagrantfile** ， [指定私钥路径 ](https://www.vagrantup.com/docs/vagrantfile/ssh_settings#config-ssh-private_key_path) 。在 [上传公钥](#上传公钥) 这一步，我的私钥是 `C:\Users\33719\.ssh\id_rsa_2048` 所以我添加配置：
 
 ```
-
+  config.ssh.private_key_path='C:\Users\33719\.ssh\id_rsa_2048'
 ```
 
 
@@ -154,8 +154,8 @@ Vagrant.configure("2") do |config|
   # ip 地址
   config.vm.network "private_network", ip: "192.168.18.10"
   # 私钥
-  config.ssh.private_key_path="C:\Users\33719\.ssh\id_rsa_2048"
-  # x
+  config.ssh.private_key_path='C:\Users\33719\.ssh\id_rsa_2048'
+  # 虚拟机配置
   config.vm.provider "virtualbox" do |vb|
     # 8G 内存
     vb.memory = "8192"
