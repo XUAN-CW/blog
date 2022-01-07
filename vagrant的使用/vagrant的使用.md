@@ -150,6 +150,7 @@ vagrant package --base ubuntu18-default_default_1640180873578_92882 --output pac
 
 ```
 Vagrant.configure("2") do |config|
+  config.vm.box = "ubuntu18"
   # ip 地址
   config.vm.network "private_network", ip: "192.168.18.10"
   config.vm.provider "virtualbox" do |vb|
