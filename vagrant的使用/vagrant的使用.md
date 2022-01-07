@@ -15,7 +15,7 @@ id: 1640005425026157100
 - VirtualBox 6.1.18 
 - bionic-server-cloudimg-amd64-vagrant.box
 
-# 安装虚拟机的方法
+# vagrant安装虚拟机
 
 以安装 bionic-server 为例
 
@@ -101,7 +101,7 @@ C:\Program Files\Oracle\VirtualBox>vboxmanage list vms
 
 如果不执行这一步，导入后启动会出现 ssh 登录失败。密钥对自行创建，创建好后上传公钥到虚拟机的 **~/.ssh/authorized_keys** 
 
-###  [package】(https://www.vagrantup.com/docs/cli/package)  
+###  [package](https://www.vagrantup.com/docs/cli/package)  
 
 如果我想导出 `ubuntu18-default_default_1640180873578_92882` 为 `package-name` 那么：
 
@@ -110,6 +110,20 @@ vagrant package --base ubuntu18-default_default_1640180873578_92882 --output pac
 ```
 
 ## 导入
+
+ [参考 vagrant 安装虚拟机](#vagrant安装虚拟机) ，在 `vagrant up`  之前，需要
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
