@@ -99,7 +99,7 @@ C:\Program Files\Oracle\VirtualBox>vboxmanage list vms
 
 ### 创建密钥对并上传公钥
 
-如果不执行这一步，导入后启动会出现 ssh 登录失败。密钥对自行创建，创建好后上传公钥到虚拟机的 **~/.ssh/authorized_keys** 
+如果不执行这一步，导入后启动会出现 ssh 登录失败。密钥对自行创建，创建好后公钥上传到虚拟机的 **~/.ssh/authorized_keys** 
 
 ###  [package](https://www.vagrantup.com/docs/cli/package)  
 
