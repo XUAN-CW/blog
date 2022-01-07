@@ -101,9 +101,13 @@ C:\Program Files\Oracle\VirtualBox>vboxmanage list vms
 
 如果不执行这一步，导入后启动会出现 ssh 登录失败。密钥对自行创建，创建好后上传公钥到虚拟机的 **~/.ssh/authorized_keys** 
 
-###  [导出](https://www.vagrantup.com/docs/cli/package) 
+###  [导出](https://www.vagrantup.com/docs/cli/package)  
 
+如果我想导出 `ubuntu18-default_default_1640180873578_92882` 为 `package-name` 那么：
 
+```
+vagrant package --base ubuntu18-default_default_1640180873578_92882 --output package-name
+```
 
 
 
