@@ -42,10 +42,6 @@ done
 
 ```
 
-# 离线安装
-
- [Linux离线安装docker的过程.html](assets/references/Linux离线安装docker的过程.html) 
-
 # 交互式
 
 ```
