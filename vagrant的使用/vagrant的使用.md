@@ -107,6 +107,8 @@ vagrant package --base ubuntu18-default_default_1640180873578_92882 --output pac
 
 ### 总结
 
+总结出来一个脚本，到时候修改 set 部分即可
+
 ```bat
 rem windows 下
 set base-on="centOS7_default_1641581613402_13934"
