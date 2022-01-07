@@ -133,7 +133,7 @@ vagrant box add %box-name% temp --force
 
 # 我的个人配置
 
-```
+```ruby
 Vagrant.configure("2") do |config|
   config.vm.box = "my-ubuntu18"
   # 用户名
