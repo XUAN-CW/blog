@@ -151,6 +151,8 @@ vagrant package --base ubuntu18-default_default_1640180873578_92882 --output pac
 ```
 Vagrant.configure("2") do |config|
   config.vm.box = "my-ubuntu18"
+  # 用户名
+  config.ssh.username = "root"
   # ip 地址
   config.vm.network "private_network", ip: "192.168.18.10"
   # 私钥
