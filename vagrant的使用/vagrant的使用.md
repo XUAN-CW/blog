@@ -97,7 +97,7 @@ C:\Program Files\Oracle\VirtualBox>vboxmanage list vms
 "k8s-node2_default_1641214679386_32935" {89122452-885a-4083-a48f-46fcfca4823b}
 ```
 
-### 上传公钥
+### 创建密钥对并上传公钥
 
 如果不执行这一步，导入后启动会出现 ssh 登录失败。密钥对自行创建，创建好后上传公钥到虚拟机的 **~/.ssh/authorized_keys** 
 
@@ -111,7 +111,8 @@ vagrant package --base ubuntu18-default_default_1640180873578_92882 --output pac
 
 ## 导入
 
- [参考 vagrant 安装虚拟机](#vagrant安装虚拟机) ，在 `vagrant up`  之前，需要
+1.  [参考 vagrant 安装虚拟机](#vagrant安装虚拟机) 
+2. 在 `vagrant up`  之前，需要编辑 **Vagrantfile** ， 指定 [config.ssh.private_key_path](https://www.vagrantup.com/docs/vagrantfile/ssh_settings#config-ssh-private_key_path) 。在 [上传公钥](#上传公钥) 这一步
 
 
 
