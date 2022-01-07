@@ -113,8 +113,8 @@ vagrant package --base ubuntu18-default_default_1640180873578_92882 --output pac
 ### 总结
 
 ```bat
-# windows 下
-set base-on="centOS7_default_1641580115970_82889"
+r windows 下
+set base-on="centOS7_default_1641581613402_13934"
 set box-name="centOS7-basic"
 vagrant package --base %base-on% --output temp
 vagrant box add %box-name% temp --force
@@ -140,7 +140,9 @@ vagrant box add %box-name% temp --force
 Vagrant.configure("2") do |config|
   config.vm.box = "my-ubuntu18"
   # 用户名
-  config.ssh.username = "root"
+  config.ssh.username = 'root'
+  config.ssh.password = 'root'
+  config.ssh.insert_key = false
   # ip 地址
   config.vm.network "private_network", ip: "192.168.18.10"
   # 私钥
