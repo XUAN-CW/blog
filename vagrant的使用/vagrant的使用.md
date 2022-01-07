@@ -119,30 +119,6 @@ vagrant package --base ubuntu18-default_default_1640180873578_92882 --output pac
   config.ssh.private_key_path='C:\Users\33719\.ssh\id_rsa_2048'
 ```
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ## 参考
 
  [Vagrant之工作环境的迁移.html](assets\references\Vagrant之工作环境的迁移.html) 
