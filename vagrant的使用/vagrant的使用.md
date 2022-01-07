@@ -119,10 +119,12 @@ vagrant box add %box-name% temp --force
 ## 导入
 
 1.  [参考 vagrant 安装虚拟机](#vagrant安装虚拟机) 
-2. 在 `vagrant up`  之前，需要编辑 **Vagrantfile** ， [指定私钥路径 ](https://www.vagrantup.com/docs/vagrantfile/ssh_settings#config-ssh-private_key_path) 。在 [上传公钥](#上传公钥) 这一步，我的私钥是 `C:\Users\33719\.ssh\id_rsa_2048` 所以我添加配置：
+2. 在 `vagrant up`  之前，需要编辑 **Vagrantfile** ，我添加配置：
 
 ```
-  config.ssh.private_key_path='C:\Users\33719\.ssh\id_rsa_2048'
+  config.ssh.username = 'vagrant'
+  config.ssh.password = 'vagrant'
+  config.ssh.insert_key = false
 ```
 
 ## 参考
