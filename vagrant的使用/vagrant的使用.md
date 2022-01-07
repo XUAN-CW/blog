@@ -110,6 +110,17 @@ C:\Program Files\Oracle\VirtualBox>vboxmanage list vms
 vagrant package --base ubuntu18-default_default_1640180873578_92882 --output package-name
 ```
 
+### 总结
+
+```bat
+# windows 下
+set box-name="box-name"
+set base-on="base-on"
+vagrant package --base %base-on% --output temp
+vagrant box remove %box-name%
+vagrant box add %box-name% temp
+```
+
 ## 导入
 
 1.  [参考 vagrant 安装虚拟机](#vagrant安装虚拟机) 
