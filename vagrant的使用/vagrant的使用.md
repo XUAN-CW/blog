@@ -150,11 +150,13 @@ vagrant package --base ubuntu18-default_default_1640180873578_92882 --output pac
 
 ```
 Vagrant.configure("2") do |config|
-  config.vm.box = "ubuntu18"
+  config.vm.box = "my-ubuntu18"
   # ip 地址
   config.vm.network "private_network", ip: "192.168.18.10"
-  config.vm.provider "virtualbox" do |vb|
+  # 私钥
   config.ssh.private_key_path="C:\Users\33719\.ssh\id_rsa_2048"
+  # x
+  config.vm.provider "virtualbox" do |vb|
     # 8G 内存
     vb.memory = "8192"
     # 2 核 CPU
