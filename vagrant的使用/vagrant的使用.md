@@ -111,10 +111,11 @@ vagrant package --base ubuntu18-default_default_1640180873578_92882 --output pac
 
 ```
 rem windows 下
-set base-on="centOS7_default_1641581613402_13934"
+set base-on="centOS7_default_1641582554576_53472"
 set box-name="centOS7-basic"
 vagrant package --base %base-on% --output temp
 vagrant box add %box-name% temp --force
+del temp
 
 ```
 
@@ -138,7 +139,7 @@ vagrant box add %box-name% temp --force
 ```ruby
 Vagrant.configure("2") do |config|
   config.vm.box = "my-box"
-  # s
+  # 使用用户名登录
   config.ssh.username = 'root'
   config.ssh.password = 'root'
   config.ssh.insert_key = false
