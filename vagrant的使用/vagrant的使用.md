@@ -137,7 +137,7 @@ vagrant box add %box-name% temp --force
 
 ```ruby
 Vagrant.configure("2") do |config|
-  config.vm.box = "my-ubuntu18"
+  config.vm.box = "my-b"
   # 用户名
   config.ssh.username = 'root'
   config.ssh.password = 'root'
