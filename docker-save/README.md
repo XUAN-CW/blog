@@ -23,6 +23,18 @@ docker load -i mysql.tar
 
 # docker-save 脚本
 
+
+
+ 
+
+```
+sudo vi /usr/local/bin/docker-save
+```
+
+ 
+
+
+
 ```sh
 
 option_array=$(docker image ls | awk 'NR>1 {print $1"_"$2"_"$3 }')
