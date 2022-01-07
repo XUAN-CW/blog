@@ -138,7 +138,7 @@ vagrant box add %box-name% temp --force
 ```ruby
 Vagrant.configure("2") do |config|
   config.vm.box = "my-box"
-  # 用户名
+  # s
   config.ssh.username = 'root'
   config.ssh.password = 'root'
   config.ssh.insert_key = false
