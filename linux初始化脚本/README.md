@@ -14,6 +14,18 @@ id: 1640865719620490200
 # ubuntu-18初始化脚本
 
 ```sh
+# 1 设置 root 用户
+echo -e "root\nroot" | sudo passwd root
+# 2 允许使用 root 登录
+sudo sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
+# 3 使用密码登录 
+sudo sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/' /etc/ssh/sshd_config
+# 刷新
+sudo systemctl restart sshd
+
+```
+
+```sh
 # 1.安装常用工具
 sudo apt-get update
 sudo apt-get install lrzsz
@@ -46,7 +58,10 @@ sudo systemctl restart docker
 sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 docker-compose --version
+
 ```
+
+# centOS-7.8 初始化脚本
 
 ```sh
 # 1 设置 root 用户
@@ -58,8 +73,6 @@ sudo sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/' /etc/ssh/s
 # 刷新
 sudo systemctl restart sshd
 ```
-
-# centOS-7.8 初始化脚本
 
 ```sh
 
@@ -95,18 +108,10 @@ sudo systemctl restart docker
 sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 docker-compose --version
+
 ```
 
-```sh
-# 1 设置 root 用户
-echo -e "root\nroot" | sudo passwd root
-# 2 允许使用 root 登录
-sudo sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
-# 3 使用密码登录 
-sudo sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/' /etc/ssh/sshd_config
-# 刷新
-sudo systemctl restart sshd
-```
+
 
 
 
