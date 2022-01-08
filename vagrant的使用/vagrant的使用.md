@@ -112,7 +112,7 @@ vagrant package --base ubuntu18-default_default_1640180873578_92882 --output pac
 ```
 rem windows 下
 set base-on="centOS7_default_1641582554576_53472"
-set box-name="centOS7-d"
+set box-name="centOS7-docker"
 vagrant package --base %base-on% --output temp
 vagrant box add %box-name% temp --force
 del temp
