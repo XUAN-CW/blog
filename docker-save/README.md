@@ -41,7 +41,6 @@ option_array=$(docker image ls | awk 'NR>1 {print $1"_"$2"_"$3 }')
 
 select var in $option_array; do
   echo "You have selected ${var}"
-  echo ${var} | od -c
   
   #判断字符串是否相等
   if [ "" != "$var" ];then
