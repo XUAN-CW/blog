@@ -23,8 +23,8 @@ docker load -i mysql.tar
 
 ## 批量导入
 
-```
-ls *docker_image* |sed -r 's#(.*)#docker load -i \1#' |bash
+```sh
+ls *docker_image* |sed -r 's#(.*)#docker load -i \1#' | bash
 ```
 
 
