@@ -1,6 +1,7 @@
 ---
 title: yum保存要安装的rpm包及其依赖包
 tags: 
+- centOS
 - yum 
 - 离线
 date: 2022-01-04 18:00:43
