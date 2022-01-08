@@ -14,7 +14,7 @@ id: 1641290443790725200
 yum install vim --downloadonly --downloaddir=/rpm/vim
 # 切换到下载目录中批量安装 vim
 cd /rpm/vim
-rpm -ivh * 
+rpm -ivh *.rpm
 ```
 
 
