@@ -31,7 +31,7 @@ sudo sed -i 's/keepcache=0/keepcache=1/' /etc/yum.conf
 
 ## 修改 cachedir
 
-此外，你还可以设置下载目录，修改下面这个配置即可：
+设置 yum 下载目录，修改下面这个配置即可：
 
 ```
 # vi /etc/yum.conf
