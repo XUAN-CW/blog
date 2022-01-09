@@ -29,7 +29,7 @@ sudo systemctl restart sshd
 # 1.安装常用工具
 sudo apt-get update
 sudo apt-get install zip -y
-
+sudo apt-get install net-tools -y
 ```
 
 ```markdown
@@ -84,13 +84,13 @@ sudo systemctl restart sshd
 # 1.安装常用工具
 sudo yum update -y
 sudo yum install zip -y
-
+syum install net-tools -y
 ```
 
 ```markdown
 本人自定义的脚本
   1. docker-save
-  2. docker-load 
+  2. docker-load
 ```
 
 ```sh
