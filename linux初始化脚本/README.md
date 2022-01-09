@@ -91,7 +91,7 @@ sudo systemctl restart sshd
 ```sh
 # 1.安装常用工具
 
-sudo yum update -y --downloaddir=update
+sudo yum update -y
 sudo yum install zip -y
 sudo yum install net-tools -y
 ```
