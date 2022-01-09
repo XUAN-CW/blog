@@ -31,6 +31,7 @@ ls *docker_image* |sed -r 's#(.*)#docker load -i \1#' | bash
 
 ```sh
 sudo vi /usr/local/bin/docker-save
+chmod 700 /usr/local/bin/docker-save
 ```
 
 ```sh
