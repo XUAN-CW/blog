@@ -27,19 +27,19 @@ rm -rf ~/*
 
 ```
 
-```markdown
-本人自定义的脚本
-  1. docker-save
-  2. docker-load
-  3. yum-install
-```
-
 ```sh
 # 安装常用工具
 sudo apt-get update -y
 sudo apt-get install zip -y
 sudo apt-get install net-tools -y
 
+```
+
+```markdown
+本人自定义的脚本
+  1. docker-save
+  2. docker-load
+  3. yum-install
 ```
 
 ```sh
@@ -86,20 +86,19 @@ rm -rf ~/*
 
 ```
 
-```markdown
-本人自定义的脚本
-  1. docker-save
-  2. docker-load
-  3. yum-install
-```
-
 ```sh
 # 安装常用工具
 sudo yum update -y
 sudo yum install zip -y
 sudo yum install net-tools -y
 
+```
 
+```markdown
+本人自定义的脚本
+  1. docker-save
+  2. docker-load
+  3. yum-install
 ```
 
 ```sh
