@@ -87,6 +87,12 @@ sudo systemctl restart sshd
 ```
 
 ```sh
+history | cut -c 8- |sed 's/^[[:space:]]*//g' | grep '^yum .\{1,\}' | tail -n 1
+```
+
+
+
+```sh
 # 1.安装常用工具
 
 sudo yum update -y --downloaddir=update
