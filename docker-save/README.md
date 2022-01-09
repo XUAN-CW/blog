@@ -61,7 +61,7 @@ select var in ${IMAGES}${IFS}${SELECT_ALL_IMAGE}; do
     echo "保存完毕"
   else
     echo "please select a valid option"
-  fi 
+  fi
 done
 ```
 
