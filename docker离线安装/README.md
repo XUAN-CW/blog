@@ -16,8 +16,8 @@ id: 1641560435580462800
 ```sh
 wget https://download.docker.com/linux/static/stable/x86_64/docker-20.10.7.tgz
 tar xzvf docker-20.10.7.tgz
-mv  docker/* /usr/local/bin/
-sudo dockerd &
+mv  docker/ /usr/local/bin/
+sudo docker &
 ```
 
 # 参考

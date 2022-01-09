@@ -32,6 +32,7 @@ rm -rf ~/*
 sudo apt-get update -y
 sudo apt-get install zip -y
 sudo apt-get install net-tools -y
+sudo apt-get install wget -y
 
 ```
 
@@ -91,6 +92,7 @@ rm -rf ~/*
 sudo yum update -y
 sudo yum install zip -y
 sudo yum install net-tools -y
+sudo yum install wget -y
 
 ```
 
