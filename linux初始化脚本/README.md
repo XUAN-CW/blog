@@ -37,6 +37,7 @@ sudo systemctl restart sshd
 sudo apt-get update -y
 sudo apt-get install zip -y
 sudo apt-get install net-tools -y
+
 ```
 
 ```sh
@@ -94,6 +95,7 @@ sudo systemctl restart sshd
 sudo yum update -y
 sudo yum install zip -y
 sudo yum install net-tools -y
+
 ```
 
 ```sh
