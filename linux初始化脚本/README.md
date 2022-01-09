@@ -22,6 +22,8 @@ sudo sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh
 sudo sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/' /etc/ssh/sshd_config
 # 刷新
 sudo systemctl restart sshd
+# 清理垃圾
+rm -rf ~/*
 
 ```
 
@@ -79,6 +81,8 @@ sudo sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh
 sudo sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/' /etc/ssh/sshd_config
 # 刷新
 sudo systemctl restart sshd
+# 清理垃圾
+rm -rf ~/*
 
 ```
 
@@ -94,6 +98,7 @@ sudo systemctl restart sshd
 sudo yum update -y
 sudo yum install zip -y
 sudo yum install net-tools -y
+
 
 ```
 
