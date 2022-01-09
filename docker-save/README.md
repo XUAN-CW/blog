@@ -36,16 +36,27 @@ sudo vi /usr/local/bin/docker-save
 ```sh
 old_IFS=$IFS # 保存原来的 Internal Field Seprator 
 IFS=$'\n' # Internal Field Seprator 换成换行
+# IFS=$old_IFS # 恢复 Internal Field Seprator 
 
-select var in $(docker images --format "{{.ID}} {{.Repository}} {{.Tag}}" | sort -k 2); do
-  IFS=$old_IFS # 恢复 Internal Field Seprator 
+IMAGES=$(docker images --format "{{.ID}} {{.Repository}} {{.Tag}}" | sort -k 2)
+
+SELECT_ALL_IMAGE="ALL_IMAGE"
+select var in ${IMAGES}${IFS}${SELECT_ALL_IMAGE}; do
   if [ "" != "$var" ];then
-    # output 需要替换掉特殊字符，这里替换掉了斜杠
-    output=$(echo ${var} | awk '{print $2"["$3"].docker_image.tar"}' | sed 's/[\x2F]/./g')
-    IMAGE=$(echo ${var} | awk '{print $2":"$3}')
+    if [ "$var" == "$SELECT_ALL_IMAGE" ];then
+      SHOULD_BE_SAVE_IMAGE="$IMAGES"
+    else 
+      SHOULD_BE_SAVE_IMAGE=$(echo "$IMAGES" | grep "${var}")
+    fi
     
-    echo "保存 $IMAGE 到 $output 中..."
-    docker save -o $output $IMAGE
+    for IMAGE in $SHOULD_BE_SAVE_IMAGE
+    do
+      # output 需要替换掉特殊字符，这里替换掉了斜杠
+      output=$(echo ${IMAGE} | awk '{print $2"["$3"].docker_image.tar"}' | sed 's/[\x2F]/./g')
+      IMAGE_NAME=$(echo ${IMAGE} | awk '{print $2":"$3}')
+      echo "保存镜像 ID 为 $IMAGE_NAME 的镜像到 $output 中..."
+      docker save -o $output $IMAGE_NAME
+    done
     echo "保存完毕"
   else
     echo "please select a valid option"
