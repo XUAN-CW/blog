@@ -21,7 +21,7 @@ id: 1640804213979022300
 docker load -i mysql.tar
 ```
 
-## 批量导入
+# 批量导入
 
 ```sh
 ls *docker_image* |sed -r 's#(.*)#docker load -i \1#' | bash
