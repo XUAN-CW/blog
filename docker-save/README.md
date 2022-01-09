@@ -9,19 +9,14 @@ id: 1640804213979022300
 ---
 # 概述
 
-#  [save](https://docs.docker.com/engine/reference/commandline/save/) 
+# 原理
 
-```sh
- docker save -o mysql.tar mysql:latest
-```
+1. [save](https://docs.docker.com/engine/reference/commandline/save/) 
+2. [load](https://docs.docker.com/engine/reference/commandline/load/) 
 
-#  [load](https://docs.docker.com/engine/reference/commandline/load/) 
+# 自定义脚本
 
-```sh
-docker load -i mysql.tar
-```
-
-# 批量导入
+## 批量导入
 
 ```sh
 ls *docker_image* | sed -r "s#(.*)#docker load -i \1#" | bash
@@ -33,7 +28,7 @@ ls *docker_image* | sed -r "s#(.*)#docker load -i \1#" | bash
 alias docker-save='ls *docker_image* | sed -r "s#(.*)#docker load -i \1#" | bash'
 ```
 
-# docker-save 脚本
+## docker-save 脚本
 
 ```sh
 sudo vi /usr/local/bin/docker-save
