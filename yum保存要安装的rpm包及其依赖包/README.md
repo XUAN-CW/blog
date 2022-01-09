@@ -29,11 +29,21 @@ rpm -ivh *.rpm
 sudo sed -i 's/keepcache=0/keepcache=1/' /etc/yum.conf
 ```
 
+## 修改 cachedir
+
 此外，你还可以设置下载目录，修改下面这个配置即可：
 
-```sh
+```
 # vi /etc/yum.conf
 cachedir=/var/cache/yum/$basearch/$releasever
+```
+
+我想把它修改成 `/yum-cachedir` ，快捷命令如下：
+
+```sh
+sudo cp /etc/yum.conf /etc/yum.conf.
+sudo sed -i 's/cachedir=\/var\/cache\/yum\/\$basearch\/\$releasever/\cachedir=/yum-cachedir/' /etc/yum.conf
+
 ```
 
 
