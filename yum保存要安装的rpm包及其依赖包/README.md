@@ -9,6 +9,10 @@ id: 1641290443790725200
 ---
 # 概述
 
+yum保存要安装的rpm包及其依赖包
+
+## 只下载不安装
+
 ```sh
 # yum自动下载 vim RPM 包及其所有依赖的包至 /rpm/vim 目录：
 yum install vim --downloadonly --downloaddir=/rpm/vim
@@ -17,7 +21,13 @@ cd /rpm/vim
 rpm -ivh *.rpm
 ```
 
+## 不删除rpm包
 
+ yum 默认情况下，升级或者安装后，会删除下载的rpm包，这里可以设置升级后不删除下载的 rpm 包
+
+```sh
+sudo sed -i 's/keepcache=0/keepcache=1' /etc/yum.conf
+```
 
 # 参考
 
