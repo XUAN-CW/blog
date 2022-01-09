@@ -27,7 +27,7 @@ sudo systemctl restart sshd
 
 ```sh
 # 1.安装常用工具
-sudo apt-get update
+sudo apt-get update 
 sudo apt-get install zip -y
 sudo apt-get install net-tools -y
 ```
@@ -84,7 +84,7 @@ sudo systemctl restart sshd
 # 1.安装常用工具
 sudo yum update -y
 sudo yum install zip -y
-syum install net-tools -y
+sudo yum install net-tools -y
 ```
 
 ```markdown
