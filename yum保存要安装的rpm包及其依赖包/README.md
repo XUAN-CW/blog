@@ -26,8 +26,17 @@ rpm -ivh *.rpm
  yum 默认情况下，升级或者安装后，会删除下载的rpm包，这里可以设置升级后不删除下载的 rpm 包
 
 ```sh
-sudo sed -i 's/keepcache=0/keepcache=1' /etc/yum.conf
+sudo sed -i 's/keepcache=0/keepcache=1/' /etc/yum.conf
 ```
+
+此外，你还可以设置下载目录，修改下面这个配置即可：
+
+```sh
+# vi /etc/yum.conf
+cachedir=/var/cache/yum/$basearch/$releasever
+```
+
+
 
 # 参考
 
