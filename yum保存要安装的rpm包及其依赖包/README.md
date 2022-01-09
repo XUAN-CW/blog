@@ -41,9 +41,7 @@ cachedir=/var/cache/yum/$basearch/$releasever
 我想把它修改成 `/yum-cachedir` ，快捷命令如下：
 
 ```sh
-
 sudo sed -i 's/cachedir=\/var\/cache\/yum\/\$basearch\/\$releasever/\cachedir=/yum-cachedir/' /etc/yum.conf
-
 ```
 
 
