@@ -25,7 +25,7 @@ ls *docker_image* | sed -r "s#(.*)#docker load -i \1#" | bash
 我们给它取个别名：
 
 ```sh
-alias docker-save='ls *docker_image* | sed -r "s#(.*)#docker load -i \1#" | bash'
+alias docker-load='ls *docker_image* | sed -r "s#(.*)#docker load -i \1#" | bash'
 ```
 
 ## docker-save 脚本
