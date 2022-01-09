@@ -33,7 +33,7 @@ sudo systemctl restart sshd
 
 ```sh
 # 1.安装常用工具
-sudo apt-get update 
+sudo apt-get update -y
 sudo apt-get install zip -y
 sudo apt-get install net-tools -y
 ```
