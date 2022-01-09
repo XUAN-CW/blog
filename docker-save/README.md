@@ -51,7 +51,6 @@ select var in $(docker images --format "{{.ID}} {{.Repository}} {{.Tag}}" | sort
     echo "please select a valid option"
   fi 
 done
-
 ```
 
 
