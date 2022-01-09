@@ -32,6 +32,12 @@ sudo apt-get install zip -y
 
 ```
 
+```markdown
+本人自定义的脚本
+  1. docker-save
+  2. docker-load  
+```
+
 ```sh
 
 # 1 docker 安装
@@ -75,12 +81,16 @@ sudo systemctl restart sshd
 ```
 
 ```sh
-
-############################################################
 # 1.安装常用工具
 sudo yum update -y
 sudo yum install zip -y
 
+```
+
+```markdown
+本人自定义的脚本
+  1. docker-save
+  2. docker-load  
 ```
 
 ```sh
@@ -110,7 +120,3 @@ docker-compose --version
 
 ```
 
-# 提示
-
-- docker-save-all 脚本
-- xshell 免密登录 ( [id_rsa_2048.pub](C:/Users/33719/.ssh/id_rsa.pub) 保存到 **~/.ssh/authorized_keys** ) 
