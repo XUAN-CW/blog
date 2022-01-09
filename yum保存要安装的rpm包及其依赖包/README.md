@@ -49,7 +49,7 @@ sudo sed -i 's/cachedir=\/var\/cache\/yum\/\$basearch\/\$releasever/cachedir=\/y
 
 ```sh
 touch /usr/local/bin/yum-install
-chmod 700 /usr/local/bin/yum-install
+chmod 777 /usr/local/bin/yum-install
 vi /usr/local/bin/yum-install
 
 ```

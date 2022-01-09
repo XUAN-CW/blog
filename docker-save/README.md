@@ -32,7 +32,7 @@ alias docker-load='ls *docker_image* | sed -r "s#(.*)#docker load -i \1#" | bash
 
 ```sh
 touch /usr/local/bin/docker-save
-chmod 700 /usr/local/bin/docker-save
+chmod 777 /usr/local/bin/docker-save
 vi /usr/local/bin/docker-save
 
 ```
