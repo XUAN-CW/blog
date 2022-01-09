@@ -48,11 +48,11 @@ sudo sed -i 's/cachedir=\/var\/cache\/yum\/\$basearch\/\$releasever/cachedir=\/y
 # yum-install
 
 ```sh
-vi /usr/local/bin/yum-install
+touch /usr/local/bin/yum-install
 chmod 700 /usr/local/bin/yum-install
+vi /usr/local/bin/yum-install
+
 ```
-
-
 
 ```sh
 downloaddir=$( echo $* | awk '{for(i=1;i<=NF;i++) if($i~/--downloaddir/) print $i}' | cut -c 15- )

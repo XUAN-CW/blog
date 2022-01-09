@@ -31,8 +31,10 @@ alias docker-load='ls *docker_image* | sed -r "s#(.*)#docker load -i \1#" | bash
 ## docker-save 脚本
 
 ```sh
-sudo vi /usr/local/bin/docker-save
+touch /usr/local/bin/docker-save
 chmod 700 /usr/local/bin/docker-save
+vi /usr/local/bin/docker-save
+
 ```
 
 ```sh
