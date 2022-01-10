@@ -58,7 +58,7 @@ cachedir="/var/cache/yum/"
 # 清空默认缓存目录
 rm -rf ${cachedir}*
 # 安装
-yum $*
+yum $* -y
 # 记录命令
 record=${cachedir}/"how-to-get-rpm-files-on-this-dir.sh"
 echo "# $(date +%y年%m月%d日)" > $record
