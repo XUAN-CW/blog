@@ -80,6 +80,11 @@ rm -f /etc/yum.conf && mv $backup /etc/yum.conf
 ## yum-update
 
 ```sh
+rm -rf /var/cache/yum/*
+yum update -y --downloadonly
+
+
+
 
 ```
 
