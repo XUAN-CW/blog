@@ -79,7 +79,7 @@ rm -f /etc/yum.conf && mv $backup /etc/yum.conf
 
 ```
 
-# yum-install 
+# myyum-install 
 
 获取：
 
