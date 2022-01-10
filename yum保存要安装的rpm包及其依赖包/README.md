@@ -93,12 +93,12 @@ tar -zcvf update.tar.gz  /var/cache/yum/
 安装
 
 ```sh
+cachedir="/var/cache/yum/"
+record=${cachedir}/"how-to-get-rpm-files-on-this-dir.sh"
 wget http://localcache/yum/update.tar.gz
 rm -rf /var/cache/yum/*
 tar -zxvf update.tar.gz 
-mv var/cache/yum/x86_64/ /var/cache/yum/
-cachedir="/var/cache/yum/"
-record=${cachedir}/"how-to-get-rpm-files-on-this-dir.sh"
+mv var/cache/yum/ /var/cache/
 ./${record}
 
 ```
