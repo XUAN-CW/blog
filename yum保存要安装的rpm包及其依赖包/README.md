@@ -72,7 +72,7 @@ rm -f /etc/yum.conf && mv $backup /etc/yum.conf
 
 ```
 
-# myyum-install 
+# my-yum-install 
 
 ```sh
 url=$1
