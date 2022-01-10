@@ -45,33 +45,35 @@ cachedir=/var/cache/yum/$basearch/$releasever
 sudo sed -i 's/cachedir=\/var\/cache\/yum\/\$basearch\/\$releasever/cachedir=\/yum-cachedir/' /etc/yum.conf
 ```
 
-# yum-install
+# my-yum
 
 ```sh
-touch /usr/local/bin/yum-install
-chmod 777 /usr/local/bin/yum-install
-vi /usr/local/bin/yum-install
+touch /usr/local/bin/yum-yum
+chmod 777 /usr/local/bin/yum-yum
+vi /usr/local/bin/yum-yum
 
 ```
 
 ```sh
-downloaddir=$( echo $* | awk '{for(i=1;i<=NF;i++) if($i~/--downloaddir/) print $i}' | cut -c 15- )
-if [ -n == $downloaddir ];then
-  echo "缺少 --downloaddir 参数"
-  exit
-fi
 # 备份
 backup="/etc/yum.conf.backup_$(date +%s)"
 cp /etc/yum.conf $backup
 # 设置不删除rpm包
 sudo sed -i 's/keepcache=0/keepcache=1/' /etc/yum.conf
+# 默认缓存目录
+cachedir="/var/cache/yum/"
+# 清空默认缓存目录
+rm -rf ${cachedir}*
 # 安装
-yum install $*
+yum $*
 # 记录命令
-record=${downloaddir}/"how-to-get-rpm-files-on-this-dir.sh"
+record=${cachedir}/"how-to-get-rpm-files-on-this-dir.sh"
 echo "# $(date +%y年%m月%d日)" > $record
-echo "yum install $*" >> $record
-# 恢复
+echo "yum $*" >> $record
+chmod 777 ${record}
+# 打包,打包之后记得重命名
+tar -zcvf yum-cache.tar.gz  /var/cache/yum/
+# 恢复设置
 rm -f /etc/yum.conf && mv $backup /etc/yum.conf
 
 
