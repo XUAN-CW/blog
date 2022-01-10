@@ -82,7 +82,7 @@ curl $url -o yum-package.tar.gz
 rm -rf /var/cache/yum/
 tar -zxvf yum-package.tar.gz 
 mv var/cache/yum/ /var/cache/
-./${record}
+b${record}
 
 ```
 
