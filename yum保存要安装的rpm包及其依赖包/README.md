@@ -77,7 +77,7 @@ rm -f /etc/yum.conf && mv $backup /etc/yum.conf
 
 ```
 
-## yum-update
+# yum-update
 
 获取：
 
