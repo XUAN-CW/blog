@@ -68,12 +68,22 @@ sudo sed -i 's/keepcache=0/keepcache=1/' /etc/yum.conf
 # 安装
 yum install $*
 # 记录命令
-echo "yum install $*" > ${downloaddir}/"how-to-get-rpm-files-on-this-dir.sh"
+record=${downloaddir}/"how-to-get-rpm-files-on-this-dir.sh"
+echo "# $(date +%y年%m月%d日)" > $record
+echo "yum install $*" >> $record
 # 恢复
 rm -f /etc/yum.conf && mv $backup /etc/yum.conf
 
 
 ```
+
+## yum-update
+
+```sh
+
+```
+
+
 
 # 参考
 
