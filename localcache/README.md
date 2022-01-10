@@ -75,6 +75,7 @@ echo "192.168.20.10 localcache" >> /etc/hosts
 
 ```
 mklink /H  "C:\Program Files\Git\usr\bin\ls-wget.localcache.sh" "C:\core\blog\localcache\assets\script\ls-wget.localcache.sh"
+mklink /H  "C:\cache\software-for-development\ls-wget.localcache.sh" "C:\core\blog\localcache\assets\script\ls-wget.localcache.sh"
 ```
 
 
