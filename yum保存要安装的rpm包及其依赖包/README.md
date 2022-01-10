@@ -81,17 +81,6 @@ rm -f /etc/yum.conf && mv $backup /etc/yum.conf
 
 # myyum-install 
 
-获取：
-
-```sh
-rm -rf /var/cache/yum/*
-yum update -y --downloadonly
-tar -zcvf update.tar.gz  /var/cache/yum/
-
-```
-
-安装
-
 ```sh
 cachedir="/var/cache/yum/"
 record=${cachedir}/"how-to-get-rpm-files-on-this-dir.sh"
