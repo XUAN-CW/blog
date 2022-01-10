@@ -71,7 +71,7 @@ echo "192.168.20.10 localcache" >> /etc/hosts
 
 # 快捷脚本
 
- [ls-wget.sh](assets\script\ls-wget.sh) 
+ [ls-wget.localcache.sh](assets\script\ls-wget.localcache.sh) 
 
 ```
 mklink /H  "C:\Program Files\Git\usr\bin\ls-wget.localcache.sh" "C:\core\blog\localcache\assets\script\ls-wget.localcache.sh"
