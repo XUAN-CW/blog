@@ -30,7 +30,24 @@ id: 1641762799502955600
 
 ### 下载
 
+- http://nginx.org/download/nginx-1.16.1.zip
 
+### 配置
+
+```
+    server {
+        listen 80;
+        server_name localhost;
+        root   C:/cache/software-for-development;
+        location / {
+            index  index.html index.htm;
+        }
+    }
+```
+
+### 开机自启动
+
+创建快捷方式到 [StartUp](C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp) 即可开机自启动
 
 
 
