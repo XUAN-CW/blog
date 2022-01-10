@@ -69,7 +69,7 @@ yum $*
 # 记录命令
 record=${cachedir}/"how-to-get-rpm-files-on-this-dir.sh"
 echo "# $(date +%y年%m月%d日)" > $record
-echo "yum $*" >> $record
+echo "yum $* -y" >> $record
 chmod 777 ${record}
 # 打包,打包之后记得重命名
 tar -zcvf yum-cache.tar.gz  /var/cache/yum/
