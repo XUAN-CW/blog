@@ -82,9 +82,10 @@ rm -f /etc/yum.conf && mv $backup /etc/yum.conf
 # myyum-install 
 
 ```sh
+url=$1
 cachedir="/var/cache/yum/"
 record=${cachedir}/"how-to-get-rpm-files-on-this-dir.sh"
-curl http://localcache/yum/update.tar.gz -o yum-package.tar.gz 
+curl $url -o yum-package.tar.gz 
 rm -rf /var/cache/yum/*
 tar -zxvf yum-package.tar.gz 
 mv var/cache/yum/ /var/cache/
