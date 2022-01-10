@@ -63,6 +63,12 @@ mklink /H  源文件的硬链接 源文件
 
 对于引用了本地缓存的 `.sh` 脚本命令，统一后缀为 `.localcache.sh` ，并创建硬链接到 nginx 根路径的 `localcache.sh` 文件夹下
 
+# 虚拟机配合
+
+```sh
+echo "192.168.20.10 localcache" >> /etc/hosts
+```
+
 # 快捷脚本
 
 ```sh
