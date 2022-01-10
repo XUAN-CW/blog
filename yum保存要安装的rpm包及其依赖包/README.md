@@ -90,6 +90,15 @@ yum update -y --downloadonly
 
 
 
+```sh
+# 上传
+http://localcache/yum/update.tar
+rm -rf /var/cache/yum/*
+var/cache/yum/x86_64/ /var/cache/yum/
+```
+
+
+
 # 参考
 
  [yum保存要安装的rpm包及其依赖包.html](assets\references\yum保存要安装的rpm包及其依赖包.html) 

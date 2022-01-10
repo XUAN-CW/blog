@@ -71,14 +71,11 @@ echo "192.168.20.10 localcache" >> /etc/hosts
 
 # 快捷脚本
 
-```sh
-nginxroot=/c/cache/software-for-development
-find $pwd -type f | xargs readlink -f | sed "s/.\{${#nginxroot}\}\(.\{1,\}\)/http:\/\/localcache\1/"
+ [ls-wget.sh](assets\script\ls-wget.sh) 
+
 ```
-
-
-
-
+mklink /H  "C:\Program Files\Git\usr\bin" "C:\core\blog\localcache\assets\script\ls-wget.sh"
+```
 
 
 
