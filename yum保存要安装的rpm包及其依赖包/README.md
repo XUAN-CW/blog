@@ -79,7 +79,7 @@ rm -f /etc/yum.conf && mv $backup /etc/yum.conf
 
 ```
 
-# yum-update
+# yum-install 
 
 获取：
 
@@ -95,9 +95,9 @@ tar -zcvf update.tar.gz  /var/cache/yum/
 ```sh
 cachedir="/var/cache/yum/"
 record=${cachedir}/"how-to-get-rpm-files-on-this-dir.sh"
-wget http://localcache/yum/update.tar.gz
+curl http://localcache/yum/update.tar.gz -o yum-package.tar.gz 
 rm -rf /var/cache/yum/*
-tar -zxvf update.tar.gz 
+tar -zxvf yum-package.tar.gz 
 mv var/cache/yum/ /var/cache/
 ./${record}
 
