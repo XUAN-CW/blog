@@ -48,13 +48,6 @@ sudo sed -i 's/cachedir=\/var\/cache\/yum\/\$basearch\/\$releasever/cachedir=\/y
 # my-yum
 
 ```sh
-touch /usr/local/bin/yum-yum
-chmod 777 /usr/local/bin/yum-yum
-vi /usr/local/bin/yum-yum
-
-```
-
-```sh
 # 备份
 backup="/etc/yum.conf.backup_$(date +%s)"
 cp /etc/yum.conf $backup
@@ -86,7 +79,7 @@ url=$1
 cachedir="/var/cache/yum/"
 record=${cachedir}/"how-to-get-rpm-files-on-this-dir.sh"
 curl $url -o yum-package.tar.gz 
-rm -rf /var/cache/yum/*
+rm -rf /var/cache/yum/
 tar -zxvf yum-package.tar.gz 
 mv var/cache/yum/ /var/cache/
 ./${record}
