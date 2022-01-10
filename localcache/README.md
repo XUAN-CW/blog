@@ -40,6 +40,7 @@ id: 1641762799502955600
         server_name localhost;
         root   C:/cache/software-for-development;
         location / {
+            root   C:/cache/software-for-development;
             index  index.html index.htm;
         }
     }
