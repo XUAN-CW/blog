@@ -79,22 +79,25 @@ rm -f /etc/yum.conf && mv $backup /etc/yum.conf
 
 ## yum-update
 
+获取：
+
 ```sh
 rm -rf /var/cache/yum/*
 yum update -y --downloadonly
-
+tar -zcvf update.tar.gz  /var/cache/yum/
 
 
 
 ```
 
-
+安装
 
 ```sh
-# 上传
-http://localcache/yum/update.tar
+wget http://localcache/yum/update.tar
 rm -rf /var/cache/yum/*
-var/cache/yum/x86_64/ /var/cache/yum/
+tar -zxvf update.tar.gz 
+mv var/cache/yum/x86_64/ /var/cache/yum/
+yum update
 ```
 
 
