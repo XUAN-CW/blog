@@ -63,5 +63,16 @@ mklink /H  源文件的硬链接 源文件
 
 对于引用了本地缓存的 `.sh` 脚本命令，统一后缀为 `.localcache.sh` ，并创建硬链接到 nginx 根路径的 `localcache.sh` 文件夹下
 
+# 快捷脚本
+
+```sh
+nginxroot=/c/cache/software-for-development
+find $pwd -type f | xargs readlink -f | sed "s/.\{${#nginxroot}\}\(.\{1,\}\)/http:\/\/localcache\1/"
+```
+
+
+
+
+
 
 
