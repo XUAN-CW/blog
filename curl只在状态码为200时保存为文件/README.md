@@ -6,6 +6,12 @@ id: 1641902693748680800
 ---
 # 摘要
 
+```
+curl -s -S -f -o f "$url"
+```
+
+
+
 # 参考
 
  [curl only write to file if successful status 200.html](assets\references\curl only write to file if successful status 200.html) 
