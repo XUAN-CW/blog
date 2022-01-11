@@ -56,7 +56,7 @@ select var in ${IMAGES}${IFS}${SELECT_ALL_IMAGE}; do
     for IMAGE in $SHOULD_BE_SAVE_IMAGE
     do
       # output 需要替换掉特殊字符，这里替换掉了斜杠
-      output=$(echo ${IMAGE} | awk '{print $2"["$3"].docker_image.tar"}' | sed 's/[\x2F]/./g')
+      output=$(echo ${IMAGE} | awk '{print $2"_"$3".docker_image.tar"}' | sed 's/[\x2F]/./g')
       IMAGE_NAME=$(echo ${IMAGE} | awk '{print $2":"$3}')
       echo "保存镜像 ID 为 $IMAGE_NAME 的镜像到 $output 中..."
       docker save -o $output $IMAGE_NAME
