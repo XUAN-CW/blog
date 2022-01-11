@@ -36,11 +36,40 @@ id: 1641762799502955600
 
 ```
     server {
-        listen 80;
-        server_name localhost;
-        root   C:/cache/software-for-development;
+        listen       80;
+        server_name proxy_pass_port;
+        
+        
+        location / {
+           # 域名中有 localcache，转发到 100 端口
+           if ($host ~* "localcache") {  
+               proxy_pass http://127.0.0.1:100;      
+           }
+           # 域名中有 blog，转发到 200 端口
+           if ($host ~* "blog") {  
+               proxy_pass http://127.0.0.1:200;      
+           }
+           # 默认情况
+           root   /var/www/html;
+           index  index.html index.htm;
+        }
+    }
+    
+    
+    server {
+        listen 100;
+        server_name localcache;
         location / {
             root   C:/cache/software-for-development;
+            index  index.html index.htm;
+        }
+    }
+    
+    server {
+        listen 200;
+        server_name blog;
+        location / {
+            root   C:/cache/blog;
             index  index.html index.htm;
         }
     }
@@ -68,6 +97,7 @@ mklink /H  源文件的硬链接 源文件
 
 ```sh
 echo "192.168.20.10 localcache" >> /etc/hosts
+echo "192.168.20.10 article" >> /etc/hosts
 ```
 
 # 快捷脚本
