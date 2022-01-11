@@ -7,7 +7,7 @@ id: 1641902693748680800
 # 摘要
 
 ```
-curl - -S -f -o filename "$url"
+curl  -S -f -o filename "$url"
 ```
 
 
