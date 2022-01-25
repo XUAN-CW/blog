@@ -39,7 +39,7 @@ ln -s /usr/local/node-v16.13.1-linux-x64/bin/npm /usr/local/bin
 
 ```sh
 npm install vue@next
-npm install -g @vue/cli
+npm install -g @vue/cli --registry=https://registry.npm.taobao.org
 # 创建软连接，使其全局可用
 ln -s /usr/local/node-v16.13.1-linux-x64/bin/vue /usr/local/bin
 ```
