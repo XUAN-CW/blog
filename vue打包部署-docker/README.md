@@ -27,7 +27,7 @@ id: 1640801802082817100
 
 ```sh
 # 下载
-wget https://nodejs.org/dist/v16.13.1/node-v16.13.1-linux-x64.tar.xz
+curl https://nodejs.org/dist/v16.13.1/node-v16.13.1-linux-x64.tar.xz -O
 # 解压
 tar xf node-v16.13.1-linux-x64.tar.xz -C /usr/local/
 # 创建软连接，使其全局可用
