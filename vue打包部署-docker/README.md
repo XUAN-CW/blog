@@ -38,7 +38,7 @@ ln -s /usr/local/node-v16.13.1-linux-x64/bin/npm /usr/local/bin
 ## vue
 
 ```sh
-npm install vue
+npm install vue@next
 npm install -g @vue/cli
 # 创建软连接，使其全局可用
 ln -s /usr/local/node-v16.13.1-linux-x64/bin/vue /usr/local/bin
