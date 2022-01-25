@@ -38,7 +38,7 @@ date
 # 2、修改时区
 timedatectl set-timezone Asia/Shanghai # 设置系统时区为上海
 # 3、安装ntp 联网校准时间
-yum install ntp
+yum install ntp -y
 # 4、联网（阿里时间服务器）校准时间
 ntpdate ntp1.aliyun.com
 ############################## docker ##############################
