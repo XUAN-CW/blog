@@ -30,6 +30,17 @@ sudo yum install -y createrepo
 sudo yum install zip -y
 sudo yum install net-tools -y
 sudo yum install wget -y
+
+
+############################## 校准时间 ##############################
+# 1、查看时间时区
+date
+# 2、修改时区
+timedatectl set-timezone Asia/Shanghai # 设置系统时区为上海
+# 3、安装ntp 联网校准时间
+yum install ntp
+# 联网（阿里时间服务器）校准时间
+ntpdate ntp1.aliyun.com
 ############################## docker ##############################
 # 安装指定版本 docker 
 sudo yum install -y docker-ce-20.10.7 docker-ce-cli-20.10.7  containerd.io-1.4.6
