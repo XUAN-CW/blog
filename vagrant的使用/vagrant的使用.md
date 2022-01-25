@@ -15,15 +15,17 @@ id: 1640005425026157100
 - VirtualBox 6.1.18 
 - bionic-server-cloudimg-amd64-vagrant.box
 
-# vagrant安装虚拟机
+# 基本使用
+
+## vagrant安装虚拟机
 
 以安装 bionic-server 为例
 
-## 下载
+### 下载
 
 **bionic-server-cloudimg-amd64-vagrant.box** ： [直接下载](https://mirrors.tuna.tsinghua.edu.cn/ubuntu-cloud-images/bionic/current/bionic-server-cloudimg-amd64-vagrant.box) | [下载页面](https://mirrors.tuna.tsinghua.edu.cn/ubuntu-cloud-images/bionic/current/) 
 
-## [box add](https://www.vagrantup.com/docs/cli/box#box-add) 
+### [box add](https://www.vagrantup.com/docs/cli/box#box-add) 
 
 我把 **bionic-server-cloudimg-amd64-vagrant.box** 下载到了 **"D:\core\Desktop\bionic-server-cloudimg-amd64-vagrant.box"** 所以我这里是：
 
@@ -41,7 +43,7 @@ bionic-server-cloudimg-amd64-vagrant (virtualbox, 0)
 
 ```
 
-##  [init](https://www.vagrantup.com/docs/cli/init) 
+###  [init](https://www.vagrantup.com/docs/cli/init) 
 
 随便找个空目录进行初始化，这里我的空目录是 **D:\vm\ubuntu18.04-server-amd64** 。`vagrant init` 后面的 box 名不要手打，要从上面 **vagrant box list** 复制，这样可以避免一些错误。我们这里选择 **bionic-server-cloudimg-amd64-vagrant** ：
 
@@ -56,7 +58,7 @@ the comments in the Vagrantfile as well as documentation on
 
 ```
 
-## [up](https://www.vagrantup.com/docs/cli/up) 
+### [up](https://www.vagrantup.com/docs/cli/up) 
 
 在 `init` 的目录下，使用 `vagrant up` ：
 
@@ -64,7 +66,7 @@ the comments in the Vagrantfile as well as documentation on
 [D:\vm\ubuntu18.04-server-amd64]$ vagrant up
 ```
 
-## [ssh](https://www.vagrantup.com/docs/cli/ssh) 
+### [ssh](https://www.vagrantup.com/docs/cli/ssh) 
 
 在 `init` 的目录下，使用 `vagrant ssh` ，即可登录虚拟机：
 
