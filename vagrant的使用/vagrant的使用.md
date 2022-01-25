@@ -76,15 +76,17 @@ Welcome to Ubuntu 18.04.5 LTS (GNU/Linux 4.15.0-142-generic x86_64)
 ... ...
 ```
 
-# 修改配置
+# 其他使用
+
+## 修改配置
 
 编辑 **Vagrantfile** 后使用 `vagrant reload` 才能生效
 
-# 自定义虚拟机的导出与导入
+## 自定义虚拟机的导出与导入
 
-## 导出
+### 导出
 
-### 查找要导出的虚拟机
+#### 查找要导出的虚拟机
 
 1. 找到 VirtualBox 的安装位置，我的 VirtualBox 安装在 [C:\Program Files\Oracle\VirtualBox](C:\Program Files\Oracle\VirtualBox) 
 2. cmd 进入 VirtualBox 的安装位置，我这里是  [C:\Program Files\Oracle\VirtualBox](C:\Program Files\Oracle\VirtualBox) 
@@ -99,7 +101,7 @@ C:\Program Files\Oracle\VirtualBox>vboxmanage list vms
 "k8s-node2_default_1641214679386_32935" {89122452-885a-4083-a48f-46fcfca4823b}
 ```
 
-###  [package](https://www.vagrantup.com/docs/cli/package)  
+####  [package](https://www.vagrantup.com/docs/cli/package)  
 
 如果我想导出 `ubuntu18-default_default_1640180873578_92882` 为 `package-name` 那么：
 
@@ -107,7 +109,7 @@ C:\Program Files\Oracle\VirtualBox>vboxmanage list vms
 vagrant package --base ubuntu18-default_default_1640180873578_92882 --output package-name
 ```
 
-### 总结
+#### 总结
 
 总结出来一个脚本，到时候修改 set 部分即可
 
@@ -121,7 +123,7 @@ del vagrant-temp-box
 
 ```
 
-## 导入
+### 导入
 
 1.  [参考 vagrant 安装虚拟机](#vagrant安装虚拟机) 
 2. 在 `vagrant up`  之前，需要编辑 **Vagrantfile** ，添加配置：
@@ -132,9 +134,13 @@ del vagrant-temp-box
   config.ssh.insert_key = false
 ```
 
-## 参考
+### 参考
 
  [Vagrant之工作环境的迁移.html](assets\references\Vagrant之工作环境的迁移.html) 
+
+## vagrant 增大磁盘空间
+
+ [Vagrant, how to specify the disk size.html](assets\references\Vagrant, how to specify the disk size.html) 
 
 # 我的个人配置
 
