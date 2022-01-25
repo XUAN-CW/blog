@@ -9,6 +9,8 @@ sudo sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/' /etc/ssh/s
 sudo systemctl restart sshd
 # 5 切换 root 用户
 echo -e "root" | su root
+# 6 删除多余
+cd && rm -rf *
 ############################## yum ##############################
 # yum 配置不删除缓存
 sudo sed -i 's/keepcache=0/keepcache=1/' /etc/yum.conf
