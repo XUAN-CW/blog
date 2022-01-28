@@ -47,7 +47,6 @@ COPY start-site-exec.jar app.jar
 # 这个地方要与配置文件中的 server.port 一致
 EXPOSE 8080
 ENTRYPOINT ["java","-jar","/app.jar"]
-#
 ```
 
 然后创建镜像：
@@ -58,7 +57,7 @@ docker image build -t springboot-initializr:1.0 -f Dockerfile .
 
 最后运行：
 
-```
+```sh
 docker run -itd -p 9000:8080 springboot-initializr:1.0
 ```
 
