@@ -14,6 +14,7 @@ id: 1640275764181110200
 
 ```sh
 git clone https://github.com/spring-io/start.spring.io.git
+mvn clean package -Dmaven.test.skip=true 
 ```
 
 
