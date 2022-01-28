@@ -10,6 +10,18 @@ id: 1640275764181110200
 
  [搭建自己的Spring Initializr.html](assets\references\搭建自己的Spring Initializr.html) 
 
+
+
+```sh
+git clone https://github.com/spring-io/start.spring.io.git
+```
+
+
+
+
+
+
+
 # 方法二
 
 ## 启动
