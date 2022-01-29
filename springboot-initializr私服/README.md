@@ -10,7 +10,7 @@ id: 1640275764181110200
 
 # 方法一（推荐）
 
-云服务器搭建 springboot Initializr 私服，这里我们不需要 web 界面，就单纯给 IDEA 用的
+云服务器搭建 springboot Initializr 私服，这里我们不需要 web 界面，就单纯给 IDEA 用
 
 ## 步骤
 
