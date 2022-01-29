@@ -18,7 +18,7 @@ id: 1640275764181110200
 
 ```sh
 git clone https://github.com/spring-io/start.spring.io.git
-cd start.spring.io/
+
 ```
 
 ### 删除 start-client
