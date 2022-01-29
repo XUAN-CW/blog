@@ -36,7 +36,7 @@ mvn clean package -Dmaven.test.skip=true
 
 ## Docker 部署
 
-将 start-site-exec.jar 上传到服务器后在通一目录下创建 Dockerfile ，内容如下：
+将 start-site-exec.jar 上传到服务器后在同一目录下创建 Dockerfile ，内容如下：
 
 ```dockerfile
 # FROM java:8
