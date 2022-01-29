@@ -8,26 +8,25 @@ date: 2021-12-24 00:09:24
 id: 1640275764181110200
 ---
 
-# 方法一（推荐）
+# 摘要
 
 云服务器搭建 springboot Initializr 私服，这里我们不需要 web 界面，就单纯给 IDEA 用
 
-## 步骤
+# 步骤
 
-### clone
+## clone
 
 ```sh
 git clone https://github.com/spring-io/start.spring.io.git
-
 ```
 
-### 删除 start-client
+## 删除 start-client
 
 start-client 需要 nodejs 打包，相当麻烦，这里我们删掉它，需要 web 界面的别删
 
 ![image-20220129012608749](assets/images/image-20220129012608749.png)
 
-### package
+## package
 
 ```
 mvn clean package -Dmaven.test.skip=true 
@@ -35,7 +34,7 @@ mvn clean package -Dmaven.test.skip=true
 
 打完包之后其实就可以用了，在 target 目录下运行 `java -jar start-site-exec.jar` 运行测试一下，是没有问题的。下面是发布到服务器上的步骤
 
-### Docker 部署
+## Docker 部署
 
 将 start-site-exec.jar 上传到服务器后在通一目录下创建 Dockerfile ，内容如下：
 
