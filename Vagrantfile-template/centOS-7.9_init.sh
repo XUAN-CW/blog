@@ -65,7 +65,7 @@ sudo systemctl restart docker
 sudo curl -L "http://192.168.20.10:100/software-for-development/docker/docker-compose_version_1.29.2/docker-compose-Linux-x86_64" -o /usr/local/bin/docker-compose
 sudo chmod 777 -R /usr/local/bin/
 # docker load 别名
-alias docker-load='ls *docker_image* | sed -r "s#(.*)#docker load -i \1#" | bash'
-
+echo 'ls *docker_image* | sed -r "s#(.*)#docker load -i \1#" | bash' > /usr/local/bin/docker-load
+sudo chmod 777 -R /usr/local/bin/
 
 

@@ -22,10 +22,11 @@ id: 1640804213979022300
 ls *docker_image* | sed -r "s#(.*)#docker load -i \1#" | bash
 ```
 
-我们给它取个别名：
+我们给存为脚本：
 
 ```sh
-alias docker-load='ls *docker_image* | sed -r "s#(.*)#docker load -i \1#" | bash'
+echo 'ls *docker_image* | sed -r "s#(.*)#docker load -i \1#" | bash' > /usr/local/bin/docker-load
+sudo chmod 777 -R /usr/local/bin/
 ```
 
 ## docker-save 脚本
