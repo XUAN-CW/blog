@@ -12,7 +12,7 @@ id: 1640275764181110200
 
 云服务器搭建 springboot Initializr 私服，这里我们不需要 web 界面，就单纯给 IDEA 用
 
-# 步骤
+# 私服搭建
 
 ## clone
 
@@ -61,5 +61,9 @@ docker image build -t springboot-initializr:1.0 -f Dockerfile .
 docker run -itd -p 9000:8080 springboot-initializr:1.0
 ```
 
+# IDEA 中配置
 
+在 Server URL 中输入私服地址即可
+
+![image-20220129111741503](assets/images/image-20220129111741503.png)
 
