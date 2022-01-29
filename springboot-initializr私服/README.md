@@ -1,8 +1,10 @@
 ---
-title: 本地部署SpringBootInitializr
-date: 2021-12-24 00:09:24
+title: springboot-initializr私服
 tags: 
-categories: 
+- springboot
+- initializr
+- 私服
+date: 2021-12-24 00:09:24
 id: 1640275764181110200
 ---
 
