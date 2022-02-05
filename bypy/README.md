@@ -85,6 +85,7 @@ python3 -m bypy info
 胶水代码，可以将下载好的文件上传到百度云。启动程序前，记得在 qBittorrent 设置给未完成的文件添加 **.!qB** 后缀
 
 ```sh
+
 runningFlag="runningFlag_$(date +%s)"
 echo "删除此文件,程序安全停止 ">${runningFlag}
 
@@ -130,10 +131,10 @@ do
     fi
     ###############################################################
     echo "获取文件所在路径"
-    upload_dir=$(upload_dirname "${shouldBeUploaded}" | sed $'s/[^[:alnum:]\/]/_/g')
+    upload_dir=$(dirname "${shouldBeUploaded}" | sed $'s/[^[:alnum:]\/]/_/g')
     upload_dir="upload_dir/${upload_dir}/"$(echo "${shouldBeUploaded##*/}"|sed $'s/[^[:alnum:]\/]/_/g')
     echo "upload_dir:${upload_dir}"
-    mkupload_dir  -p "${upload_dir}"
+    mkdir -p "${upload_dir}"
     ###############################################################
     echo "加密压缩"
     zip -rP Xuan19981224 "${upload_dir}/${zipFileFlag}_$(date +%s).zip" "${shouldBeUploaded}" -m
@@ -150,10 +151,11 @@ do
 #    break
     ###############################################################
     echo "删除空文件夹"
-    find -type d -empty | sed 's/\(.*\)/\"\1\"/' | xargs rmupload_dir
+    find -type d -empty | sed 's/\(.*\)/\"\1\"/' | xargs rmdir
     ((i++))
 done
 # nohup ./findAndZipAndUpload.sh > FindAndZipAndUpload.out 2>&1 &
+
 ```
 
 ## aria2-pro
