@@ -130,33 +130,30 @@ do
     fi
     ###############################################################
     echo "获取文件所在路径"
-    dir=$(dirname "${shouldBeUploaded}" | sed $'s/[^[:alnum:]\/]/_/g')
-    dir="${dir}/"$(echo "${shouldBeUploaded##*/}"|sed $'s/[^[:alnum:]\/]/_/g')
-    echo "dir:${dir}"
-    mkdir  -p "${dir}"
+    upload_dir=$(upload_dirname "${shouldBeUploaded}" | sed $'s/[^[:alnum:]\/]/_/g')
+    upload_dir="upload_dir/${upload_dir}/"$(echo "${shouldBeUploaded##*/}"|sed $'s/[^[:alnum:]\/]/_/g')
+    echo "upload_dir:${upload_dir}"
+    mkupload_dir  -p "${upload_dir}"
     ###############################################################
     echo "加密压缩"
-    zip -rP Xuan19981224 "${dir}/${zipFileFlag}_$(date +%s).zip" "${shouldBeUploaded}" -m
+    zip -rP Xuan19981224 "${upload_dir}/${zipFileFlag}_$(date +%s).zip" "${shouldBeUploaded}" -m
     ###############################################################
     echo "bypy 上传到百度云"
-    bypy syncup "${dir}/" "${dir}/" 
+    bypy syncup "${upload_dir}/" "${upload_dir}/" 
     
     ###############################################################
     # 这里跟一个不存在的目录比较,跟不存在的目录比较后得到的就是所有的远程文件了
     currentPath=`pwd`
-    cd "${dir}/"
-    bypy -v compare "${dir}/" inexistenceFile | grep '^F' | awk '{print $3}' | xargs -i rm -rf {}
+    cd "${upload_dir}/"
+    bypy -v compare "${upload_dir}/" inexistenceFile | grep '^F' | awk '{print $3}' | xargs -i rm -rf {}
     cd "${currentPath}/"
 #    break
     ###############################################################
     echo "删除空文件夹"
-    find -type d -empty | sed 's/\(.*\)/\"\1\"/' | xargs rmdir
+    find -type d -empty | sed 's/\(.*\)/\"\1\"/' | xargs rmupload_dir
     ((i++))
 done
-```
-
-```sh
-nohup ./findAndZipAndUpload.sh > FindAndZipAndUpload.out 2>&1 &
+# nohup ./findAndZipAndUpload.sh > FindAndZipAndUpload.out 2>&1 &
 ```
 
 ## aria2-pro
