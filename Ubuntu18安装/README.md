@@ -79,7 +79,7 @@ LANGUAGE="zh_CN:zh"
 ```sh
 echo 'LANG="en_US.UTF-8"' >/etc/default/locale
 echo 'LANGUAGE="en_US:en"' >>/etc/default/locale
-locale-gen -en_US:en 
+reboot 
 ```
 
 
