@@ -32,11 +32,10 @@ sudo apt-get install openssh-server -y
 
 
 
-## 合盖不关机
+## 合盖不休眠
 
 ```sh
-sudo sed -i 's/#HandleLidSwitch=suspend/HandleLidSwitch=ignore/' /etc/systemd/logind.conf
-sudo restart systemd-logind
+sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
 ```
 
 
