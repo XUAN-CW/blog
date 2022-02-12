@@ -22,4 +22,6 @@ docker run -itd  -p 8081:8081 -p 8083:8083 -v /docker-v/necus3/nexus-data:/nexus
 
 ## 访问
 
-http://192.168.0.10:8081/
+- 路径： http://nexus3-ip:8081/
+- 账号：admin
+- 密码： **container** 内的 **/nexus-data/admin.password** 存放着密码
