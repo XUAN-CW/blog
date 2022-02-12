@@ -32,6 +32,15 @@ sudo apt-get install openssh-server -y
 
 
 
+## 合盖不关机
+
+```sh
+sudo sed -i 's/#HandleLidSwitch=suspend/HandleLidSwitch=ignore/' /etc/systemd/logind.conf
+sudo restart systemd-logind
+```
+
+
+
 # 参考
 
  [Ubuntu 18.04未发现WiFi适配器解决办法.html](assets\references\Ubuntu 18.04未发现WiFi适配器解决办法.html) 
