@@ -60,7 +60,7 @@ docker login -u admin  192.168.0.10:8083 -padmin
 
 ```sh
 rm -rf /docker-v/necus3/ && mkdir -p /docker-v/necus3/
-chmod 777 -R /docker-v/
+chmod 777 -R /docker-v/necus3/
 docker run -itd  -p 8081:8081 -p 8083:8083 -v /docker-v/necus3/nexus-data:/nexus-data --privileged=true --restart=always --name=nexus3 sonatype/nexus3:3.2.1
 ```
 
