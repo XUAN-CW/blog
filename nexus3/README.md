@@ -58,19 +58,35 @@ docker login -u admin  192.168.0.10:8083 -padmin
 
 # 3.2.1版本
 
+## 运行
+
 ```sh
 rm -rf /docker-v/necus3/ && mkdir -p /docker-v/necus3/
 chmod 777 -R /docker-v/necus3/
 docker run -itd  -p 8081:8081 -p 8083:8083 -v /docker-v/necus3/nexus-data:/nexus-data --privileged=true --restart=always --name=nexus3 sonatype/nexus3:3.2.1
 ```
 
-
-
 ## 访问
 
 - 路径： http://nexus3-ip:8081/
 - 账号：admin
 - 密码：admin123
+
+## Create repository
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
