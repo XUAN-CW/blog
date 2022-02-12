@@ -74,9 +74,31 @@ docker run -itd  -p 8081:8081 -p 8083:8083 -v /docker-v/necus3/nexus-data:/nexus
 
 ## Create repository
 
+![image-20220212203136223](assets/images/image-20220212203136223.png)
 
+## 测试
 
+### 加入授信列表
 
+别忘 修改 **nexus3-ip** 为自己的 IP
+
+```sh
+tee /etc/docker/daemon.json <<-'EOF'
+{
+  "insecure-registries": ["nexus3-ip:8081","192.168.0.10:8083"]
+}
+EOF
+
+# 重启
+systemctl daemon-reload
+systemctl restart docker
+```
+
+### 登录
+
+```sh
+docker login -u admin -p admin123 nexus3-ip:8083
+```
 
 
 
