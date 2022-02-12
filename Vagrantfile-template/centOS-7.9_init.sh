@@ -11,17 +11,17 @@ sudo systemctl restart sshd
 echo -e "root" | su root
 # 6 删除多余
 cd && rm -rf *
-############################## yum ##############################
+############################## 私服 ##############################
 # 配置私服
 echo "192.168.0.10  ps" >> /etc/hosts
 ############################## yum ##############################
 # yum 配置不删除缓存
 sudo sed -i 's/keepcache=0/keepcache=1/' /etc/yum.conf
 # 配置仓库
-cat <<EOF | sudo tee /etc/yum.repos.d/my-yum-repo.repo
-[my-yum-repo]
-name=my-yum-repo
-baseurl=http://192.168.20.10:100/yum/x86_64/7
+cat <<EOF | sudo tee /etc/yum.repos.d/private-service.repo
+[private-service-repo]
+name=private-service
+baseurl=http://ps:7000/repository/yum-private-service/
 gpgcheck=0
 gpgkey=
 EOF
