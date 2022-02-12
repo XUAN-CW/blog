@@ -28,7 +28,7 @@ docker run -itd  -p 8081:8081 -p 8083:8083 -v /docker-v/necus3/nexus-data:/nexus
 
 # 测试
 
-```
+```sh
 tee /etc/docker/daemon.json <<-'EOF'
 {
   "registry-mirrors": ["https://zydiol88.mirror.aliyuncs.com"],
