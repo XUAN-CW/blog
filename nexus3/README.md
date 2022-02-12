@@ -27,7 +27,7 @@ watch docker logs nexus3
 
 # Create repository
 
-![image-20220212203136223](assets/images/image-20220212203136223.png)
+![image-20220212211026973](assets/images/image-20220212211026973.png)
 
 # 测试
 
