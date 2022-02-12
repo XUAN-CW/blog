@@ -64,9 +64,9 @@ docker tag hello-world:latest nexus3-ip:8083/my-hello-world:1.0
 docker push nexus3-ip:8083/my-hello-world:1.0
 ```
 
+# 其他模式介绍
 
-
-
+ [Nexus3搭建Docker等私服.html](assets\references\Nexus3搭建Docker等私服.html) 
 
 
 
