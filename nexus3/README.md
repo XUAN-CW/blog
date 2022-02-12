@@ -35,7 +35,7 @@ docker run -itd  -p 8081:8081 -p 8083:8083 -v /docker-v/necus3/nexus-data:/nexus
 ```sh
 tee /etc/docker/daemon.json <<-'EOF'
 {
-  "insecure-registries": ["nexus3-ip:8081","192.168.0.10:8083"]
+  "insecure-registries": ["nexus3-ip:8081"]
 }
 EOF
 
