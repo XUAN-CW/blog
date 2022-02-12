@@ -25,3 +25,15 @@ docker run -itd  -p 8081:8081 -p 8083:8083 -v /docker-v/necus3/nexus-data:/nexus
 - 路径： http://nexus3-ip:8081/
 - 账号：admin
 - 密码： **container** 内的 **/nexus-data/admin.password** 存放着密码
+
+# 测试
+
+```
+tee /etc/docker/daemon.json <<-'EOF'
+{
+  "registry-mirrors": ["https://zydiol88.mirror.aliyuncs.com"],
+  "insecure-registries": ["192.168.0.10:8083"]
+}
+EOF
+```
+
