@@ -20,6 +20,12 @@ docker run -itd  -p 8081:8081 -p 8083:8083 -v /docker-v/necus3/nexus-data:/nexus
 
 
 
+
+
+```
+docker run -itd  -p 8081:8081 -p 8083:8083 -v /docker-v/necus3/nexus-data:/nexus-data --privileged=true --restart=always --name=nexus3 sonatype/nexus3:3.2.1
+```
+
 ## 访问
 
 - 路径： http://nexus3-ip:8081/
