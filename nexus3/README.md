@@ -11,9 +11,12 @@ id: 1644661871858288100
 # 运行
 
 ```sh
-rm -rf /docker-v/necus3/ && mkdir -p /docker-v/necus3/
-chmod 777 -R /docker-v/necus3/
-docker run -itd  -p 8081:8081 -p 8083:8083 -v /docker-v/necus3/nexus-data:/nexus-data --privileged=true --restart=always --name=nexus3 sonatype/nexus3:3.2.1
+docker container rm -f nexus3
+rm -rf /docker-v/nexus3/
+mkdir -p /docker-v/nexus3/
+chmod 777 -R /docker-v/nexus3/
+docker run -itd  -p 8081:8081 -p 8083:8083 -v /docker-v/nexus3/nexus-data:/nexus-data --privileged=true --restart=always --name=nexus3 sonatype/nexus3:3.2.1
+docker logs nexus3
 ```
 
 # 访问
