@@ -80,7 +80,7 @@ docker run -itd  -p 8081:8081 -p 8083:8083 -v /docker-v/necus3/nexus-data:/nexus
 
 ### 加入授信列表
 
-别忘 修改 **nexus3-ip** 为自己的 IP
+别忘了修改 **nexus3-ip** 为自己的 IP
 
 ```sh
 tee /etc/docker/daemon.json <<-'EOF'
@@ -99,6 +99,23 @@ systemctl restart docker
 ```sh
 docker login -u admin -p admin123 nexus3-ip:8083
 ```
+
+### push 
+
+- push 前记得登录
+- 别忘了修改 **nexus3-ip** 为自己的 IP
+
+```sh
+docker pull hello-world
+docker tag hello-world:latest nexus3-ip:8083/my-hello-world:1.0
+docker push nexus3-ip:8083/my-hello-world:1.0
+```
+
+
+
+
+
+
 
 
 
