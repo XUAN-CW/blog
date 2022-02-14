@@ -162,7 +162,7 @@ netsh interface portproxy add v4tov4 listenaddress=localhost listenport=5601 con
 
 rem nacos
 netsh interface portproxy add v4tov4 listenaddress=localhost listenport=8848 connectaddress=192.168.18.10 connectport=8848
-netsh interface portproxy add v4tov4 listenaddress=localhost listenport=8848 connectaddress=192.168.18.10 connectport=9848
+netsh interface portproxy add v4tov4 listenaddress=localhost listenport=9848 connectaddress=192.168.18.10 connectport=9848
 
 rem Oracle
 netsh interface portproxy add v4tov4 listenaddress=localhost listenport=1521 connectaddress=192.168.18.10 connectport=1521
