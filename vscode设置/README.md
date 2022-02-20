@@ -20,6 +20,7 @@ id: 1641022560760560000
 6. open in browser
 7. Auto Close Tag
 8. Auto Rename Tag
+8. open （使用系统默认的应用打开文件）
 
 # 设置
 

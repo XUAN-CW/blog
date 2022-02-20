@@ -19,7 +19,7 @@ Linux 下BT文件转存百度云。使用 **qBittorrent** 下载 BT 文件，再
 ```shell
 docker pull crazymax/qbittorrent:4.1.9
 
-mkdir -p /h/q 
+mkdir -p /h/qbit 
 
 docker run -d \
   --privileged=true \
@@ -28,7 +28,7 @@ docker run -d \
   -e WEBUI_PORT=8080 \
   -p 9821:6881 \
   -p 9821:6881/udp \
-  -p 8080:8080 \
+  -p 8:8080 \
   -v /h/qbit:/root/Downloads \
   --restart unless-stopped \
   crazymax/qbittorrent:4.1.9
