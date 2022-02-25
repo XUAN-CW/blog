@@ -173,6 +173,28 @@ https://start.springboot.io/
 - Alibaba Java Coding Guidelines
 - Codota
 
+# 加大内存
+
+Windows10、idea2021环境下修改 **C:\Program Files\JetBrains\IntelliJ IDEA 2021.2\bin\idea64.exe.vmoptions** 文件
+
+```
+-Xmx7500m
+-Xms1280m
+```
+
+- `-Xmx7500m` JVM初始分配的堆内存
+- `-Xms1280m` JVM最大允许分配的堆内存，按需分配
+
+## 参考
+
+ [设置java内存_IDEA设置JVM可分配内存大小和其他参数的教程.html](assets\references\设置java内存_IDEA设置JVM可分配内存大小和其他参数的教程.html) 
+
+ [idea设置java内存.html](assets\references\idea设置java内存.html) 
+
+
+
+
+
 
 
 
