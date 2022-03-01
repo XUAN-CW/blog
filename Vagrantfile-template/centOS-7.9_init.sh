@@ -42,17 +42,6 @@ sudo yum install -y docker-ce-20.10.7 docker-ce-cli-20.10.7  containerd.io-1.4.6
 # 启动 docker
 sudo systemctl start docker
 sudo systemctl enable docker
-# docker 加速
-sudo mkdir -p /etc/docker
-# 添加镜像、加入授信列表
-tee /etc/docker/daemon.json <<-'EOF'
-{
-  "registry-mirrors": ["http://ps:7001"],
-  "insecure-registries": ["ps:7002"]
-}
-EOF
-sudo systemctl daemon-reload
-sudo systemctl restart docker
 # docker主机开启docker 远程访问API
 #     访问 http://ip:2375/images/json 查看是否成功
 sudo sed -i "s|ExecStart=/usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock|ExecStart=/usr/bin/dockerd -H tcp://0.0.0.0:2375 -H unix:///var/run/docker.sock|g" /lib/systemd/system/docker.service 
