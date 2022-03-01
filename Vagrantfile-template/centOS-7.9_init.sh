@@ -52,9 +52,11 @@ sudo systemctl start docker
 sudo systemctl enable docker
 # docker 加速
 sudo mkdir -p /etc/docker
-sudo tee /etc/docker/daemon.json <<-'EOF'
+# 添加镜像、加入授信列表
+tee /etc/docker/daemon.json <<-'EOF'
 {
-  "registry-mirrors": ["https://6ypv0a1a.mirror.aliyuncs.com"]
+  "registry-mirrors": ["http://ps:7001"],
+  "insecure-registries": ["ps:7002"]
 }
 EOF
 sudo systemctl daemon-reload
