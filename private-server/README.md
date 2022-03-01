@@ -33,7 +33,7 @@ docker run -itd  \
 docker run -itd \
   --name private-file-server \
   -p 7101:80 \
-  -v /some/content:/usr/share/nginx/html \
+  -v /docker-v/private-file-server:/usr/share/nginx/html \
   nginx:1.16.1
   
 
