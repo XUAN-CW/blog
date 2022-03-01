@@ -63,7 +63,7 @@ docker run -itd -p 9000:8080 springboot-initializr:1.0
 
 # IDEA 中配置
 
-在 Server URL 中输入私服地址即可
+在 Server URL 中将原来的 https://start.spring.io 修改为私服地址即可
 
 ![image-20220129111741503](assets/images/image-20220129111741503.png)
 
