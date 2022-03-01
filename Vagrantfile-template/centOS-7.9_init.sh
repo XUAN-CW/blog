@@ -17,14 +17,6 @@ echo "192.168.0.10  ps" >> /etc/hosts
 ############################## yum ##############################
 # yum 配置不删除缓存
 sudo sed -i 's/keepcache=0/keepcache=1/' /etc/yum.conf
-# 配置仓库
-cat <<EOF | sudo tee /etc/yum.repos.d/yum-private-service.repo
-[yum-private-service-repo]
-name=yum-private-service
-baseurl=http://ps:7000/repository/yum-private-service/
-gpgcheck=0
-gpgkey=
-EOF
 
 # 更新
 yum update -y
