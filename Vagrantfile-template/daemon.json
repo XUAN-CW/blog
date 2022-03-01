@@ -1,0 +1,4 @@
+{
+  "registry-mirrors": ["http://ps:7001"],
+  "insecure-registries": ["ps:7002"]
+}
