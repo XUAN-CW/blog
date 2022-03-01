@@ -10,7 +10,7 @@ sudo systemctl restart sshd
 # 5 切换 root 用户
 echo -e "root" | su root
 # 6 删除多余
-cd && rm -rf *
+cd && rm -f anaconda-ks.cfg original-ks.cfg
 ############################## 私服 ##############################
 # 配置私服
 echo "192.168.0.10  ps" >> /etc/hosts
