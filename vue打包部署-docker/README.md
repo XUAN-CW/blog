@@ -65,9 +65,9 @@ npm run build
 
 ## 创建项目并打包 - 方法二
 
-### 创建镜像
+### 环境准备
 
-在项目下创建 Dokerfile ：
+在项目下创建 Dokerfile ，然后创建镜像：
 
 ```dockerfile
 FROM node:16.14.0-bullseye
