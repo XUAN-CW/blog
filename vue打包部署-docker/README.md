@@ -52,25 +52,16 @@ npm install -g @vue/cli --registry=https://registry.npm.taobao.org
 ln -s /usr/local/node-v16.13.1-linux-x64/bin/vue /usr/local/bin
 ```
 
-### 创建项目
+### 创建 vue 项目并打包
 
 ```sh
 # 执行后一路回车即可
 vue create deploy-vue-by-docker
-```
-
-创建项目后记得先测试一下看看能不能用，如果不行，下面的也别做了
-
-### build
-
-```sh
 # 进入项目
 cd deploy-vue-by-docker
 # 项目打包
 npm run build
 ```
-
-
 
 ## 创建项目并打包 - 方法二
 
@@ -87,7 +78,7 @@ RUN npm install -g @vue/cli@@vue/cli 5.0.1 --registry=https://registry.npm.taoba
 docker build -t create-vue-project:1.0 .
 ```
 
-### 创建 vue 项目
+### 创建 vue 项目并打包
 
 ```sh
 docker run -it --rm \
