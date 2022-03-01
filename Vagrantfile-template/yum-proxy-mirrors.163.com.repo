@@ -1,13 +1,7 @@
-
 [upcentos7]
-
 name=upcentos7
-
-baseurl= http://ps:7000/repository/centos7-163/
-
+baseurl=http://ps:7000/repository/yum-proxy-mirrors.163.com/
 enabled=1
-
 gpgcheck=0
-
 gpgkey=http://mirrors.163.com/centos/RPM-GPG-KEY-CentOS-7
 
