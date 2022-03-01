@@ -113,7 +113,11 @@ groovyScript("def returnType = \"${_1}\"; def result = '* @return ' + returnType
 
 我想双击用本地应用打开 markdown 文件，但网上的怎么找都找不到。
 
-我在 idea 中双击 mp4 文件，他就直接本地应用播放了，所以就在想，能让 MP4 直接本地应用打开，那应该也可以让能让 md 直接本地应用打开。于是我直接从 IDEA 导出  **settings.zip**，解压后检索 `mp4` ,于是在   [settings\options\filetypes.xml](assets\data\filetypes.xml) 中找到了  `mp4`  ：
+我在 idea 中双击 mp4 文件，他就直接本地应用播放了，所以就在想，能让 MP4 直接本地应用打开，那应该也可以让能让 md 直接本地应用打开。
+
+## 添加 mapping
+
+我直接 IDEA 导出  **settings.zip**，解压后检索 `mp4` ,于是在   [settings\options\filetypes.xml](assets\data\filetypes.xml) 中找到了  `mp4`  ：
 
 ```xml
 <application>
@@ -142,7 +146,11 @@ groovyScript("def returnType = \"${_1}\"; def result = '* @return ' + returnType
 </application>
 ```
 
-再打开 idea ，就可以用本地应用打开 markdown 了
+再打开 idea，发现没卵用，再打开 filetypes.xml ，发现配置的 mapping 消失了，这是因为 IDEA 自带 markdown 插件，我们需要禁用此插件
+
+## 禁用 markdown 插件
+
+![image-20220301161911636](assets/images/image-20220301161911636.png)
 
 # maven指定
 
