@@ -55,7 +55,7 @@ ln -s /usr/local/node-v16.13.1-linux-x64/bin/vue /usr/local/bin
 ### 创建 vue 项目并打包
 
 ```sh
-# 执行后一路回车即可
+# 创建 vue 项目,执行后一路回车即可
 vue create deploy-vue-by-docker
 # 进入项目
 cd deploy-vue-by-docker
@@ -81,15 +81,16 @@ docker build -t create-vue-project:1.0 .
 ### 创建 vue 项目并打包
 
 ```sh
+# 创建 vue 项目,执行后一路回车即可
 docker run -it --rm \
   --name deploy-vue-by-docker \
   -v "$PWD":/usr/src/app \
   -w /usr/src/app \
   create-vue-project:1.0 \
   vue create deploy-vue-by-docker
-  
+# 进入项目
 cd deploy-vue-by-docker
-
+# 项目打包
 docker run -it --rm \
   --name deploy-vue-by-docker \
   -v "$PWD":/usr/src/app \
