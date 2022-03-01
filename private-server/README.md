@@ -36,7 +36,10 @@ docker run -itd \
   -v /docker-v/private-file-server:/usr/share/nginx/html \
   nginx:1.16.1
   
+```
 
-
+```sh
+# docker-compose
+sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o "/docker-v/private-file-server/docker-compose-$(uname -s)-$(uname -m)"
 ```
 
