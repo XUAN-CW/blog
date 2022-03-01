@@ -103,7 +103,7 @@ docker run --name deploy-vue-by-docker -p 80:80 -d deploy-vue-by-docker:1.0
 
 ```dockerfile
 FROM node:16.14.0-bullseye
-RUN npm install -g @vue/cli@2.11.0 --registry=https://registry.npm.taobao.org
+RUN npm install -g @vue/cli@@vue/cli 5.0.1 --registry=https://registry.npm.taobao.org
 
 CMD vue -V
 ```
@@ -121,8 +121,8 @@ docker build -t deploy-vue-by-docker:1.0 .
    --name deploy-vue-by-docker \
    -v "$PWD":/usr/src/app \
    -w /usr/src/app \
-   my-node:1.0 \
-   npm run build
+   deploy-vue-by-docker:1.0 \
+   vue -V
 ```
 
 
