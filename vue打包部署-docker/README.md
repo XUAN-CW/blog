@@ -46,7 +46,7 @@ ln -s /usr/local/node-v16.13.1-linux-x64/bin/npm /usr/local/bin
 虚拟机安装 vue
 
 ```sh
-npm install -g @vue/cli@vue/cli@5.0.1 --registry=https://registry.npm.taobao.org
+npm install -g @vue/cli@5.0.1 --registry=https://registry.npm.taobao.org
 ```
 
 ### 创建 vue 项目并打包
@@ -68,7 +68,7 @@ npm run build
 
 ```dockerfile
 FROM node:16.14.0-bullseye
-RUN npm install -g @vue/cli@vue/cli@5.0.1 --registry=https://registry.npm.taobao.org
+RUN npm install -g @vue/cli@5.0.1 --registry=https://registry.npm.taobao.org
 ```
 
 ```sh
