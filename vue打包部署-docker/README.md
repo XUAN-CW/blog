@@ -47,8 +47,6 @@ ln -s /usr/local/node-v16.13.1-linux-x64/bin/npm /usr/local/bin
 
 ```sh
 npm install -g @vue/cli@vue/cli@5.0.1 --registry=https://registry.npm.taobao.org
-# 创建软连接，使其全局可用
-ln -s /usr/local/node-v16.13.1-linux-x64/bin/vue /usr/local/bin
 ```
 
 ### 创建 vue 项目并打包
