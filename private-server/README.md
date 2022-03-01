@@ -10,7 +10,7 @@ id: 1646139367829383000
 
 
 
-
+# nexus3
 
 ```sh
 docker container rm -f nexus3
@@ -27,7 +27,7 @@ docker run -itd  \
   sonatype/nexus3:3.16.2
 ```
 
-
+# 文件服务
 
 ```sh
 docker run -itd \
@@ -35,5 +35,8 @@ docker run -itd \
   -p 7101:80 \
   -v /some/content:/usr/share/nginx/html \
   nginx:1.16.1
+  
+
+
 ```
 
