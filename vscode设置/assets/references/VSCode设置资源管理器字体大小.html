@@ -1,0 +1,144 @@
+<!DOCTYPE html> <html style lang=zh-cn><!--
+ Page saved with SingleFile 
+ url: https://www.cnblogs.com/live41/p/14695978.html 
+ saved date: Wed Mar 02 2022 21:40:48 GMT+0800 (中国标准时间)
+--><meta charset=utf-8>
+<meta name=viewport content="width=device-width, initial-scale=1.0">
+<meta name=referrer content=origin-when-crossorigin>
+<meta name=description content="1.进入安装目录Microsoft VS Code\resources\app\out\vs\workbench 2.打开文件workbench.desktop.main.css 3.搜索.monac">
+<meta property=og:description content="1.进入安装目录Microsoft VS Code\resources\app\out\vs\workbench 2.打开文件workbench.desktop.main.css 3.搜索.monac">
+<meta http-equiv=Cache-Control content=no-transform>
+<meta http-equiv=Cache-Control content=no-siteapp>
+<meta http-equiv=X-UA-Compatible content="IE=edge">
+<title>VSCode设置资源管理器字体大小 - Clotho_Lee - 博客园</title>
+<style>.navbar{display:flex;flex-direction:column;align-items:center;background-color:#fff;padding-left:40px;padding-right:40px;padding-top:5px;padding-bottom:5px}body{font-family:'PingFang SC','Microsoft YaHei','Helvetica Neue','Helvetica','Arial',sans-serif}img{max-width:100%;height:auto}#cnblogs_post_body{margin-bottom:20px}#cnblogs_post_body{word-break:break-word}#cnblogs_post_body p{margin:10px auto}#cnblogs_post_body p{text-indent:0}.vertical-middle>*{vertical-align:middle}@keyframes fadeIn{0%{opacity:0}100%{opacity:var(--cnb-code-toolbar-initial-opacity)}}.clear{clear:both}@keyframes modal-open{0%{height:0;opacity:0}95%{height:505px}100%{height:auto;opacity:1}}:root{--cnblogs-toc-bg-color:rgba(245,245,245,.98);--cnblogs-toc-highlight-color:rgba(255,255,255,.9);--cnblogs-toc-color:#000}body{min-height:100vh}@keyframes wb-fade-in{0%{opacity:0}to{opacity:.85}}@-webkit-keyframes ui-dialog-loading{0%{-webkit-transform:rotate(0deg)}100%{-webkit-transform:rotate(360deg)}}@keyframes ui-dialog-loading{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}*{margin:0;padding:0}body{color:#000;background:#fff;font-size:13px;line-height:1.5}img{border:0}h1{color:#000}a{text-decoration:none;color:#000}a:hover{color:#f00}.navbar{padding:3px 15px 3px 10px;border-bottom:1px solid #f2f2f2}#mainContent{margin-right:330px}#sideBar{position:absolute;width:300px;border-left:1px solid #ccc;border-top-width:0;overflow:hidden;padding:0 8px 20px 30px;right:0}.forFlow{margin:0 50px 0 50px}.postTitle{border-bottom:1px solid #ddd;font-size:14px;font-weight:bold;margin:20px 0 10px}.postBody{color:#111;font-size:13px;line-height:1.8}.postDesc{border-bottom:0 dotted #999;color:#666;text-align:right;padding-bottom:5px;vertical-align:middle}.postDesc a:link,.postDesc a:active,.postDesc a:visited{color:#666;text-decoration:none}.postDesc a:hover{text-decoration:underline}h1.postTitle a{line-height:1.5}.has-bannerbar #sideBar{top:202px}@media only screen and (max-width:767px){.postTitle{margin-top:30px}}</style>
+<style media="only screen and (max-width: 767px)">body{font-size:14px!important;-webkit-text-size-adjust:none}.forpc{display:none!important}.navbar{display:none}body{font-family:'HanHei SC','PingFang SC','Helvetica Neue','Helvetica','STHeitiSC-Light','Arial',sans-serif}.forFlow{margin:0 10px}#mainContent{margin-right:0}#sideBar{width:auto;position:static}</style>
+<link type=application/rss+xml rel=alternate href=https://www.cnblogs.com/live41/rss>
+<link type=application/rsd+xml rel=EditURI href=https://www.cnblogs.com/live41/rsd.xml>
+<link type=application/wlwmanifest+xml rel=wlwmanifest href=https://www.cnblogs.com/live41/wlwmanifest.xml>
+<link id=favicon rel="shortcut icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+PGRlZnM+PGNsaXBQYXRoIGlkPSJwcmVmaXhfX2NsaXAtcGF0aCI+PHBhdGggY2xhc3M9InByZWZpeF9fY2xzLTEiIGQ9Ik0yOS40OCAyNS4yNGMtLjE2LTEuODktLjA4LTEuNS0uMjQtMy4xNmE3Mi4yNCA3Mi4yNCAwIDAwLTItMTAuMzdMMjYgNi4yNWwtMi42IDUuNDEtLjQ0Ljg5cS0uMjQuNDgtLjU0IDFhMjAuNDMgMjAuNDMgMCAwMS0xLjI0IDEuODQgMjAuMDggMjAuMDggMCAwMS0zLjA4IDMuMjQgMTkuNzIgMTkuNzIgMCAwMS0zLjg3IDIuNTNjLS43Mi4zMy0xLjQ1LjcxLTIuMjMgMS0uMzQuMTQtMS4xOS40NC0xLjkzLjY2YTIuNTUgMi41NSAwIDAxLTEuMDctLjNjLS4zNC0xLS44My0yLjI0LTEuMi0zLjE5LS41LTEuMjUtMS0yLjUtMS41MS0zLjczYTU5LjExIDU5LjExIDAgMDAtMy42Mi03LjI1IDU5LjgyIDU5LjgyIDAgMDAxLjUxIDcuOTRjLjMgMS4zLjcgMi41OCAxLjA1IDMuODdTNiAyMi43MSA2LjQ0IDI0YTEuNCAxLjQgMCAwMDEuMjkuOTNjMS4yOCAwIDIuNTcuMDYgMy44Ni4wNXMyLjU5IDAgMy44OC0uMTFhNTYgNTYgMCAwMDcuNzktLjg3Yy0xLjkyLS40OS03LjUtLjgxLTEwLjc5LTEuMDZhNDMgNDMgMCAwMDYuNTMtMS43IDI0LjA2IDI0LjA2IDAgMDA1LjM4LTMuNDVjLjcxLS42MiAxLjIxIDEuODggMi4zOSA1LjI3LjYyIDEuNjkuMzQgMSAxIDIuNjZzMS4zNyA0LjM4IDIuMTcgNmMtLjA3LTEuODItLjMxLTQuNjctLjQ2LTYuNDh6Ii8+PC9jbGlwUGF0aD48Y2xpcFBhdGggaWQ9InByZWZpeF9fY2xpcC1wYXRoLTIiPjxwYXRoIGNsYXNzPSJwcmVmaXhfX2Nscy0xIiBkPSJNMjAuOTIgMy40NmE0LjI1IDQuMjUgMCAwMS4zMSA1Ljg2IDMuOTEgMy45MSAwIDAxLTUuNjYuMjQgNC4yNSA0LjI1IDAgMDEtLjMxLTUuODYgMy45MSAzLjkxIDAgMDE1LjY2LS4yNG0xLjM1LTEuNTRhNS44OSA1Ljg5IDAgMDAtOC41My4zNiA2LjQxIDYuNDEgMCAwMC40OCA4LjgzIDUuOTEgNS45MSAwIDAwOC41My0uMzYgNi40MSA2LjQxIDAgMDAtLjQ4LTguODN6Ii8+PC9jbGlwUGF0aD48c3R5bGU+LnByZWZpeF9fY2xzLTF7ZmlsbDojM2UzYTM5fUBtZWRpYSAocHJlZmVycy1jb2xvci1zY2hlbWU6ZGFyayl7LnByZWZpeF9fY2xzLTF7ZmlsbDojZWZlZmVmfX08L3N0eWxlPjwvZGVmcz48ZyBzdHlsZT0iaXNvbGF0aW9uOmlzb2xhdGUiPjxnIGlkPSJwcmVmaXhfX2xheWVyXzEiIGRhdGEtbmFtZT0ibGF5ZXIgMSI+PHBhdGggY2xhc3M9InByZWZpeF9fY2xzLTEiIGQ9Ik0yOS40OCAyNS4yNGMtLjE2LTEuODktLjA4LTEuNS0uMjQtMy4xNmE3Mi4yNCA3Mi4yNCAwIDAwLTItMTAuMzdMMjYgNi4yNWwtMi42IDUuNDEtLjQ0Ljg5cS0uMjQuNDgtLjU0IDFhMjAuNDMgMjAuNDMgMCAwMS0xLjI0IDEuODQgMjAuMDggMjAuMDggMCAwMS0zLjA4IDMuMjQgMTkuNzIgMTkuNzIgMCAwMS0zLjg3IDIuNTNjLS43Mi4zMy0xLjQ1LjcxLTIuMjMgMS0uMzQuMTQtMS4xOS40NC0xLjkzLjY2YTIuNTUgMi41NSAwIDAxLTEuMDctLjNjLS4zNC0xLS44My0yLjI0LTEuMi0zLjE5LS41LTEuMjUtMS0yLjUtMS41MS0zLjczYTU5LjExIDU5LjExIDAgMDAtMy42Mi03LjI1IDU5LjgyIDU5LjgyIDAgMDAxLjUxIDcuOTRjLjMgMS4zLjcgMi41OCAxLjA1IDMuODdTNiAyMi43MSA2LjQ0IDI0YTEuNCAxLjQgMCAwMDEuMjkuOTNjMS4yOCAwIDIuNTcuMDYgMy44Ni4wNXMyLjU5IDAgMy44OC0uMTFhNTYgNTYgMCAwMDcuNzktLjg3Yy0xLjkyLS40OS03LjUtLjgxLTEwLjc5LTEuMDZhNDMgNDMgMCAwMDYuNTMtMS43IDI0LjA2IDI0LjA2IDAgMDA1LjM4LTMuNDVjLjcxLS42MiAxLjIxIDEuODggMi4zOSA1LjI3LjYyIDEuNjkuMzQgMSAxIDIuNjZzMS4zNyA0LjM4IDIuMTcgNmMtLjA3LTEuODItLjMxLTQuNjctLjQ2LTYuNDh6Ii8+PGcgY2xpcC1wYXRoPSJ1cmwoI3ByZWZpeF9fY2xpcC1wYXRoKSI+PHBhdGggY2xhc3M9InByZWZpeF9fY2xzLTEiIGQ9Ik0tLjg3LS43OGgzNC40MnYzMy4wN0gtLjg3eiIvPjwvZz48cGF0aCBjbGFzcz0icHJlZml4X19jbHMtMSIgZD0iTTIwLjkyIDMuNDZhNC4yNSA0LjI1IDAgMDEuMzEgNS44NiAzLjkxIDMuOTEgMCAwMS01LjY2LjI0IDQuMjUgNC4yNSAwIDAxLS4zMS01Ljg2IDMuOTEgMy45MSAwIDAxNS42Ni0uMjRtMS4zNS0xLjU0YTUuODkgNS44OSAwIDAwLTguNTMuMzYgNi40MSA2LjQxIDAgMDAuNDggOC44MyA1LjkxIDUuOTEgMCAwMDguNTMtLjM2IDYuNDEgNi40MSAwIDAwLS40OC04LjgzeiIvPjxnIGNsaXAtcGF0aD0idXJsKCNwcmVmaXhfX2NsaXAtcGF0aC0yKSI+PHBhdGggY2xhc3M9InByZWZpeF9fY2xzLTEiIGQ9Ik0tLjg3LS43OGgzNC40MnYzMy4wN0gtLjg3eiIvPjwvZz48L2c+PC9nPjwvc3ZnPg==" type=image/svg+xml><style>.sf-hidden{display:none!important}</style><link rel=canonical href=https://www.cnblogs.com/live41/p/14695978.html><meta http-equiv=content-security-policy content="default-src 'none'; font-src 'self' data:; img-src 'self' data:; style-src 'unsafe-inline'; media-src 'self' data:; script-src 'unsafe-inline' data:;"></head>
+<body class="skin-lessismoreright has-navbar has-bannerbar" style=margin-bottom:27px!important>
+ <a name=top></a>
+ <a href=https://click.aliyun.com/m/1000325865/ target=_blank rel=nofollow class=sf-hidden>
+ 
+ </a>
+ <div id=top_nav class="navbar forpc">
+ <nav id=nav_main class="navbar-main sf-hidden">
+ 
+ 
+ </nav>
+ </div>
+ 
+ <div id=home>
+ <div id=header class=sf-hidden>
+ 
+ 
+ </div>
+ <div id=main>
+ <div id=mainContent>
+ <div class=forFlow>
+ <div id=post_detail>
+ <div id=topics>
+ <div class=post>
+ <h1 class=postTitle>
+ 
+<a id=cb_post_title_url class="postTitle2 vertical-middle" href=https://www.cnblogs.com/live41/p/14695978.html>
+ <span>VSCode设置资源管理器字体大小</span>
+ 
+</a>
+ </h1>
+ <div class=clear></div>
+ <div class=postBody>
+ <div id=cnblogs_post_body class="blogpost-body blogpost-body-html">
+<p>1.进入安装目录Microsoft VS Code\resources\app\out\vs\workbench</p>
+<p>&nbsp;</p>
+<p>2.打开文件workbench.desktop.main.css</p>
+<p>&nbsp;</p>
+<p>3.搜索.monaco-workbench .part&gt;.content</p>
+<p>&nbsp;</p>
+<p>4.修改font-size的值，默认是13px</p>
+<p>&nbsp;</p>
+<p>5.保存，重启VSCode</p>
+<p>&nbsp;</p>
+</div>
+<div class=clear></div>
+<div id=blog_post_info_block class=sf-hidden>
+ <div id=blog_post_info class=sf-hidden>
+</div>
+ 
+ 
+</div>
+ </div>
+ <div class=postDesc>posted @ 
+<span id=post-date>2021-04-23 23:29</span>&nbsp;
+<a href=https://www.cnblogs.com/live41/ class=sf-hidden>Clotho_Lee</a>&nbsp;
+阅读(<span id=post_view_count>3247</span>)&nbsp;
+评论(<span id=post_comment_count>0</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14695978" rel=nofollow>编辑</a>&nbsp;
+<a href=https://www.cnblogs.com/live41/p/14695978.html>收藏</a>&nbsp;
+<a href=https://www.cnblogs.com/live41/p/14695978.html>举报</a></div>
+ </div>
+ 
+ <a id=!comments></a>
+<div id=blog-comments-placeholder class=sf-hidden></div>
+<div id=comment_form class="commentform sf-hidden">
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+</div>
+ </div>
+</div>
+ </div>
+ </div>
+ <div id=sideBar>
+ <div id=sideBarMain class=sf-hidden>
+ 
+ 
+ 
+ <div id=leftcontentcontainer class=sf-hidden>
+ 
+ 
+ 
+ 
+ </div>
+ </div>
+ </div>
+ <div class=clear></div>
+ </div>
+ <div class=clear></div>
+ <div id=footer class=sf-hidden>
+ 
+Copyright © 2022 Clotho_Lee
+ </div>
+</div>
+ 
+ 
+ 
+ 
+ 
+<div id=s3downbar-ibmbeeacmbeeaebmfjpmnlgkhoejinha style="box-sizing:initial!important;position:fixed;white-space:nowrap;width:100%!important;left:0px;bottom:0px;border-top:1px solid rgb(153,153,153);transform-origin:left bottom 0px;z-index:2147483647;margin:0px;padding:2px 0px;background-color:rgb(238,238,238);color:rgb(34,34,34);display:flex!important;transform:scale(1)!important"><div style=box-sizing:initial!important;position:absolute!important id=s3downbar_resize_pane is_top=false><div style=box-sizing:initial!important class="tooltip_box sf-hidden" is_top=false></div><div style=box-sizing:initial!important class="tooltip_arrow sf-hidden" is_top=false></div></div><div style=box-sizing:initial!important;color:rgb(34,34,34)!important;position:relative!important;order:4!important class=s3dmBox id=s3downbar_hide_button is_hidden=false><div id=s3downbar_hide_button_img style='box-sizing:initial!important;background-image:url("moz-extension://1a1c2160-344a-4049-a4e0-70e717e5735c/skin/s3dm_icons.png")!important;display:inline-block!important'></div><div style=box-sizing:initial!important class="tooltip_box sf-hidden" is_top=false></div><div style=box-sizing:initial!important class="tooltip_arrow sf-hidden" is_top=false></div></div><div style=box-sizing:initial!important;color:rgb(34,34,34)!important;position:relative!important class=s3dmBox id=s3downbar_main_menu_button is_hidden=false><img style=box-sizing:initial!important src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><span style=box-sizing:initial!important>下载管理</span><div style=box-sizing:initial!important class="tooltip_box sf-hidden" is_top=false></div><div style=box-sizing:initial!important class="tooltip_arrow sf-hidden" is_top=false></div></div><div style=box-sizing:initial!important;color:rgb(34,34,34)!important;position:relative!important;order:2!important class=s3dmBox id=s3downbar_clear_button is_hidden=false>清除<div style=box-sizing:initial!important class="tooltip_box sf-hidden" is_top=false></div><div style=box-sizing:initial!important class="tooltip_arrow sf-hidden" is_top=false></div></div><div style=box-sizing:initial!important;color:rgb(34,34,34)!important;position:relative!important;order:1!important class=s3dmBox id=s3downbar_holder_summary_progress is_hidden=false><div style=box-sizing:initial!important>100%</div><div style=box-sizing:initial!important class="tooltip_box sf-hidden" is_top=false></div><div style=box-sizing:initial!important class="tooltip_arrow sf-hidden" is_top=false></div></div><div style=box-sizing:initial!important id=s3downbar_download_data_listbox><div style=box-sizing:initial!important;max-height:60px!important id=s3downbar_download_data_listbox_scroll list_count=1><div style=box-sizing:initial!important id=s3downbar_download_data_list_empty class=sf-hidden>Download list is empty</div><div id=s3db_C4CA4238A0B923820DCC509A6F75849B class="download_data_box db_finishedHbox" style=background-image:linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,0.4),rgba(255,255,255,0),rgba(255,255,255,0))!important click_handle=finished_click_handle>
+ <div class=download_data_box_iframe_box><div id=s3downbar_download_box_iframe is_hidden=true class=download_data_box_iframe></div></div>
+ <div id=s3downbar_download_box_progressremainder class="download_data_box_progressremainder sf-hidden" is_hidden=true></div>
+ <div id=s3downbar_download_box_progress class="download_data_box_progress sf-hidden" style=background-image:linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,0.4),rgba(255,255,255,0),rgba(255,255,255,0))!important;width:100%!important is_hidden=true></div>
+ <div id=s3downbar_download_box_data class=download_data_box_data>
+ <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" id=s3downbar_download_box_img class=download_data_box_img style='background:rgba(0,0,0,0) url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABnklEQVQ4T6XT20oCQRgH8P+sGVorebiKjF2ptBQ6qAUVdVt39QB23QtET1BeCRXd9RDdZyeIsLuig1IW5UonISxWM/Cw286E1VJU5MAyMPN9v/l2DgQ1NlJjPkg4HHaoXH3kPxBRijNkLhIRSAWp3wCXKODm9g5dHjeupDQURUHuJS8yoENwpUaGB5nBcdxvFpvf2Y0hmbr8ALydHjwXCnB7u7GayOuQNrsR7SYZsiyzcZ7nsX94jHjy9CtgF33wLqVRxxGUFRUVBQj1WjA/pJWcy0FVVQYcHJ3oAZvVitu7ewyNTTLAaCAoljVABaZ6eUw7JUiSxABBEPCQfUL8/OyjgoFgAJVKGYqlGZ2LadDzpcm0UWB53IJSqQRCCMxmM6IbW3qg1elENpuFOzgK90JatwehHh6zvkdkMhmYTCb4/X6saUDicwXVU8gbmr4FViYcDKW/QL/o5vb3gNXmwLVcZkFauNYDjUYCRwP3nkzn1ilwkXzbA7GlNdUf6GMr2G12mvYeXF1VG9Khu7E9nEtXYu1X+U/X7oegml/jK36e26kEYtC1AAAAAElFTkSuQmCC") no-repeat scroll 50% 50% / contain!important' no_image=false is_hidden=false>
+ <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" id=s3downbar_download_box_img_queue class="download_data_box_img sf-hidden" is_hidden=true>
+ <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" id=s3downbar_download_box_picToShrink pictoshrink=true is_hidden=true class="download_data_box_img sf-hidden">
+ <div id=s3downbar_download_box_filename class=download_data_box_filename>VSCodeUserSetup-x64-1.64.2.exe</div>
+ <div id=s3downbar_download_box_progress_data class="download_data_box_progress_data sf-hidden" is_hidden=true>
+ 
+ 
+ 
+ 
+ </div>
+ </div>
+ <div style=box-sizing:initial!important;position:fixed!important;z-index:50!important><div style=box-sizing:initial!important class="tooltip_box sf-hidden" is_top=false></div><div style=box-sizing:initial!important class="tooltip_arrow sf-hidden" is_top=false></div></div></div></div></div></div>

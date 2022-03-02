@@ -26,13 +26,15 @@ id: 1641022560760560000
 
 ## 自动保存
 
+![image-20220302214305655](assets/images/image-20220302214305655.png)
+
 ## 调整终端控制台字体大小
 
  [vs code调整终端控制台字体大小.html](assets\references\vs code调整终端控制台字体大小.html) 
 
+## 设置资源管理器字体大小
 
-
-
+ [VSCode设置资源管理器字体大小.html](assets\references\VSCode设置资源管理器字体大小.html) 
 
 
 
