@@ -68,6 +68,8 @@ https://p3terx.com/archives/docker-aria2-pro.html 
 
 # 上传到百度云：bypy
 
+## 普通安装
+
 bypy需要python3，这里我使用 `centOS8.2` ，它内置 `Python 3.6.8` 。安装步骤如下：
 
 ```sh
@@ -77,6 +79,29 @@ python3 -m bypy info
 ```
 
  [linux命令行百度云上传下载_onion_rain的博客-CSDN博客.html](assets/references/linux命令行百度云上传下载_onion_rain的博客-CSDN博客.html) 
+
+## docker
+
+```dockerfile
+FROM python:3.9.10-slim-bullseye
+RUN pip install bypy
+```
+
+
+
+```
+docker build -t bypy:1.0 .
+```
+
+
+
+
+
+```
+docker run -it bypy:1.0  /bin/bash
+```
+
+
 
 # 胶水代码
 
