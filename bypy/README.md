@@ -92,12 +92,8 @@ docker image rm bypy:1.0
 
 docker build -t bypy:1.0 .
 
-docker run -itd  bypy:1.0
+docker run -itd bypy:1.0
 ```
-
-
-
-
 
 # 胶水代码
 
