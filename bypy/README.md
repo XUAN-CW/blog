@@ -87,19 +87,15 @@ FROM python:3.9.10-slim-bullseye
 RUN pip install bypy
 ```
 
-
-
 ```
-docker image rm bypy:1.0 && docker build -t bypy:1.0 .
-```
+docker image rm bypy:1.0
 
+docker build -t bypy:1.0 .
 
-
-
-
-```
 docker run -it --rm bypy:1.0 /bin/bash
 ```
+
+
 
 
 
