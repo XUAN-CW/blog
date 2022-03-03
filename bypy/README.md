@@ -87,12 +87,13 @@ FROM python:3.9.10-slim-bullseye
 RUN pip install bypy
 ```
 
-```
+```sh
 docker image rm bypy:1.0
 
 docker build -t bypy:1.0 .
 
-docker run -itd bypy:1.0
+docker run -itd --name=bypy bypy:1.0
+docker exec -it bypy /bin/b bypy info
 ```
 
 # 胶水代码
