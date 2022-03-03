@@ -90,7 +90,7 @@ RUN pip install bypy
 
 
 ```
-docker build -t bypy:1.0 .
+docker image rm bypy:1.0 && docker build -t bypy:1.0 .
 ```
 
 
@@ -98,7 +98,7 @@ docker build -t bypy:1.0 .
 
 
 ```
-docker run -it bypy:1.0  /bin/bash
+docker run -it --rm bypy:1.0 /bin/bash
 ```
 
 
