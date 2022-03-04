@@ -179,7 +179,7 @@ https://start.springboot.io/
 # 插件安装
 
 - Alibaba Java Coding Guidelines
-- Codota
+- MyBatisX
 
 # 加大内存
 
