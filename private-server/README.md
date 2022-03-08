@@ -75,5 +75,11 @@ curl -L $url -o $path
 chmod 777 download-to-original-path.sh 
 ./download-to-original-path.sh "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)"
 
+
+
+
+
+
+
 ```
 
