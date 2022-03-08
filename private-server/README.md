@@ -88,7 +88,7 @@ echo "http://www.baidu.com:80/ABCD/a.txt" | cut -d/ -f4-
 #   
 # 启动示例：
 ##############################################
-
+url=$1
 path=$(echo $url | sed 's/http[s]\?:\/\///')
 dir=$(echo $path | awk -F '/' ' OFS="/" {$NF="";print}')
 mkdir $dir
