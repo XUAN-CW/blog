@@ -40,18 +40,10 @@ docker run -itd \
 
 ```sh
 cd /docker-v/private-file-server
-
-mkdir -p "github.com/docker/compose/releases/download/1.29.2/"
-sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o "github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)"
-
-
-
-
+# 下载脚本放在此目录下
 ```
 
-
-
-# 测试
+## 下载脚本
 
 ```sh
 #!/bin/bash 
