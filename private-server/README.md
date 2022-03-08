@@ -88,6 +88,10 @@ echo "http://www.baidu.com:80/ABCD/a.txt" | cut -d/ -f4-
 #   
 # 启动示例：
 ##############################################
+if [ -z "$1" ]; then
+  echo "empty url"
+  exit 1
+fi
 url=$1
 path=$(echo $url | sed 's/http[s]\?:\/\///')
 dir=$(echo $path | awk -F '/' ' OFS="/" {$NF="";print}')
