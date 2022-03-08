@@ -78,6 +78,17 @@ echo "http://www.baidu.com:80/ABCD/a.txt" | cut -d/ -f4-
 
 
 ```sh
+#!/bin/bash 
+##############################################
+# 脚本名称：
+#   download-to-original-path.sh
+# 作用：
+#   
+# 语法：
+#   
+# 启动示例：
+##############################################
+
 path=$(echo $url | sed 's/http[s]\?:\/\///')
 dir=$(echo $path | awk -F '/' ' OFS="/" {$NF="";print}')
 mkdir $dir
