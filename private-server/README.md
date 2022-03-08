@@ -77,5 +77,7 @@ echo "http://www.baidu.com:80/ABCD/a.txt" | cut -d/ -f4-
 
 
 
-
+```sh
+echo $url | sed  's/http[s]\?:\/\///'
+```
 
