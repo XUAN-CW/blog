@@ -29,6 +29,8 @@ docker run -itd  \
 
 # 文件服务
 
+## 安装
+
 ```sh
 docker run -itd \
   --name private-file-server \
@@ -67,6 +69,13 @@ path=$(echo $url | sed 's/http[s]\?:\/\///')
 dir=$(echo $path | awk -F '/' ' OFS="/" {$NF="";print}')
 mkdir -p $dir
 curl -L $url -o $path
+
+```
+
+## 常用文件
+
+```sh
+"https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)"
 
 ```
 
