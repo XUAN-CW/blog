@@ -54,30 +54,6 @@ sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-
 # 测试
 
 ```sh
-url="https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)"
-
-fileName=$(echo $url | awk -F '/' '{ print $NF}')
-
-```
-
-```sh
-# 获取协议
-echo "http://www.baidu.com:80/ABCD/a.txt" | awk -F':' '{print $1}'
-# 输出http
-# 获取域名 
-echo "http://www.baidu.com:80/ABCD/a.txt" | awk -F'[/:]' '{print $4}'
-# 输出：www.baidu.com
-# 获取端口 
-echo "http://www.baidu.com:80/ABCD/a.txt" | awk -F'[/:]' '{print $5}'
-# 输出 80
-# 获取Path 
-echo "http://www.baidu.com:80/ABCD/a.txt" | cut -d/ -f4-
-# 输出 ABCD/a.txt
-```
-
-
-
-```sh
 #!/bin/bash 
 ##############################################
 # 脚本名称：
