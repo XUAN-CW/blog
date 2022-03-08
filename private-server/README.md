@@ -38,9 +38,6 @@ docker run -itd \
   -v /docker-v/private-file-server:/usr/share/nginx/html \
   nginx:1.16.1
   
-```
-
-```sh
 cd /docker-v/private-file-server
 # 下载脚本放在此目录下
 ```
