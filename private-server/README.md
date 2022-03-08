@@ -85,5 +85,7 @@ fileName=$(echo $path | awk -F '/' '{ print $NF}')
 
 mkdir $dir
 
+curl -L $url -o $path
+
 ```
 
