@@ -81,8 +81,9 @@ echo "http://www.baidu.com:80/ABCD/a.txt" | cut -d/ -f4-
 path=$(echo $url | sed 's/http[s]\?:\/\///')
 
 dir=$(echo $path | awk -F '/' ' OFS="/" {$NF="";print}')
+fileName=$(echo $path | awk -F '/' '{ print $NF}')
 
-mkdir $
+mkdir $dir
 
 ```
 
