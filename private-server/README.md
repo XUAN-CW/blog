@@ -51,7 +51,14 @@ sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-
 
 
 
+# 测试
 
+```sh
+url="https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)"
+
+fileName=$(echo $url | awk -F '/' '{ print $NF}')
+
+```
 
 
 
