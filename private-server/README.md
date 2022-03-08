@@ -39,9 +39,7 @@ docker run -itd \
 ```
 
 ```sh
-# docker-compose
-mkdir -p /docker-v/private-file-server/docker-compose
-cd /docker-v/private-file-server/docker-compose
+cd /docker-v/private-file-server
 
 mkdir -p "github.com/docker/compose/releases/download/1.29.2/"
 sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o "github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)"
