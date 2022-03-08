@@ -82,5 +82,7 @@ path=$(echo $url | sed 's/http[s]\?:\/\///')
 
 dir=$(echo $path | awk -F '/' ' OFS="/" {$NF="";print}')
 
+mkdir $
+
 ```
 
