@@ -80,7 +80,7 @@ echo "http://www.baidu.com:80/ABCD/a.txt" | cut -d/ -f4-
 ```sh
 path=$(echo $url | sed  's/http[s]\?:\/\///')
 
-dir= $(echo $path |  awk -F '/' ' OFS="/" {$NF="";print}')
+dir=$(echo $path |  awk -F '/' ' OFS="/" {$NF="";print}')
 
 ```
 
