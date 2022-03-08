@@ -68,10 +68,13 @@ if [ -z "$1" ]; then
   echo "empty url"
   exit 1
 fi
+
 url=$1
+echo "url=$url"
 path=$(echo $url | sed 's/http[s]\?:\/\///')
 dir=$(echo $path | awk -F '/' ' OFS="/" {$NF="";print}')
-mkdir $dir
+mkdir -p $dir
 curl -L $url -o $path
+
 ```
 
