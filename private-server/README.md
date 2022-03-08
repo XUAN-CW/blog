@@ -35,6 +35,7 @@ docker run -itd  \
 docker run -itd \
   --name file-private-server \
   -p 7101:80 \
+  --restart=always \
   -v /docker-v/file-private-server:/usr/share/nginx/html \
   nginx:1.16.1
   
