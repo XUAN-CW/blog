@@ -33,12 +33,12 @@ docker run -itd  \
 
 ```sh
 docker run -itd \
-  --name private-file-server \
+  --name file-private-server \
   -p 7101:80 \
-  -v /docker-v/private-file-server:/usr/share/nginx/html \
+  -v /docker-v/file-private-server:/usr/share/nginx/html \
   nginx:1.16.1
   
-cd /docker-v/private-file-server
+cd /docker-v/file-private-server
 # 下载脚本放在此目录下
 ```
 
