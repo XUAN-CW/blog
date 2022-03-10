@@ -17,6 +17,8 @@ echo "192.168.0.10  ps" >> /etc/hosts
 ############################## yum ##############################
 # yum 配置不删除缓存
 sudo sed -i 's/keepcache=0/keepcache=1/' /etc/yum.conf
+# 删除多余 repo
+rm -rf /etc/yum.repos.d/CentOS-*
 
 # 更新
 yum update -y
