@@ -38,12 +38,13 @@ public class $!{tableName} {
      * 分页查询
      *
      * @param $!{tool.firstLowerCase($tableInfo.name)} 筛选条件
-     * @param pageRequest      分页对象
+     * @param pageNumber 页码
+     * @param pageSize 每页大小
      * @return 查询结果
      */
-    @GetMapping("queryByPage")
-    public ResponseEntity<Page<$!{tableInfo.name}>> queryByPage($!{tableInfo.name} $!{tool.firstLowerCase($tableInfo.name)}, PageRequest pageRequest) {
-        return ResponseEntity.ok(this.$!{tool.firstLowerCase($tableInfo.name)}Service.queryByPage($!{tool.firstLowerCase($tableInfo.name)}, pageRequest));
+    @GetMapping("queryByPage/{pageNumber}/{pageSize}")
+    public ResponseEntity<Page<$!{tableInfo.name}>> queryByPage($!{tableInfo.name} $!{tool.firstLowerCase($tableInfo.name)}, @PathVariable("pageNumber")int pageNumber, @PathVariable("pageSize")int pageSize) {
+        return ResponseEntity.ok(this.$!{tool.firstLowerCase($tableInfo.name)}Service.queryByPage($!{tool.firstLowerCase($tableInfo.name)}, PageRequest.of(pageNumber,pageSize)));
     }
 
     /**
