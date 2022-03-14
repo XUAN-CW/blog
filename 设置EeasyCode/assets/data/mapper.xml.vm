@@ -42,12 +42,17 @@ $!callback.setSavePath($tool.append($modulePath, "/src/main/resources/mapper"))
             </if>
 #end
         </where>
-        <if test="order != null">
-            ORDER BY
-            <foreach collection="order.entrySet()" separator=","  index="key" item="val">
-                #{key} ${val}
-            </foreach>
+        <if test="singleFieldOrder != null">
+#foreach($column in $tableInfo.fullColumn)
+            <if test="singleFieldOrder == '$!{column.obj.name}DESC'">
+                ORDER BY $!{column.obj.name} DESC
+            </if>
+            <if test="singleFieldOrder == '$!{column.obj.name}ASC'">
+                ORDER BY $!{column.obj.name} ASC
+            </if>
+#end
         </if>
+        
         limit #{pageable.offset}, #{pageable.pageSize}
     </select>
 
