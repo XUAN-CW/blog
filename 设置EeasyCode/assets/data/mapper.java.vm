@@ -16,7 +16,7 @@ import org.apache.ibatis.annotations.Param;
 import org.springframework.data.domain.Pageable;
 import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
-
+import java.util.Map;
 
 /**
  * $!{tableInfo.comment}($!{tableInfo.name})表数据库访问层
@@ -42,7 +42,7 @@ public interface $!{tableName} {
      * @param pageable         分页对象
      * @return 对象列表
      */
-    List<$!{tableInfo.name}> queryAllByLimit(@Param("$!tool.firstLowerCase($!{tableInfo.name})") $!{tableInfo.name} $!tool.firstLowerCase($!{tableInfo.name}), @Param("pageable") Pageable pageable);
+    List<$!{tableInfo.name}> queryAllByLimit(@Param("$!tool.firstLowerCase($!{tableInfo.name})") $!{tableInfo.name} $!tool.firstLowerCase($!{tableInfo.name}), @Param("pageable") Pageable pageable, @Param("order")Map<String,String> order);
 
     /**
      * 统计总行数

@@ -16,7 +16,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
+import java.util.Map;
 import javax.annotation.Resource;
 
 /**
@@ -43,8 +43,10 @@ public class $!{tableName} {
      * @return 查询结果
      */
     @GetMapping("queryByPage/{pageNumber}/{pageSize}")
-    public ResponseEntity<Page<$!{tableInfo.name}>> queryByPage($!{tableInfo.name} $!{tool.firstLowerCase($tableInfo.name)}, @PathVariable("pageNumber")int pageNumber, @PathVariable("pageSize")int pageSize) {
-        return ResponseEntity.ok(this.$!{tool.firstLowerCase($tableInfo.name)}Service.queryByPage($!{tool.firstLowerCase($tableInfo.name)}, PageRequest.of(pageNumber,pageSize)));
+    public ResponseEntity<Page<$!{tableInfo.name}>> queryByPage($!{tableInfo.name} $!{tool.firstLowerCase($tableInfo.name)}, @PathVariable("pageNumber")int pageNumber, @PathVariable("pageSize")int pageSize,@RequestHeader String order) throws JsonProcessingException {
+        ObjectMapper objectMapper = new ObjectMapper();
+        Map<String,String> orderMap = objectMapper.readValue(order, Map.class);
+        return ResponseEntity.ok(this.$!{tool.firstLowerCase($tableInfo.name)}Service.queryByPage($!{tool.firstLowerCase($tableInfo.name)}, PageRequest.of(pageNumber,pageSize),orderMap));
     }
 
     /**
