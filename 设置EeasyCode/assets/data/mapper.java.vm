@@ -24,7 +24,7 @@ import org.apache.ibatis.annotations.Mapper;
  * @author $!author
  * @since $!time.currTime()
  */
- @Mapper
+@Mapper
 public interface $!{tableName} {
 
     /**
