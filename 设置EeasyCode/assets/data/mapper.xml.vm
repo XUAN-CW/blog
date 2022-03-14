@@ -42,6 +42,12 @@ $!callback.setSavePath($tool.append($modulePath, "/src/main/resources/mapper"))
             </if>
 #end
         </where>
+        <if test="order != null">
+            ORDER BY
+            <foreach collection="order.entrySet()" separator=","  index="key" item="val">
+                #{key} ${val}
+            </foreach>
+        </if>
         limit #{pageable.offset}, #{pageable.pageSize}
     </select>
 
@@ -56,13 +62,6 @@ $!callback.setSavePath($tool.append($modulePath, "/src/main/resources/mapper"))
             </if>
 #end
         </where>
-        <if test="order != null">
-            ORDER BY
-            <foreach collection="order.entrySet()" separator=","  index="key" item="val">
-                #{key} ${val}
-            </foreach>
-        </if>
-        limit #{pageable.offset}, #{pageable.pageSize}
     </select>
 
     <!--新增所有列-->
