@@ -38,7 +38,7 @@ $!callback.setSavePath($tool.append($modulePath, "/src/main/resources/mapper"))
         <where>
 #foreach($column in $tableInfo.fullColumn)
             <if test="$!tool.firstLowerCase($!{tableInfo.name}).$!column.name != null#if($column.type.equals("java.lang.String")) and $!tool.firstLowerCase($!{tableInfo.name}).$!column.name != ''#end">
-                and $!column.obj.name = #{$!column.name}
+                and $!column.obj.name = #{$!tool.firstLowerCase($!{tableInfo.name}).$!column.name}
             </if>
 #end
         </where>
