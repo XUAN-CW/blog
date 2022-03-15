@@ -39,10 +39,11 @@ public interface $!{tableName} {
      * 查询指定行数据
      *
      * @param $!tool.firstLowerCase($!{tableInfo.name}) 查询条件
-     * @param pageable         分页对象
+     * @param pageable 分页对象
+     * @param singleFieldOrder 单字段排序
      * @return 对象列表
      */
-    List<$!{tableInfo.name}> queryAllByLimit(@Param("$!tool.firstLowerCase($!{tableInfo.name})") $!{tableInfo.name} $!tool.firstLowerCase($!{tableInfo.name}), @Param("pageable") Pageable pageable, @Param("order")Map<String,String> order);
+    List<$!{tableInfo.name}> queryAllByLimit(@Param("$!tool.firstLowerCase($!{tableInfo.name})") $!{tableInfo.name} $!tool.firstLowerCase($!{tableInfo.name}), @Param("pageable") Pageable pageable, @Param("singleFieldOrder")String singleFieldOrder);
 
     /**
      * 统计总行数

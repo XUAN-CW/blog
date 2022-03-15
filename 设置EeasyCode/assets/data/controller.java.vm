@@ -37,16 +37,18 @@ public class $!{tableName} {
     /**
      * 分页查询
      *
-     * @param $!{tool.firstLowerCase($tableInfo.name)} 筛选条件
      * @param pageNumber 页码
      * @param pageSize 每页大小
+     * @param field 排序字段，输入的不是对象字段，而是数据库里的表字段
+     * @param order 排序方式，只有两种，升序 ASC ,降序 DESC ，其他输入都会被忽略
+     * @param $!{tool.firstLowerCase($tableInfo.name)} 筛选条件
      * @return 查询结果
      */
-    @GetMapping("queryByPage/{pageNumber}/{pageSize}")
-    public ResponseEntity<Page<$!{tableInfo.name}>> queryByPage($!{tableInfo.name} $!{tool.firstLowerCase($tableInfo.name)}, @PathVariable("pageNumber")int pageNumber, @PathVariable("pageSize")int pageSize,@RequestHeader String order) throws JsonProcessingException {
-        ObjectMapper objectMapper = new ObjectMapper();
-        Map<String,String> orderMap = objectMapper.readValue(order, Map.class);
-        return ResponseEntity.ok(this.$!{tool.firstLowerCase($tableInfo.name)}Service.queryByPage($!{tool.firstLowerCase($tableInfo.name)}, PageRequest.of(pageNumber,pageSize),orderMap));
+    @GetMapping("{pageNumber}/{pageSize}")
+    public ResponseEntity<Page<$!{tableInfo.name}>> queryByPage(@PathVariable("pageNumber")int pageNumber, @PathVariable("pageSize")int pageSize,
+                                                                @RequestHeader("field") String field,@RequestHeader("order") String order,
+                                                                $!{tableInfo.name} $!{tool.firstLowerCase($tableInfo.name)}) {
+        return ResponseEntity.ok(this.$!{tool.firstLowerCase($tableInfo.name)}Service.queryByPage($!{tool.firstLowerCase($tableInfo.name)}, PageRequest.of(pageNumber,pageSize), field, order));
     }
 
     /**

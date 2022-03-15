@@ -47,13 +47,15 @@ public class $!{tableName} implements $!{tableInfo.name}Service {
      * 分页查询
      *
      * @param $!{tool.firstLowerCase($tableInfo.name)} 筛选条件
-     * @param pageRequest      分页对象
+     * @param pageRequest 分页对象
+     * @param field 排序字段，输入的不是对象字段，而是数据库里的表字段
+     * @param order 排序方式，只有两种，升序 ASC ,降序 DESC ，其他输入都会被忽略
      * @return 查询结果
      */
     @Override
-    public Page<$!{tableInfo.name}> queryByPage($!{tableInfo.name} $!{tool.firstLowerCase($tableInfo.name)}, PageRequest pageRequest, Map<String,String> orderMap) {
+    public Page<$!{tableInfo.name}> queryByPage($!{tableInfo.name} $!{tool.firstLowerCase($tableInfo.name)}, PageRequest pageRequest, String field, String order) {
         long total = this.$!{tool.firstLowerCase($tableInfo.name)}Mapper.count($!{tool.firstLowerCase($tableInfo.name)});
-        return new PageImpl<>(this.$!{tool.firstLowerCase($tableInfo.name)}Mapper.queryAllByLimit($!{tool.firstLowerCase($tableInfo.name)}, pageRequest,orderMap), pageRequest, total);
+        return new PageImpl<>(this.$!{tool.firstLowerCase($tableInfo.name)}Mapper.queryAllByLimit($!{tool.firstLowerCase($tableInfo.name)}, pageRequest, field + order), pageRequest, total);
     }
 
     /**
