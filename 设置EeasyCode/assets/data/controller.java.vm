@@ -46,7 +46,7 @@ public class $!{tableName} {
      */
     @GetMapping("{pageNumber}/{pageSize}")
     public ResponseEntity<Page<$!{tableInfo.name}>> queryByPage(@PathVariable("pageNumber")int pageNumber, @PathVariable("pageSize")int pageSize,
-                                                                @RequestHeader("field") String field,@RequestHeader("order") String order,
+                                                                @RequestHeader(name = "field",required=false) String field,@RequestHeader(name = "order",required = false) String order,
                                                                 $!{tableInfo.name} $!{tool.firstLowerCase($tableInfo.name)}) {
         return ResponseEntity.ok(this.$!{tool.firstLowerCase($tableInfo.name)}Service.queryByPage($!{tool.firstLowerCase($tableInfo.name)}, PageRequest.of(pageNumber,pageSize), field, order));
     }
