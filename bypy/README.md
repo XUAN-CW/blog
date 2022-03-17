@@ -34,6 +34,25 @@ docker run -d \
   crazymax/qbittorrent:4.1.9
 ```
 
+```sh
+docker run -d \
+  --name=qbittorrent \
+  -e PUID=1000 \
+  -e PGID=1000 \
+  -e TZ=Europe/London \
+  -e WEBUI_PORT=8082 \
+  -p 6882:6881 \
+  -p 6882:6881/udp \
+  -p 8082:8082 \
+  -v /path/to/appdata/config:/config \
+  -v /path/to/downloads:/downloads \
+  --restart unless-stopped \
+  --name qbit\
+  lscr.io/linuxserver/qbittorrent:4.4
+```
+
+
+
 ## [aria2-pro](https://hub.docker.com/r/p3terx/aria2-pro) 
 
 按照说明，设置 `RPC_SECRET`， 这里我设置为 `RPC_SECRET=TOKEN` ，下面的图形界面要用
