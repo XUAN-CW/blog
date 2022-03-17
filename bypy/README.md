@@ -47,8 +47,7 @@ docker run -d \
   -v /path/to/appdata/config:/config \
   -v /path/to/downloads:/downloads \
   --restart unless-stopped \
-  --name qbit\
-  lscr.io/linuxserver/qbittorrent:4.4
+  lscr.io/linuxserver/qbittorrent:4.4.1
 ```
 
 
