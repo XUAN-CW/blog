@@ -30,7 +30,7 @@ docker run -d \
   -p 9821:6881/udp \
   -p 8:8080 \
   -v /h/qbit:/root/Downloads \
-  --restart unless-stopped \
+  --restart always \
   crazymax/qbittorrent:4.1.9
 ```
 
@@ -46,7 +46,7 @@ docker run -d \
   -p 8082:8082 \
   -v /path/to/appdata/config:/config \
   -v /path/to/downloads:/downloads \
-  --restart unless-stopped \
+  --restart always \
   lscr.io/linuxserver/qbittorrent:4.4.1
 ```
 
