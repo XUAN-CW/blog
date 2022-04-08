@@ -20,3 +20,9 @@ https://github.com/fatedier/frp/releases
 
 
 
+# 测试
+
+[demo](demo) 
+
+http://180.76.247.58:8088/hello
+
