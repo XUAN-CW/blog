@@ -1,0 +1,127 @@
+<!DOCTYPE html> <html style lang=zh-cn><!--
+ Page saved with SingleFile 
+ url: https://www.cnblogs.com/sanduzxcvbnm/p/8509150.html 
+ saved date: Fri Apr 08 2022 12:59:56 GMT+0800 (中国标准时间)
+--><meta charset=utf-8>
+<meta name=viewport content="width=device-width, initial-scale=1.0">
+<meta name=referrer content=origin-when-crossorigin>
+<meta name=description content=有域名的话使用域名，没有域名的话使用IP注意80端口是否被已经安装使用的nginx占用，若被占用，可以换成其他端口，比如8080,，或者利用nginx的反向代理实现frp服务端与nginx共用80端口>
+<meta property=og:description content=有域名的话使用域名，没有域名的话使用IP注意80端口是否被已经安装使用的nginx占用，若被占用，可以换成其他端口，比如8080,，或者利用nginx的反向代理实现frp服务端与nginx共用80端口>
+<meta http-equiv=Cache-Control content=no-transform>
+<meta http-equiv=Cache-Control content=no-siteapp>
+<meta http-equiv=X-UA-Compatible content="IE=edge">
+<title>七、利用frp 穿透到内网的http/https网站，实现对外开放 - 三度 - 博客园</title>
+<style>.navbar{display:flex;flex-direction:column;align-items:center;background-color:#fff}#cnblogs_post_body{margin-bottom:20px}#cnblogs_post_body{word-break:break-word}#cnblogs_post_body p{margin:10px auto}#cnblogs_post_body p{text-indent:0}.vertical-middle>*{vertical-align:middle}@keyframes fadeIn{0%{opacity:0}100%{opacity:var(--cnb-code-toolbar-initial-opacity)}}@keyframes modal-open{0%{height:0;opacity:0}95%{height:505px}100%{height:auto;opacity:1}}:root{--cnblogs-toc-bg-color:rgba(245,245,245,.98);--cnblogs-toc-highlight-color:rgba(255,255,255,.9);--cnblogs-toc-color:#000}@keyframes wb-fade-in{0%{opacity:0}to{opacity:.85}}@-webkit-keyframes ui-dialog-loading{0%{-webkit-transform:rotate(0deg)}100%{-webkit-transform:rotate(360deg)}}@keyframes ui-dialog-loading{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}*{margin:0;padding:0}html{height:100%}body{color:#000;background:#d2d8de;font-family:'PingFang SC','Microsoft YaHei','Helvetica Neue','Helvetica','Arial',sans-serif;font-size:14px;min-height:101%}a:link{color:#000;text-decoration:none}a:visited{color:#000;text-decoration:none}a:hover{color:#f60;text-decoration:underline}a:active{color:#000;text-decoration:none}.clear{clear:both}#home{margin:0 auto}.navbar{padding-top:3px;padding-bottom:3px;border-bottom:1px dotted #eee;padding-left:12px;padding-right:12px}#main{min-width:950px;text-align:left;padding:20px 0 0 10px;overflow:hidden}#mainContent .forFlow{margin-left:21em;float:none;width:auto}#mainContent{min-height:200px;padding:0 0 10px 0;-o-text-overflow:ellipsis;text-overflow:ellipsis;overflow:hidden;word-break:break-all;float:right;margin-left:-21em;margin-right:20px;display:inline;width:100%}.postTitle{clear:both}.postTitle a:link,.postTitle a:visited,.postTitle a:active{color:#390;transition:all .4s linear 0s}.postTitle a:hover{color:#f60;text-decoration:none;margin-left:10px}.postDesc{clear:both;line-height:2.5em}.postDesc a:link,.postDesc a:visited,.postDesc a:active{color:#666}.postDesc a:hover{color:#f60;text-decoration:none}#sideBar{width:250px;min-height:200px;padding:0 0 0 5px;float:left;-o-text-overflow:ellipsis;text-overflow:ellipsis;overflow:hidden;word-break:break-all}#topics{min-height:200px;margin-bottom:15px;padding:15px;-o-text-overflow:ellipsis;text-overflow:ellipsis;overflow:hidden;word-break:break-all;background:#fff;border-radius:7px;box-shadow:1px 1px 2px #a7a8ad}#topics .postTitle{font-size:130%;font-weight:bold;border-bottom:1px solid #999;float:left;line-height:2em;width:100%;padding-left:5px}.postBody{padding:15px 2px 5px 5px;color:#000;border-bottom:1px solid #ccc}#topics .postDesc{float:right;width:100%;text-align:right;padding-right:5px;color:#666;margin-top:5px}.postBody{line-height:1.5}</style>
+<style media="only screen and (max-width: 767px)">body{font-size:14px!important;-webkit-text-size-adjust:none}.forpc{display:none!important}.navbar{display:none}#main{min-width:auto!important;padding-left:0!important;width:auto!important;padding-right:5px}#sideBar{width:auto!important}#mainContent{margin-left:0!important;float:none!important}#mainContent .forFlow{margin-left:5px!important}#home{width:auto}</style>
+<link type=application/rss+xml rel=alternate href=https://www.cnblogs.com/sanduzxcvbnm/rss>
+<link type=application/rsd+xml rel=EditURI href=https://www.cnblogs.com/sanduzxcvbnm/rsd.xml>
+<link type=application/wlwmanifest+xml rel=wlwmanifest href=https://www.cnblogs.com/sanduzxcvbnm/wlwmanifest.xml>
+<link id=favicon rel="shortcut icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+PGRlZnM+PGNsaXBQYXRoIGlkPSJwcmVmaXhfX2NsaXAtcGF0aCI+PHBhdGggY2xhc3M9InByZWZpeF9fY2xzLTEiIGQ9Ik0yOS40OCAyNS4yNGMtLjE2LTEuODktLjA4LTEuNS0uMjQtMy4xNmE3Mi4yNCA3Mi4yNCAwIDAwLTItMTAuMzdMMjYgNi4yNWwtMi42IDUuNDEtLjQ0Ljg5cS0uMjQuNDgtLjU0IDFhMjAuNDMgMjAuNDMgMCAwMS0xLjI0IDEuODQgMjAuMDggMjAuMDggMCAwMS0zLjA4IDMuMjQgMTkuNzIgMTkuNzIgMCAwMS0zLjg3IDIuNTNjLS43Mi4zMy0xLjQ1LjcxLTIuMjMgMS0uMzQuMTQtMS4xOS40NC0xLjkzLjY2YTIuNTUgMi41NSAwIDAxLTEuMDctLjNjLS4zNC0xLS44My0yLjI0LTEuMi0zLjE5LS41LTEuMjUtMS0yLjUtMS41MS0zLjczYTU5LjExIDU5LjExIDAgMDAtMy42Mi03LjI1IDU5LjgyIDU5LjgyIDAgMDAxLjUxIDcuOTRjLjMgMS4zLjcgMi41OCAxLjA1IDMuODdTNiAyMi43MSA2LjQ0IDI0YTEuNCAxLjQgMCAwMDEuMjkuOTNjMS4yOCAwIDIuNTcuMDYgMy44Ni4wNXMyLjU5IDAgMy44OC0uMTFhNTYgNTYgMCAwMDcuNzktLjg3Yy0xLjkyLS40OS03LjUtLjgxLTEwLjc5LTEuMDZhNDMgNDMgMCAwMDYuNTMtMS43IDI0LjA2IDI0LjA2IDAgMDA1LjM4LTMuNDVjLjcxLS42MiAxLjIxIDEuODggMi4zOSA1LjI3LjYyIDEuNjkuMzQgMSAxIDIuNjZzMS4zNyA0LjM4IDIuMTcgNmMtLjA3LTEuODItLjMxLTQuNjctLjQ2LTYuNDh6Ii8+PC9jbGlwUGF0aD48Y2xpcFBhdGggaWQ9InByZWZpeF9fY2xpcC1wYXRoLTIiPjxwYXRoIGNsYXNzPSJwcmVmaXhfX2Nscy0xIiBkPSJNMjAuOTIgMy40NmE0LjI1IDQuMjUgMCAwMS4zMSA1Ljg2IDMuOTEgMy45MSAwIDAxLTUuNjYuMjQgNC4yNSA0LjI1IDAgMDEtLjMxLTUuODYgMy45MSAzLjkxIDAgMDE1LjY2LS4yNG0xLjM1LTEuNTRhNS44OSA1Ljg5IDAgMDAtOC41My4zNiA2LjQxIDYuNDEgMCAwMC40OCA4LjgzIDUuOTEgNS45MSAwIDAwOC41My0uMzYgNi40MSA2LjQxIDAgMDAtLjQ4LTguODN6Ii8+PC9jbGlwUGF0aD48c3R5bGU+LnByZWZpeF9fY2xzLTF7ZmlsbDojM2UzYTM5fUBtZWRpYSAocHJlZmVycy1jb2xvci1zY2hlbWU6ZGFyayl7LnByZWZpeF9fY2xzLTF7ZmlsbDojZWZlZmVmfX08L3N0eWxlPjwvZGVmcz48ZyBzdHlsZT0iaXNvbGF0aW9uOmlzb2xhdGUiPjxnIGlkPSJwcmVmaXhfX2xheWVyXzEiIGRhdGEtbmFtZT0ibGF5ZXIgMSI+PHBhdGggY2xhc3M9InByZWZpeF9fY2xzLTEiIGQ9Ik0yOS40OCAyNS4yNGMtLjE2LTEuODktLjA4LTEuNS0uMjQtMy4xNmE3Mi4yNCA3Mi4yNCAwIDAwLTItMTAuMzdMMjYgNi4yNWwtMi42IDUuNDEtLjQ0Ljg5cS0uMjQuNDgtLjU0IDFhMjAuNDMgMjAuNDMgMCAwMS0xLjI0IDEuODQgMjAuMDggMjAuMDggMCAwMS0zLjA4IDMuMjQgMTkuNzIgMTkuNzIgMCAwMS0zLjg3IDIuNTNjLS43Mi4zMy0xLjQ1LjcxLTIuMjMgMS0uMzQuMTQtMS4xOS40NC0xLjkzLjY2YTIuNTUgMi41NSAwIDAxLTEuMDctLjNjLS4zNC0xLS44My0yLjI0LTEuMi0zLjE5LS41LTEuMjUtMS0yLjUtMS41MS0zLjczYTU5LjExIDU5LjExIDAgMDAtMy42Mi03LjI1IDU5LjgyIDU5LjgyIDAgMDAxLjUxIDcuOTRjLjMgMS4zLjcgMi41OCAxLjA1IDMuODdTNiAyMi43MSA2LjQ0IDI0YTEuNCAxLjQgMCAwMDEuMjkuOTNjMS4yOCAwIDIuNTcuMDYgMy44Ni4wNXMyLjU5IDAgMy44OC0uMTFhNTYgNTYgMCAwMDcuNzktLjg3Yy0xLjkyLS40OS03LjUtLjgxLTEwLjc5LTEuMDZhNDMgNDMgMCAwMDYuNTMtMS43IDI0LjA2IDI0LjA2IDAgMDA1LjM4LTMuNDVjLjcxLS42MiAxLjIxIDEuODggMi4zOSA1LjI3LjYyIDEuNjkuMzQgMSAxIDIuNjZzMS4zNyA0LjM4IDIuMTcgNmMtLjA3LTEuODItLjMxLTQuNjctLjQ2LTYuNDh6Ii8+PGcgY2xpcC1wYXRoPSJ1cmwoI3ByZWZpeF9fY2xpcC1wYXRoKSI+PHBhdGggY2xhc3M9InByZWZpeF9fY2xzLTEiIGQ9Ik0tLjg3LS43OGgzNC40MnYzMy4wN0gtLjg3eiIvPjwvZz48cGF0aCBjbGFzcz0icHJlZml4X19jbHMtMSIgZD0iTTIwLjkyIDMuNDZhNC4yNSA0LjI1IDAgMDEuMzEgNS44NiAzLjkxIDMuOTEgMCAwMS01LjY2LjI0IDQuMjUgNC4yNSAwIDAxLS4zMS01Ljg2IDMuOTEgMy45MSAwIDAxNS42Ni0uMjRtMS4zNS0xLjU0YTUuODkgNS44OSAwIDAwLTguNTMuMzYgNi40MSA2LjQxIDAgMDAuNDggOC44MyA1LjkxIDUuOTEgMCAwMDguNTMtLjM2IDYuNDEgNi40MSAwIDAwLS40OC04LjgzeiIvPjxnIGNsaXAtcGF0aD0idXJsKCNwcmVmaXhfX2NsaXAtcGF0aC0yKSI+PHBhdGggY2xhc3M9InByZWZpeF9fY2xzLTEiIGQ9Ik0tLjg3LS43OGgzNC40MnYzMy4wN0gtLjg3eiIvPjwvZz48L2c+PC9nPjwvc3ZnPg==" type=image/svg+xml><style>.sf-hidden{display:none!important}</style><link rel=canonical href=https://www.cnblogs.com/sanduzxcvbnm/p/8509150.html><meta http-equiv=content-security-policy content="default-src 'none'; font-src 'self' data:; img-src 'self' data:; style-src 'unsafe-inline'; media-src 'self' data:; script-src 'unsafe-inline' data:;"></head>
+<body class="skin-darkgreentrip has-navbar">
+ <a name=top></a>
+ <div id=top_nav class="navbar forpc">
+ <nav id=nav_main class="navbar-main sf-hidden">
+ 
+ 
+ </nav>
+ </div>
+ 
+ 
+<div id=home>
+<div id=header class=sf-hidden>
+ 
+ 
+</div>
+<div id=main>
+ <div id=mainContent>
+ <div class=forFlow>
+ <div id=post_detail>
+ 
+ <div id=topics>
+ <div class=post>
+ <h1 class=postTitle>
+ 
+<a id=cb_post_title_url class="postTitle2 vertical-middle" href=https://www.cnblogs.com/sanduzxcvbnm/p/8509150.html>
+ <span role=heading aria-level=2>七、利用frp 穿透到内网的http/https网站，实现对外开放</span>
+ 
+</a>
+ </h1>
+ <div class=clear></div>
+ <div class=postBody>
+ <div id=cnblogs_post_body class="blogpost-body blogpost-body-html">
+<p><span style=font-size:18px>有域名的话使用域名，没有域名的话使用IP</span><br><span style=font-size:18px>注意80端口是否被已经安装使用的nginx占用，若被占用，可以换成其他端口，比如8080,，或者利用nginx的反向代理实现frp服务端与nginx共用80端口</span><br><br><span style=font-size:18px>1.自己有域名的配置</span></p>
+<p><br><span style=font-size:18px># frps.ini服务端配置</span><br><span style=font-size:18px>[common]</span><br><span style=font-size:18px>bind_addr = 0.0.0.0</span><br><span style=font-size:18px>bind_port = 7000</span><br><span style=font-size:18px>privilege_token = 12345678</span><br><span style=font-size:18px>vhost_http_port = 80</span><br><span style=font-size:18px>vhost_https_port = 443</span></p>
+<p><br><span style=font-size:18px>vhost_http_port = 80 和 vhost_https_port = 443 为将服务器的80端口做http，443端口做https，原理就像nginx一样，可以多个网站使用这两个端口。</span><br><br><br></p>
+<p>&nbsp;</p>
+<p><span style=font-size:18px>#frpc.ini客户端配置<br><br>[common]<br>server_addr = 服务端IP<br>server_port = 7000<br>privilege_token = 12345678<br><br>[httpname]<br>type = http<br>local_port = 80<br>local_ip = 127.0.0.1<br>custom_domains = www.123.com<br><br>[httpsname]<br>type = https<br>local_port = 443<br>local_ip = 127.0.0.1<br>custom_domains = <span style=font-size:18px>www.456.com</span><br><br>客户端，这个你需要拥有自己的域名，而且要将指定域名解析到frps服务端的IP上。</span></p>
+<p><span style=font-size:18px>custom_domains = 这里填写你已经解析到frps服务端IP上的域名，自己每个穿透对应服务，都可以绑定一个专属域名用于访问，包括使用tcp和udp协议。<br><br>然后就可以通过这个已经自定义域域名访问到自己的对应HTTP服务。</span></p>
+<p><span style=font-size:18px>2.没有域名的配置</span></p>
+<p><span style=font-size:18px><br>我没有域名，但我想穿透到我的HTTP服务访问。<br><br>frps.ini服务端配置</span></p>
+<p><span style=font-size:18px># <span style=font-size:18px>frps.ini</span></span></p>
+<p><span style=font-size:18px><br>[common]<br>bind_addr = 0.0.0.0<br>bind_port = 7000<br>privilege_token = 12345678</span></p>
+<p><span style=font-size:18px><br># frpc.ini客户端配置</span></p>
+<p><span style=font-size:18px><br>[common]<br>server_addr = 服务端IP<br>server_port = 7000<br>privilege_token = 12345678</span></p>
+<p><span style=font-size:18px><br>[httpname]<br>type = tcp<br>local_port = 80<br>local_ip = 127.0.0.1<br>remote_port = 8080</span></p>
+<p><span style=font-size:18px><br>通过 服务端IP:8080既可访问到对应穿透的服务。<br>这个remote_port = 8080为将服务器的8080端口绑定到你的穿透服务，你可以修改为别的1-65535端口，每个穿透服务，不能同用一个端口，你有其他的穿透服务，必须修改为不同的，不能占用。<br></span></p>
+</div>
+<div class=clear></div>
+<div id=blog_post_info_block role=contentinfo class=sf-hidden>
+ <div id=blog_post_info class=sf-hidden>
+</div>
+ 
+ 
+</div>
+ </div>
+ <div class=postDesc>posted @ 
+<span id=post-date>2018-03-05 15:19</span>&nbsp;
+<a href=https://www.cnblogs.com/sanduzxcvbnm/ class=sf-hidden>三度</a>&nbsp;
+阅读(<span id=post_view_count>36077</span>)&nbsp;
+评论(<span id=post_comment_count>1</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=8509150" rel=nofollow>编辑</a>&nbsp;
+<a href=https://www.cnblogs.com/sanduzxcvbnm/p/8509150.html>收藏</a>&nbsp;
+<a href=https://www.cnblogs.com/sanduzxcvbnm/p/8509150.html>举报</a></div>
+ </div>
+ 
+ 
+ </div>
+</div>
+<a id=!comments></a>
+<div id=blog-comments-placeholder class=sf-hidden></div>
+<div id=comment_form class="commentform sf-hidden">
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+</div>
+ </div>
+ </div>
+ <div id=sideBar>
+ <div id=sideBarMain class=sf-hidden>
+ 
+ 
+ <div id=leftcontentcontainer class=sf-hidden>
+ 
+ 
+ </div> 
+ </div>
+ </div>
+ <div class=clear></div>
+ </div>
+ <div class=clear></div>
+ <div id=footer class=sf-hidden>
+ 
+Copyright © 2022 三度
+ </div>
+</div>
+ 
+ 
+ 
+ 
