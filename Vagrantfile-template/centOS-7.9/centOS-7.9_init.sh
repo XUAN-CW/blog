@@ -23,8 +23,8 @@ rm -rf /etc/yum.repos.d/CentOS-*
 # 更新
 yum update -y
 # 安装常用工具
-sudo yum install -y createrepo
 sudo yum install zip -y
+sudo yum install -y unzip
 sudo yum install net-tools -y
 sudo yum install wget -y
 
