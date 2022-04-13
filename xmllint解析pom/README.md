@@ -12,3 +12,6 @@ id: 1649826890498610200
 echo "cat //*[local-name()='project']/*[local-name()='version']" | xmllint --shell pom.xml | sed '/^\/ >/d' | sed 's/<[^>]*.//g'
 ```
 
+# 参考
+
+ [xmllint - Native shell command set to extract node value from XML.html](assets\references\xmllint - Native shell command set to extract node value from XML.html) 
