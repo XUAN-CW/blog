@@ -15,3 +15,5 @@ echo "cat //*[local-name()='project']/*[local-name()='version']" | xmllint --she
 # 参考
 
  [xmllint - Native shell command set to extract node value from XML.html](assets\references\xmllint - Native shell command set to extract node value from XML.html) 
+
+ [maven - xmllint_ xmlns on a non-root xml element.html](assets\references\maven - xmllint_ xmlns on a non-root xml element.html) 
