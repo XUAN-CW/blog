@@ -44,7 +44,29 @@ local_ip = 127.0.0.1
 remote_port = 8088
 ```
 
+# 服务器端启动
 
+```
+./frps -c ./frps.ini
+```
+
+
+
+# 客户端启动
+
+linux 下：
+
+```
+./frpc -c ./frpc.ini
+```
+
+Windows下：
+
+```
+./frpc.exe -c ./frpc.ini
+```
+
+记得关闭实时防护
 
 # 参考
 
