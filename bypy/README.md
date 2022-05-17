@@ -34,20 +34,25 @@ docker run -d \
   crazymax/qbittorrent:4.1.9
 ```
 
+
+
 ```sh
+# 查看架构
+dpkg --print-architecture
+docker pull linuxserver/qbittorrent:amd64-4.4.2
+
 docker run -d \
   --name=qbittorrent \
   -e PUID=1000 \
   -e PGID=1000 \
-  -e TZ=Europe/London \
-  -e WEBUI_PORT=8082 \
-  -p 6882:6881 \
-  -p 6882:6881/udp \
-  -p 8082:8082 \
-  -v /path/to/appdata/config:/config \
-  -v /path/to/downloads:/downloads \
+  -e TZ=Asia/Shanghai \
+  -e WEBUI_PORT=8080 \
+  -p 8080:8080 \
+  -p 6881:6881 \
+  -p 6881:6881/udp \
+  -v /mnt/1dc0b66c-17d9-4ea1-9fae-3ca00e7022de/mnt_qbit:/downloads \
   --restart always \
-  lscr.io/linuxserver/qbittorrent:4.4.1
+  linuxserver/qbittorrent:4.4.2
 ```
 
 
