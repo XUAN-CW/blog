@@ -42,7 +42,7 @@ dpkg --print-architecture
 docker pull linuxserver/qbittorrent:amd64-4.4.2
 
 docker run -d \
-  --name=qbittorrent \
+  --name=qbittorrent_mnt \
   -e PUID=1000 \
   -e PGID=1000 \
   -e TZ=Asia/Shanghai \
