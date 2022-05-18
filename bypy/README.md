@@ -196,7 +196,7 @@ do
     ((i++))
 done
 # nohup ./findAndZipAndUpload.sh > FindAndZipAndUpload.out 2>&1 &
-
+# nohup bash findAndZipAndUpload.sh > FindAndZipAndUpload.out 2>&1 &
 ```
 
 ## aria2-pro
