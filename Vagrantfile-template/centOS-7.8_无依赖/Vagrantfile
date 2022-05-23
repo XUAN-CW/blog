@@ -1,0 +1,18 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+
+  # box 地址 https://app.vagrantup.com/centos/boxes/7/versions/2004.01
+  config.vm.box = "centOS-7.8.2003"
+  
+  config.vm.network "private_network", ip: "192.168.18.10"
+  
+  config.vm.provider "virtualbox" do |vb|
+    vb.cpus = 2
+    vb.memory = "8192"
+  end
+  
+  config.vm.provision "shell", path: "centOS-7.9_init.sh"
+  
+end
