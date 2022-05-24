@@ -12,7 +12,9 @@ Vagrant.configure("2") do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://vagrantcloud.com/search.
-  config.vm.box = "centOS-7.9"
+  
+  # box 地址 https://app.vagrantup.com/centos/boxes/7/versions/2004.01
+  config.vm.box = "centOS-7.8.2003"
   # config.vm.synced_folder "C:/cache/software-for-development/yum/x86_64/7", "/var/cache/yum/x86_64/7"
 
   # Disable automatic box update checking. If you disable this, then
