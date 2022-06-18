@@ -50,7 +50,6 @@ sudo sed -i "s|ExecStart=/usr/bin/dockerd -H fd:// --containerd=/run/containerd/
 sudo systemctl daemon-reload
 sudo systemctl restart docker
 # docker-compose
-sudo curl -L "http://ps:7101/github.com/docker/compose/releases/download/1.29.2/docker-compose-Linux-x86_64" -o /usr/local/bin/docker-compose
 sudo chmod 777 -R /usr/local/bin/
 
 

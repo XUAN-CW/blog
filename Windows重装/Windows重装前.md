@@ -16,12 +16,12 @@ id: 1639924641941586800
 
 ## IDEA
 
- [IDEA-settings.zip](assets\backup\IDEA-settings.zip) 
+ [settings.zip](assets\backup\IDEA\settings.zip) 
 
 ## Firefox
 
-1. AdGuard  [20211219_225012_adg_ext_settings_3.6.17.json](assets\backup\20211219_225012_adg_ext_settings_3.6.17.json) 
-2. 书签 [Firefox_bookmarks.html](assets\backup\Firefox_bookmarks.html) 
+1. AdGuard  [20220618_173513_adg_ext_settings_4.0.161.json](assets\backup\Firefox\20220618_173513_adg_ext_settings_4.0.161.json) 
+2. 书签  [bookmarks-2022-06-18.json](assets\backup\Firefox\bookmarks-2022-06-18.json) 
 3. 同步
 
 # 整个保留的绿色软件

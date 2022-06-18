@@ -80,5 +80,9 @@ Vagrant.configure("2") do |config|
   config.vm.provision "file", source: "daemon.json", destination: "/tmp/daemon.json"
   config.vm.provision "shell", inline: "sudo mkdir -p /etc/docker && mv /tmp/daemon.json /etc/docker/daemon.json"
   
+  # github.com/docker/compose/releases/download/1.29.2/docker-compose-Linux-x86_64
+  config.vm.provision "file", source: "docker-compose-Linux-x86_64", destination: "/tmp/docker-compose-Linux-x86_64"
+  config.vm.provision "shell", inline: "sudo mkdir -p /usr/local/bin && mv /tmp/docker-compose-Linux-x86_64 /usr/local/bin/docker-compose"
+  
   config.vm.provision "shell", path: "centOS-7.9_init.sh"
 end
