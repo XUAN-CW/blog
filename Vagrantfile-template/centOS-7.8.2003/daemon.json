@@ -1,4 +1,4 @@
 {
-  "registry-mirrors": ["http://ps:7001"],
-  "insecure-registries": ["ps:7002","10.0.0.0/8","172.16.0.0/12","192.168.0.0/16"]
+  "registry-mirrors": ["https://6ypv0a1a.mirror.aliyuncs.com"],
+  "insecure-registries": ["127.0.0.0/8","10.0.0.0/8","172.16.0.0/12","192.168.0.0/16"]
 }
