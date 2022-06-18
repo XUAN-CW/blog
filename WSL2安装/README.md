@@ -98,7 +98,9 @@ https://blog.csdn.net/qq_18625805/article/details/109732122
 
 ## 下载 Docker Desktop 并安装
 
-https://www.docker.com/get-started/
+ https://www.docker.com/get-started/
+
+ [历史版本](https://docs.docker.com/desktop/release-notes/)
 
 ## 在 WSL2 运行 Docker
 
@@ -116,22 +118,41 @@ https://www.docker.com/get-started/
 
 ## 加速
 
-```
-# 加速
-sudo mkdir -p /etc/docker
-sudo tee /etc/docker/daemon.json <<-'EOF'
+ [Win10系统基于WSL2安装Docker问题小结.html](assets\references\Win10系统基于WSL2安装Docker问题小结.html) 
+
+```json
 {
-  "registry-mirrors": ["https://6ypv0a1a.mirror.aliyuncs.com"],
-  "insecure-registries": ["127.0.0.0/8","10.0.0.0/8","172.16.0.0/12","192.168.0.0/16"]
+  "builder": {
+    "gc": {
+      "defaultKeepStorage": "20GB",
+      "enabled": true
+    }
+  },
+  "experimental": false,
+  "features": {
+    "buildkit": true
+  },
+  "insecure-registries": [
+    "127.0.0.0/8",
+    "10.0.0.0/8",
+    "172.16.0.0/12",
+    "192.168.0.0/16"
+  ],
+  "registry-mirrors": [
+    "https://6ypv0a1a.mirror.aliyuncs.com",
+    "https://registry.docker-cn.com",
+    "http://hub-mirror.c.163.com",
+    "https://docker.mirrors.ustc.edu.cn",
+    "https://docker.mirrors.ustc.edu.cn"
+  ]
 }
-EOF
-sudo systemctl daemon-reload
-sudo systemctl restart docker
 ```
 
+![image-20220619001839565](assets/images/image-20220619001839565.png)
 
+# 问题解决
 
-
+ [Win10 WSL2 安装Docker.html](assets\references\Win10 WSL2 安装Docker.html) 
 
 
 
