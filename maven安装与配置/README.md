@@ -32,10 +32,10 @@ wget https://archive.apache.org/dist/maven/maven-3/3.6.3/binaries/apache-maven-3
 
 tar -zxvf apache-maven-3.6.3-bin.tar.gz
 
-mv apache-maven-3.6.3 /usr/local/
+mv apache-maven-3.6.3 /usr/local/maven-3.6.3
 
 
-echo "MAVEN_HOME=/usr/local/apache-maven-3.6.3" >> /etc/profile
+echo "MAVEN_HOME=/usr/local/maven-3.6.3" >> /etc/profile
 echo "PATH=\$PATH:\$MAVEN_HOME/bin" >> /etc/profile
 
  
