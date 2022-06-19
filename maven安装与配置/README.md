@@ -10,7 +10,9 @@ tags:
 
 # maven版本
 
-[apache-maven-3.6.3-bin](https://maven.apache.org/)
+[apache-maven-3.6.3-bin](https://maven.apache.org/) 
+
+https://archive.apache.org/dist/maven/maven-3/
 
 # Windows
 
@@ -22,6 +24,28 @@ tags:
 ```
 mvn -v
 ```
+
+# Linux
+
+```
+wget https://archive.apache.org/dist/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz
+
+tar -zxvf apache-maven-3.6.3-bin.tar.gz
+
+mv apache-maven-3.6.3 /usr/local/
+
+
+echo "MAVEN_HOME=/usr/local/apache-maven-3.6.3" >> /etc/profile
+echo "PATH=\$PATH:\$MAVEN_HOME/bin" >> /etc/profile
+
+ 
+source /etc/profile
+ 
+mvn -v
+
+```
+
+
 
 
 
