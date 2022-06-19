@@ -67,3 +67,59 @@ docker run -itd -p 9000:8080 springboot-initializr:1.0
 
 ![image-20220129111741503](assets/images/image-20220129111741503.png)
 
+
+
+
+
+# 草稿
+
+## node
+
+```
+yum -y install gcc gcc-c++ openssl-devel
+# 下载
+wget https://nodejs.org/dist/v16.13.1/node-v16.13.1-linux-x64.tar.xz
+# 解压
+tar xf node-v16.13.1-linux-x64.tar.xz -C /usr/local/
+# 创建软连接
+ln -s /usr/local/node-v16.13.1-linux-x64/bin/node /usr/local/bin
+ln -s /usr/local/node-v16.13.1-linux-x64/bin/npm /usr/local/bin
+```
+
+## yarn
+
+```
+npm install --global yarn
+ln -s /usr/local/node-v16.13.1-linux-x64/bin/yarn /usr/local/bin
+
+```
+
+## jdk17
+
+## maven-3.6.3
+
+
+
+
+
+
+
+
+
+```
+yum -y install dos2unix
+dos2unix mvnw
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
