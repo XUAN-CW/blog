@@ -12,12 +12,6 @@ id: 1640275764181110200
 
 云服务器搭建 springboot Initializr 私服，这里我们不需要 web 界面，就单纯给 IDEA 用
 
-
-
-```
- mvn spring-javaformat:apply
-```
-
 # 环境
 
 1. jdk-17.0.3.1
