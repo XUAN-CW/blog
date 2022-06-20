@@ -18,9 +18,12 @@ id: 1640275764181110200
  mvn spring-javaformat:apply
 ```
 
+# 环境
 
+1. jdk-17.0.3.1
+2. apache-maven-3.6.3
 
-# 私服搭建
+# 具体实现
 
 ## clone
 
@@ -31,8 +34,9 @@ git clone https://github.com/spring-io/start.spring.io.git
 
 ## initializr
 
-```
+此项目install 的原因见 [搭建个人 Spring Initializr 服务器.html](搭建个人 Spring Initializr 服务器.html) ，`mvn spring-javaformat:apply` 的原因见 [Failed to execute goal io.spring.javaformat_spring-javaformat.html](assets\references\Failed to execute goal io.spring.javaformat_spring-javaformat.html) 
 
+```
 cd initializr
 mvn spring-javaformat:apply
 mvn clean install -DskipTests
@@ -45,8 +49,6 @@ mvn spring-javaformat:apply
 mvn clean package -Dmaven.test.skip=true 
 ```
 
-
-
 ### 删除 start-client
 
 start-client 需要 nodejs 打包，相当麻烦，这里我们删掉它，需要 web 界面的别删。需要执行删除操作的地方有两个：
@@ -54,13 +56,9 @@ start-client 需要 nodejs 打包，相当麻烦，这里我们删掉它，需�
 1. start-parent
 2. start-site
 
-![image-20220129012608749](assets/images/image-20220129012608749.png)
+![image-20220620183946455](assets/images/image-20220620183946455.png)
 
-
-
-![image-20220620173729323](assets/images/image-20220620173729323.png)
-
-
+![image-20220620184019729](assets/images/image-20220620184019729.png)
 
 ### package
 
@@ -73,8 +71,6 @@ mvn clean package -Dmaven.test.skip=true
 ```sh
 find / -name start-site-exec.jar
 ```
-
-
 
 ## Docker 部署
 
@@ -109,66 +105,6 @@ docker run -itd -p 9000:8080 springboot-initializr:1.0
 
 ![image-20220129111741503](assets/images/image-20220129111741503.png)
 
+# 自定义
 
-
-
-
-# 草稿
-
-```
-https://nodejs.org/dist/v12.13.0/node-v12.13.0-linux-x64.tar.gz
-```
-
-```
-https://github.com/yarnpkg/yarn/releases/download/v1.22.4/yarn-v1.22.4.tar.gz
-```
-
-
-
-## node
-
-```
-yum -y install gcc gcc-c++ openssl-devel
-# 下载
-wget https://nodejs.org/dist/v12.13.0/node-v12.13.0-linux-x64.tar.gz
-# 解压
-tar xf node-v12.13.0-linux-x64.tar.gz -C /usr/local/
-# 创建软连接
-ln -s /usr/local/node-v12.13.0-linux-x64/bin/node /usr/local/bin
-ln -s /usr/local/node-v12.13.0-linux-x64/bin/npm /usr/local/bin
-```
-
-## yarn
-
-```
-npm install --global yarn@1.22.4
-ln -s /usr/local/node-v12.13.0-linux-x64/bin/yarn /usr/local/bin
-```
-
-## jdk17
-
-## maven-3.6.3
-
-
-
-
-
-
-
-```
-yum -y install dos2unix
-dos2unix mvnw
-```
-
-
-
-
-
-
-
-https://www.wangt.cc//2021/10/%e6%90%ad%e5%bb%ba%e4%b8%aa%e4%ba%baspring-initializr%e6%9c%8d%e5%8a%a1%e5%99%a8/
-
-
-
-
-
+ [搭建自己的Spring Initializr.html](assets\references\搭建自己的Spring Initializr.html) 
