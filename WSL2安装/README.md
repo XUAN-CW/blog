@@ -92,7 +92,10 @@ https://blog.csdn.net/qq_18625805/article/details/109732122
 
 ### 方法二
 
- 参考 [Win10 如何以管理员身份设置开机自启程序.html](assets\references\Win10 如何以管理员身份设置开机自启程序.html) ，触发器设置为登录时
+ 参考 [Win10 如何以管理员身份设置开机自启程序.html](assets\references\Win10 如何以管理员身份设置开机自启程序.html) ，注意两点：
+
+1. 触发器设置为登录时
+2. 15秒后执行，不延时 WSL2 可能还没起动
 
 # docker
 
