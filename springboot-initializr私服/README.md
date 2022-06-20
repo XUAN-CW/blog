@@ -77,10 +77,8 @@ find / -name start-site-exec.jar
 将 start-site-exec.jar 上传到服务器后在同一目录下创建 Dockerfile ，内容如下：
 
 ```dockerfile
-# FROM java:8
-FROM openjdk:8-jdk-alpine
-# 测试时用这个，工具比较多
-# FROM openjdk:8u312-oraclelinux8
+# FROM openjdk:17.0.2-oracle
+FROM openjdk:17.0.2-oracle
 COPY start-site-exec.jar app.jar
 # 这个地方要与配置文件中的 server.port 一致
 EXPOSE 8080
