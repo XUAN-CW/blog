@@ -38,11 +38,6 @@ mvn clean install -DskipTests
 
 ## start.spring.io
 
-```
-mvn spring-javaformat:apply
-mvn clean package -Dmaven.test.skip=true 
-```
-
 ### 删除 start-client
 
 start-client 需要 nodejs 打包，相当麻烦，这里我们删掉它，需要 web 界面的别删。需要执行删除操作的地方有两个：
@@ -57,6 +52,7 @@ start-client 需要 nodejs 打包，相当麻烦，这里我们删掉它，需�
 ### package
 
 ```sh
+mvn spring-javaformat:apply
 mvn clean package -Dmaven.test.skip=true 
 ```
 
