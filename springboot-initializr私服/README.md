@@ -28,7 +28,7 @@ git clone https://github.com/spring-io/start.spring.io.git
 
 ## initializr
 
-此项目install 的原因见 [搭建个人 Spring Initializr 服务器.html](搭建个人 Spring Initializr 服务器.html) ，`mvn spring-javaformat:apply` 的原因见 [Failed to execute goal io.spring.javaformat_spring-javaformat.html](assets\references\Failed to execute goal io.spring.javaformat_spring-javaformat.html) 
+此项目 install 的原因见 [搭建个人 Spring Initializr 服务器.html](搭建个人 Spring Initializr 服务器.html) ，`mvn spring-javaformat:apply` 的原因见 [Failed to execute goal io.spring.javaformat_spring-javaformat.html](assets\references\Failed to execute goal io.spring.javaformat_spring-javaformat.html) 
 
 ```
 cd initializr
