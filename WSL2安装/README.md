@@ -97,6 +97,13 @@ https://blog.csdn.net/qq_18625805/article/details/109732122
 1. 触发器设置为登录时
 2. 15秒后执行，不延时 WSL2 可能还没起动
 
+去除弹出窗口的做法： [BAT批处理文件的后台运行不弹出窗口.html](assets\references\BAT批处理文件的后台运行不弹出窗口.html) 
+
+```vb
+set ws=wscript.createobject("wscript.shell")
+ws.run "set_IP_for_WSL2.bat /start",0  
+```
+
 # docker
 
 ## 下载 Docker Desktop 并安装
