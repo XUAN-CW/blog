@@ -53,11 +53,10 @@ https://blog.csdn.net/qq_18625805/article/details/109732122
 
 ```
 :: set_IP_for_WSL2.bat
-    @echo off
-    if "%1"=="h" goto begin
-    start mshta vbscript:createobject("wscript.shell").run("""%~nx0"" h",0)(window.close)&&exit
-    :begin
-
+rem     @echo off
+   if "%1"=="hide" goto CmdBegin
+   start mshta vbscript:createobject("wscript.shell").run("""%~0"" hide",0)(window.close)&&exit
+   :CmdBegin
     setlocal enabledelayedexpansion
     ::先停掉可能在跑的wsl实例
     wsl --shutdown ubuntu
@@ -81,7 +80,7 @@ https://blog.csdn.net/qq_18625805/article/details/109732122
             echo set windows ip success: 192.168.2.200
         )
     )
-    pause
+
 ```
 
 ## 开机自动执行任务
@@ -101,12 +100,7 @@ https://blog.csdn.net/qq_18625805/article/details/109732122
 1. 触发器设置为登录时
 2. 15秒后执行，不延时 WSL2 可能还没起动
 
-去除弹出窗口的做法： [Windows 静默运行程序.html](assets\references\Windows 静默运行程序.html) 
 
-```vb
-set ws=wscript.createobject("wscript.shell")
-ws.run "set_IP_for_WSL2.bat /start",0  
-```
 
 # docker
 
