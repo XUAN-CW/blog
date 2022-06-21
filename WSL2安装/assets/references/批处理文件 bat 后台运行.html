@@ -1,0 +1,902 @@
+<!DOCTYPE html> <html style lang=zh-CN><!--
+ Page saved with SingleFile 
+ url: https://blog.csdn.net/diyu122222/article/details/77871585 
+ saved date: Tue Jun 21 2022 08:46:17 GMT+0800 (中国标准时间)
+--><meta charset=utf-8>
+<link rel=canonical href=https://blog.csdn.net/diyu122222/article/details/77871585>
+<meta name=renderer content=webkit>
+<meta name=force-rendering content=webkit>
+<meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
+<meta name=viewport content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name=report content='{"pid": "blog", "spm":"1001.2101"}'>
+<meta name=referrer content=always>
+<meta http-equiv=Cache-Control content=no-siteapp><link rel=alternate media=handheld href=#>
+<meta name=shenma-site-verification content=5a59773ab8077d4a62bf469ab966a63b_1497598848>
+<meta name=applicable-device content=pc>
+<title>(19条消息) 批处理文件 bat 后台运行_North_Spark的博客-CSDN博客_批处理后台运行</title>
+<meta name=keywords content=批处理后台运行>
+<meta name=csdn-baidu-search content='{"autorun":true,"install":true,"keyword":"批处理后台运行"}'>
+<meta name=description content=后台运行DOS>
+<style>:root{--sf-img-7: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAAeFBMVEUAAAD////////b29vMzObS0uHV1d/NzdrQ0NvR0dzPz9rOztnPz9rMzNvNzdrOztvNzdjNzdvNzdrNzdnMzNrNzdrMzNnNzdjMzNnMzNnNzdnMzNjMzNnNzdnMzNjMzNnNzdjMzNjMzNjMzNnNzdnNzdjMzNjMzNht5VztAAAAJ3RSTlMAAAMHChEYKSssMENFRkxUVltgbHR1h8DEz9DT1NXZ3t/s9fb4+ft3fWcLAAAAvElEQVQoz7VS2Q6CMBAcoQUB5RRQkKOc//+HIltUTCiJifM0s9NtptvFQQH8bi7QnORaN019TRwNa+hRNb5QRfqnZ+fjCrn99rx+/ELvLZ4/yFJXlp2kg0+e2ZIWIQNYKEi15hwzI5UadNZISWfP0IHsmzzuunxyZW8wmQXREDhPVXECQqoUgCWzMPC5Q3AwmcpCTKQEXGIuUBKLVeZFde1REei+95StIdy0vfGpB6/+MvVnq9dka8H+s9QPD4w4I+oLviYAAAAASUVORK5CYII=")}body,h1,h3,ul,li,p,span,div,pre,a,input{margin:0;padding:0;font-weight:normal;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box}li,form{list-style:none}h1,h3{font-family:"PingFang SC","Microsoft YaHei","SimHei","Arial","SimSun"}img{border:0;outline:none}input,textarea{outline:none}a{outline:none}a:link,a:visited{color:#4f4f4f}a:hover,a:active,a:focus{text-decoration:none}.clearfix:after{content:".";height:0;visibility:hidden;display:block;clear:both}.d-flex{display:-webkit-box;display:-ms-flexbox}.clearfix:after{content:" ";display:block;height:0;visibility:hidden;clear:both}main{margin-bottom:40px;float:right}main div.blog-content-box{position:relative;padding:0 24px 16px;background:#fff;border-radius:2px}main div.blog-content-box .article-header-box{border-bottom:1px solid #f5f6f7;padding-top:8px;z-index:9;background-color:#fff}main div.blog-content-box .article-header-box .article-header .un-collection{font-size:14px}main div.blog-content-box .article-header-box .article-header .un-collection span{margin-right:0!important}main div.blog-content-box .article-header-box .article-header div.article-title-box{margin-bottom:8px}main div.blog-content-box .article-header-box .article-header div.article-title-box .title-article{font-size:28px;word-wrap:break-word;color:#222226;font-weight:600;margin:0;word-break:break-all}main div.blog-content-box .article-header-box .article-header div.article-info-box{position:relative;background:#f8f8f8;border-radius:4px}main div.blog-content-box .article-header-box .article-header div.article-info-box div.blog-tags-box{padding-left:48px;display:-webkit-box;display:-ms-flexbox;display:flex}main div.blog-content-box .article-header-box .article-header div.article-info-box div.blog-tags-box .tags-box{font-size:14px;line-height:24px;margin-bottom:4px;margin-right:8px}main div.blog-content-box .article-header-box .article-header div.article-info-box div.blog-tags-box .tags-box.artic-tag-box a.tag-link{-webkit-box-sizing:border-box;box-sizing:border-box;margin-right:8px;padding:3px 6px;font-size:12px;background-color:#fff;color:#5094d5;border:1px solid #eaeaef;height:24px;line-height:17px;border-radius:2px;display:inline-block}main div.blog-content-box .article-header-box .article-header div.article-info-box div.blog-tags-box .tags-box.artic-tag-box a.tag-link:hover{color:#277ccc}main div.blog-content-box .article-header-box .article-header div.article-info-box div.blog-tags-box .tags-box span.label{display:inline-block;color:#999aaa}main div.blog-content-box .article-header-box .article-header div.article-info-box div.article-bar-top{color:#999aaa;width:88%;display:-webkit-box;display:-ms-flexbox;display:flex}main div.blog-content-box .article-header-box .article-header div.article-info-box div.article-bar-top .bar-content{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;padding-left:12px}main div.blog-content-box .article-header-box .article-header div.article-info-box div.article-bar-top span,main div.blog-content-box .article-header-box .article-header div.article-info-box div.article-bar-top a{vertical-align:top;margin-right:12px;line-height:32px}main div.blog-content-box .article-header-box .article-header div.article-info-box div.article-bar-top .article-type-img{width:36px;height:32px;line-height:32px}main div.blog-content-box .article-header-box .article-header div.article-info-box div.article-bar-top .article-heard-img{margin-right:4px}main div.blog-content-box .article-header-box .article-header div.article-info-box div.article-bar-top .article-read-img{width:16px;height:16px;margin-top:0}main div.blog-content-box .article-header-box .article-header div.article-info-box div.article-bar-top .article-collect-img{vertical-align:-3px;margin-top:0;margin-right:0;width:16px;height:16px}main div.blog-content-box .article-header-box .article-header div.article-info-box div.article-bar-top .article-time-img{width:16px;height:16px}main div.blog-content-box .article-header-box .article-header div.article-info-box div.article-bar-top #blog_detail_zk_collection{color:#999aaa;display:inline-block}main div.blog-content-box .article-header-box .article-header div.article-info-box div.article-bar-top #blog_detail_zk_collection:hover img.isdefault{display:none!important}main div.blog-content-box .article-header-box .article-header div.article-info-box div.article-bar-top #blog_detail_zk_collection:hover img.isactive{display:inline-block!important}main div.blog-content-box .article-header-box .article-header div.article-info-box div.article-bar-top #blog_detail_zk_collection:hover span{color:#fc5531}main div.blog-content-box .article-header-box .article-header div.article-info-box div.article-bar-top .follow-nickName{color:#555666;margin-right:20px}main div.blog-content-box .article-header-box .article-header div.article-info-box div.article-bar-top .follow-nickName:hover{color:#fc5531}main div.blog-content-box .article-header-box .article-header div.article-info-box div.article-bar-top span.time{position:relative}main div.blog-content-box .article-header-box .article-header div.article-info-box .operating{position:absolute;top:0;right:8px;line-height:32px}main div.blog-content-box .article-header-box .article-header div.article-info-box .operating a.href-article-edit{position:relative;color:#8fb0c9;padding:0 4px;font-size:12px}main div.blog-content-box .article-header-box .article-header div.article-info-box .operating a.href-article-edit:last-child::after{display:none}main div.blog-content-box .article-header-box .article-header div.article-info-box .operating a.href-article-edit:after{display:block;content:"";width:1px;height:11px;background:#e0e0e0;position:absolute;top:2px;right:-2px}main div.blog-content-box .article-header-box .article-header div.article-info-box .operating a.href-article-edit:hover{color:#fc5531}main div.blog-content-box .article-header-box .article-header div.article-info-box .operating a.href-article-edit:active{color:#5c91df}main div.blog-content-box .article-header-box .article-header div.article-info-box .operating a.slide-toggle:after{display:none}main div.blog-content-box article{position:relative;padding-top:16px}main div.blog-content-box article *{word-wrap:break-word}#content_views{position:relative;min-height:70px;font-size:16px!important}.markdown_views p{font-size:16px!important}.comment-box.comment-box-new{margin-bottom:8px;padding:16px 24px 24px 24px;border-radius:2px;background:#fff}.comment-box.comment-box-new .comment-title{font-size:18px;font-weight:600;color:#222226;line-height:32px;margin-bottom:8px}.comment-box.comment-box-new .comment-edit-box{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}.comment-box.comment-box-new .comment-edit-box .user-img{margin-right:8px;padding-top:9px}.comment-box.comment-box-new .comment-edit-box .user-img img{display:block;width:30px;height:30px;border-radius:50%;border:1px solid #e8e8ed}.comment-box.comment-box-new .comment-edit-box form{width:100%;position:relative;background:rgba(245,246,247,0.8);border-radius:8px;padding:8px 0}.comment-box.comment-box-new .comment-edit-box form .comment-sofa-flag{position:absolute;height:18px;top:-14px;right:0;z-index:12}.comment-box.comment-box-new .comment-edit-box form .comment-content{display:block;width:100%;background:rgba(248,249,251,0.8);border:none;padding:4px 12px;border-radius:4px;resize:none;height:30px;font-size:14px;line-height:22px;-webkit-box-sizing:border-box;box-sizing:border-box;-webkit-transition:height .3s ease-in-out;transition:height .3s ease-in-out;font-family:"SF Pro Display",Roboto,Noto,Arial,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;border-top-left-radius:8px;border-top-right-radius:8px}.comment-box.comment-box-new .comment-edit-box form .comment-content::-webkit-scrollbar,.comment-fold-box .comment-edit-box form .comment-content::-webkit-scrollbar{width:2px}.comment-box.comment-box-new .comment-edit-box form .comment-content::-webkit-scrollbar-thumb,.comment-fold-box .comment-edit-box form .comment-content::-webkit-scrollbar-thumb{background-color:rgba(153,154,170,0.3)}.comment-box.comment-box-new .comment-edit-box form .comment-content::-webkit-input-placeholder,.comment-fold-box .comment-edit-box form .comment-content::-webkit-input-placeholder{color:#999aaa}.comment-box.comment-box-new .comment-edit-box form .comment-content::-moz-placeholder,.comment-fold-box .comment-edit-box form .comment-content::-moz-placeholder{color:#999aaa}.comment-box.comment-box-new .comment-edit-box form .comment-content:-moz-placeholder,.comment-fold-box .comment-edit-box form .comment-content:-moz-placeholder{color:#999aaa}.comment-box.comment-box-new .comment-edit-box form .comment-operate-box{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;padding:0 12px 0 12px;border-bottom-left-radius:8px;border-bottom-right-radius:8px;-webkit-transition:display .3s ease-in-out;transition:display .3s ease-in-out}.comment-box.comment-box-new .comment-edit-box form .comment-operate-box.active{position:absolute;width:200px;top:8px;right:0}.comment-box.comment-box-new .comment-edit-box form .comment-operate-box.active .comment-operate-r .comment-operate-item .btn-comment-input{background:#e1e2e6;color:#222226}.comment-box.comment-box-new .comment-edit-box form .comment-operate-box.active .comment-operate-r .comment-operate-item .btn-comment-input.btn-comment-defualt{display:block}.comment-box.comment-box-new .comment-edit-box form .comment-operate-box .comment-operate-r{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.comment-box.comment-box-new .comment-edit-box form .comment-operate-box .comment-operate-r .comment-operate-item{position:relative;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;margin-left:16px}.comment-box.comment-box-new .comment-edit-box form .comment-operate-box .comment-operate-r .comment-operate-item:nth-child(1),.comment-fold-box .comment-edit-box form .comment-operate-box .comment-operate-r .comment-operate-item:nth-child(1){margin-left:0}.comment-box.comment-box-new .comment-edit-box form .comment-operate-box .comment-operate-r .comment-operate-item:nth-child(3),.comment-fold-box .comment-edit-box form .comment-operate-box .comment-operate-r .comment-operate-item:nth-child(3){margin-left:20px}.comment-box.comment-box-new .comment-edit-box form .comment-operate-box .comment-operate-r .comment-operate-item:hover,.comment-fold-box .comment-edit-box form .comment-operate-box .comment-operate-r .comment-operate-item:hover{cursor:pointer}.comment-box.comment-box-new .comment-edit-box form .comment-operate-box .comment-operate-r .comment-operate-item .btn-comment-input{width:72px;height:32px;border-radius:16px;font-size:14px;text-align:center;line-height:32px;border:none}.comment-box.comment-box-new .comment-edit-box form .comment-operate-box .comment-operate-r .comment-operate-item .btn-comment-input:hover,.comment-fold-box .comment-edit-box form .comment-operate-box .comment-operate-r .comment-operate-item .btn-comment-input:hover{color:#fff;background:#fc5531}.comment-box.comment-box-new .comment-edit-box form .comment-operate-box .comment-operate-r .comment-operate-item .comment-operate-img{display:block;width:20px;height:20px}.comment-box.comment-box-new .comment-edit-box form .comment-operate-box .comment-operate-r .comment-operate-item .comment-emoticon-box{width:328px;padding:8px 0;z-index:2000;position:absolute;right:-56px;top:34px;background:#fff;-webkit-box-shadow:0 4px 16px 0 rgba(0,0,0,0.1);box-shadow:0 4px 16px 0 rgba(0,0,0,0.1);border-radius:4px}.comment-box.comment-box-new .comment-edit-box form .comment-operate-box .comment-operate-r .comment-operate-item .comment-emoticon-box:before,.comment-fold-box .comment-edit-box form .comment-operate-box .comment-operate-r .comment-operate-item .comment-emoticon-box:before{content:"";width:8px;height:8px;transform:rotate(45deg);-webkit-transform:rotate(45deg);-moz-transform:rotate(45deg);position:absolute;top:-4px;right:60px;background:#fff}.comment-box.comment-box-new .comment-edit-box form .comment-operate-box .comment-operate-r .comment-operate-item .comment-code-box{width:270px;z-index:10;padding:8px 0;position:absolute;right:-24px;top:34px;background:#fff;-webkit-box-shadow:0 4px 16px 0 rgba(0,0,0,0.1);box-shadow:0 4px 16px 0 rgba(0,0,0,0.1);border-radius:4px}.comment-box.comment-box-new .comment-edit-box form .comment-operate-box .comment-operate-r .comment-operate-item .comment-code-box:before,.comment-fold-box .comment-edit-box form .comment-operate-box .comment-operate-r .comment-operate-item .comment-code-box:before{content:"";width:8px;height:8px;transform:rotate(45deg);-webkit-transform:rotate(45deg);-moz-transform:rotate(45deg);position:absolute;top:-4px;right:30px;background:#fff}.ellipsis-online{overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-box-orient:vertical;word-break:break-all}.ellipsis-online-1{-webkit-line-clamp:1}.display-flex{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:nowrap;flex-wrap:nowrap}.recommend-box.recommend-box-style{border-top-left-radius:2px;border-top-right-radius:2px;overflow:hidden}.recommend-box .recommend-item-box{padding:8px 24px;background-color:#fff;font-style:normal;border-top:1px solid #f7f7fc;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:nowrap;flex-wrap:nowrap;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.recommend-box .recommend-item-box .content-box{width:100%}.recommend-box .recommend-item-box .title-box{-webkit-box-flex:1;-ms-flex:1;flex:1;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.recommend-box .recommend-item-box .title-box .tit{color:#282b31;font-size:16px;line-height:24px;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:nowrap;flex-wrap:nowrap;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.recommend-box .recommend-item-box .title-box .tit:hover{color:#fc5531}.recommend-box .recommend-item-box .title-box .tit em{color:#fc5531;font-style:normal}.recommend-box .recommend-item-box .title-box .tit .tag{color:#507999;background:#ebf2f7;line-height:22px;height:20px;font-size:12px;margin-left:8px;margin-right:8px;margin-top:-2px;padding:0 6px;-ms-flex-negative:0;flex-shrink:0;border-radius:2px}.recommend-box .recommend-item-box .info-box{display:-webkit-box;display:-ms-flexbox;display:flex}.recommend-box .recommend-item-box .info-box .blog-title{color:#999aaa;font-size:13px}.recommend-box .recommend-item-box .info-box .blog-title:hover{color:#fc5531}.recommend-box .recommend-item-box .info-box .info{min-width:32px}.recommend-box .recommend-item-box .info-box .info:hover .read{display:none}.recommend-box .recommend-item-box .info-box .info-block{font-size:13px;color:#999aaa;margin-left:12px;line-height:24px}.recommend-box .recommend-item-box .info-box .read-img{width:14px;height:14px;vertical-align:-2px;margin-right:4px}.recommend-box .recommend-item-box .desc-box .desc{color:#999aaa;font-size:14px}.recommend-box .recommend-item-box .desc-box .desc em{color:#fc5531;font-style:normal}.first-recommend-box,.second-recommend-box{margin-top:0}.second-recommend-box{margin-bottom:2px}body{height:100%}.nodata .container{width:300px;margin-left:8px;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box}.template-box{padding:6px 0;text-align:center;background:#fff;border-top:1px solid #f4f5f6;border-bottom-left-radius:2px;border-bottom-right-radius:2px}.template-box span{font-size:14px;color:#555666;line-height:20px;padding:0 4px}.template-box .back-home{color:#555666}.template-box .back-home:hover{color:#fc5531}#blogColumnPayAdvert{background-color:#fff}#blogColumnPayAdvert .column-group{padding:16px 0}#blogColumnPayAdvert .column-group:hover{cursor:pointer}#blogColumnPayAdvert .column-group-item{display:-webkit-box;display:-ms-flexbox;display:flex;position:relative;-ms-flex-wrap:nowrap;flex-wrap:nowrap;height:56px;padding:9px 16px 9px 16px;background:#fff;-webkit-box-shadow:0 0 10px 0 rgba(232,232,237,0.4);border-radius:2px;border:1px solid #f0f0f0;-webkit-box-sizing:border-box;box-sizing:border-box;width:100%;-webkit-transition:width .2s ease-in-out;-webkit-transition:margin-top .2s ease-in-out;transition:margin-top .2s ease-in-out}#blogColumnPayAdvert .column-group-item.column-group0{margin-top:0;z-index:3}#blogColumnPayAdvert .column-group-item.column-group-item-one{-webkit-box-shadow:none;box-shadow:none}#blogColumnPayAdvert .column-group-item.column-group-item-one:hover{-webkit-box-shadow:0 0 10px 0 rgba(232,232,237,0.4);box-shadow:0 0 10px 0 rgba(232,232,237,0.4)}#blogColumnPayAdvert .column-group-item .item-l{overflow:hidden;width:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:nowrap;flex-wrap:nowrap;-webkit-box-align:center;-ms-flex-align:center;align-items:center}#blogColumnPayAdvert .column-group-item .item-l a{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:nowrap;flex-wrap:nowrap;-webkit-box-align:center;-ms-flex-align:center;align-items:center}#blogColumnPayAdvert .column-group-item .item-l img{width:36px;height:36px;border-radius:2px;border:1px solid #f5f6f7;vertical-align:middle}#blogColumnPayAdvert .column-group-item .item-l .title{font-size:16px;font-weight:500;color:#222226;line-height:22px;margin-left:10px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;vertical-align:middle;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}#blogColumnPayAdvert .column-group-item .item-l .title>span{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:nowrap;flex-wrap:nowrap}#blogColumnPayAdvert .column-group-item .item-l .title .tit{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:162px}#blogColumnPayAdvert .column-group-item .item-l .title .dec{margin-left:8px;font-size:14px;color:#999aaa;line-height:20px}#blogColumnPayAdvert .column-group-item .item-l .title:hover{color:#fc5531}#blogColumnPayAdvert .column-group-item .item-m{min-width:260px;font-size:14px;color:#999aaa;line-height:40px}#blogColumnPayAdvert .column-group-item .item-m span{float:right;margin-right:20px}#blogColumnPayAdvert .column-group-item .item-r{padding:4px 0;display:-webkit-box;display:-ms-flexbox;display:flex}#blogColumnPayAdvert .column-group-item .item-r a{display:block;width:80px;height:28px;font-size:12px;color:#555666;background:#fff;border-radius:16px;border:1px solid #ccccd8;text-align:center;line-height:28px}#blogColumnPayAdvert .column-group-item .item-r a:hover{cursor:default;border:1px solid #555666}#blogColumnPayAdvert .column-group-item .item-r a.article-column-bt:hover{cursor:pointer}@media screen and (max-width:1320px){#blogColumnPayAdvert .column-group-item .item-l .title .tit{width:115px}}@-webkit-keyframes myflist{from{-webkit-transform:scale(1,1) translateY(0);transform:scale(1,1) translateY(0);opacity:1;display:block}to{-webkit-transform:scale(2,2) translateY(-5px);transform:scale(2,2) translateY(-5px);opacity:0;display:none}}@keyframes myflist{from{-webkit-transform:scale(1,1) translateY(0);transform:scale(1,1) translateY(0);opacity:1;display:block}to{-webkit-transform:scale(2,2) translateY(-5px);transform:scale(2,2) translateY(-5px);opacity:0;display:none}}@-webkit-keyframes myflistdeom{from{-webkit-transform:scale(1,1) translateY(0);transform:scale(1,1) translateY(0);opacity:1;display:block}to{-webkit-transform:scale(1.2,1.2) translateY(-10px);transform:scale(1.2,1.2) translateY(-10px);opacity:0;display:none}}@keyframes myflistdeom{from{-webkit-transform:scale(1,1) translateY(0);transform:scale(1,1) translateY(0);opacity:1;display:block}to{-webkit-transform:scale(1.2,1.2) translateY(-10px);transform:scale(1.2,1.2) translateY(-10px);opacity:0;display:none}}.recommend-nps-box{background:#fff;padding:12px 24px;border-top:1px solid #f4f5f6}.recommend-nps-box .aside-title{font-size:16px;color:#222226;line-height:22px;text-align:center}.recommend-nps-box .newnps-list{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:nowrap;flex-wrap:nowrap;padding-top:8px;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}.recommend-nps-box .newnps-list .newnps-item{text-align:center;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;margin:0 12px}.recommend-nps-box .newnps-list .newnps-item:hover{cursor:pointer}.recommend-nps-box .newnps-list .newnps-item:hover .newnps-img-box .newnps-img{top:-4px}.recommend-nps-box .newnps-list .newnps-img-box{position:relative;width:24px;height:24px;margin:auto}.recommend-nps-box .newnps-list .newnps-img-box .newnps-img{width:24px;height:24px;position:absolute;left:0;top:0;border-radius:50%;-webkit-transition:top .1s linear;transition:top .1s linear}.recommend-nps-box .newnps-list .newnps-img-box .newnps-img.active{display:block}.recommend-nps-box .newnps-list .newnps-text{font-size:12px;margin-left:6px;color:#777888;line-height:16px}body{min-width:1200px;-webkit-font-smoothing:antialiased}.main_father{padding:8px 12px 0 12px}@media (min-width:1320px) and (max-width:1380px){.nodata .container{width:1208px}.nodata .container main{width:900px}}@media screen and (max-width:1320px){.nodata .container{width:1068px}.nodata .container main{width:760px}}@media screen and (min-width:1380px){.nodata .container{width:1318px}.nodata .container main{width:1010px}}@media (min-width:1550px) and (max-width:1700px){.nodata .container{width:1128px}.nodata .container main{width:820px}}@media screen and (min-width:1700px){.nodata .container{width:1318px}.nodata .container main{width:1010px}}</style>
+<script type=application/ld+json>{"@context":"https://ziyuan.baidu.com/contexts/cambrian.jsonld","@id":"https://blog.csdn.net/diyu122222/article/details/77871585","appid":"1638831770136827","pubDate":"2017-09-06T21:17:34","title":"批处理文件 bat 后台运行_North_Spark的博客-CSDN博客_批处理后台运行","upDate":"2017-09-06T21:17:34"}</script>
+<style>body{background:url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/7AARRHVja3kAAQAEAAAAQQAA/+4ADkFkb2JlAGTAAAAAAf/bAIQACAYGBwYFCAcHBwkJCAoMFA0MCwsMGRITDxQdGh8eHRocHCAkLicgIiwjHBwoNyksMDE0NDQfJzk9ODI8LjM0MgEJCQkMCwwYDQ0YMiEcITIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIy/8IAEQgAhQCTAwEiAAIRAQMRAf/EABgAAQEBAQEAAAAAAAAAAAAAAAECAAMH/9oACAEBAAAAAPaczqqHTL0xtU6SatgrQdUnWaKw4M7awqXZlM4NslyVLmp2yQlO2krKGbiGszgvbbTqdGdsuJ1Y2dpqRrVO008rdz3SHXpocVMUCss3pvbDoJqjSt6Om53KBrYLmrIraRKNqjViwHbbc+k1tO1piXG1MM3KqE1tOchTJTpxRR//xAAVAQEBAAAAAAAAAAAAAAAAAAAABP/aAAgBAhAAAACMAAAAAAAAAAAAAAH/xAAVAQEBAAAAAAAAAAAAAAAAAAAAA//aAAgBAxAAAAC4AAAAAAAAAAAAAAP/xAAjEAEBAQEBAAICAQUBAAAAAAABABEhAhIxEEFhAyIyUVKB/9oACAEBAAE/ANc0IcLe3pxj1sNumMmQ5+5B/hgfJL0lfsY9aA2ZeuI/ZJpGF3/cGSgaE+87k6n83gXsr9jDIMouZDiDrMh6NLMdhX1o3j3uifj6f4vQjy1/6/KD+o6t1MINkY9I4yaqQaI2IkKd/VxI8BcWP6n8WiSc/GZLCZPkSEWyXHAjPRjY+bno0vs7BlgOhO/KR4FzNgC2/uhb15TpAh1tQlB2PQ/wyC6F5dPr8JjpLHb6bNkyYYO6W3PRCkgkN6DI8GCMCMul59baSc5HC0Y+5BnxZ2D8fRfd60yQ9ECGM6OjyPqTURuEc431+5SzsqGw/IhSTS73nbYdUhy+WuJb/Fm2ATPByDSFHL7kEumSkGTjDZnVvlLk43DkNjmbCnq42Izg9bD1OvLyYZJpKl4RMbhIBrK+l/Gboz/ZxkHG8mqtoYSRo27IJHJ5OtmBIP2XoTEvvL06hmkYJfC1+WBIeiDOax6JewpJppC/+jcT8HbQ/wBE+/tCGZ5mEDHrF8+rfRyWVL/M+o8uLAj21+sh/ZPkel509OPIdks6qfj16PB9S/I5frNtRvfn5mn3fL4838Jpet8m5fMuJYjeXukZevIkKNuSD+PQIj9Rw5Jt514lmWH+i+XY9DDyfAsbu/qPQkoF599tMkGO8YUcZLQcbO26yhPoC1nztmQ6aSqlwjyHS56gCAb6ZJ7MD9v1LyJI6Nh/1Cj9T5GxJZNxHGxy+Oej0SbDbls2m43rQ4w6YsFp8sJ8nWxn6vKz0npsmJCzPCW8xPGTL9X1elDS/qAh6+m+z8f/xAAUEQEAAAAAAAAAAAAAAAAAAABg/9oACAECAQE/ADX/xAAUEQEAAAAAAAAAAAAAAAAAAABg/9oACAEDAQE/ADX/2Q==)repeat}html{-webkit-box-sizing:border-box;box-sizing:border-box;-ms-overflow-style:scrollbar;height:100%}*,*::before,*::after{-webkit-box-sizing:inherit;box-sizing:inherit;outline:0}body{position:relative;font-size:14px;background-color:#f5f6f7;min-height:100%}body,div,ul,li,h1,h3,form,input,p{padding:0;margin:0}a{text-decoration:none;cursor:pointer}a:active,a:hover{outline:0}html input[type="button"]{-webkit-appearance:button;cursor:pointer}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}blockquote:before,blockquote:after,q:before,q:after{content:""}::-webkit-input-placeholder{color:#ccc}::-moz-placeholder{color:#ccc}:-moz-placeholder{color:#ccc}ul{list-style:none}.d-flex{display:-webkit-box!important;display:-ms-flexbox!important;display:flex!important}.justify-content-center{-webkit-box-pack:center!important;-ms-flex-pack:center!important;justify-content:center!important}.clearfix::after{display:block;content:"";clear:both}.c-blue-hover:hover{color:#86aee7}.c-blue-focus:focus{color:#6d94ce}#csdn-toolbar{font-size:14px;font-weight:400;color:#222226;background:#fff;-webkit-box-shadow:0 2px 4px 0 rgba(0,0,0,.05);box-shadow:0 2px 4px 0 rgba(0,0,0,.05)}#csdn-toolbar *{padding:0;margin:0;-webkit-box-sizing:content-box;box-sizing:content-box;font-family:"PingFang SC","SF Pro Display","Microsoft YaHei",Roboto,Noto,Arial,sans-serif}@-webkit-keyframes rotate{from{-webkit-transform:rotate(0);transform:rotate(0)}to{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes rotate{from{-webkit-transform:rotate(0);transform:rotate(0)}to{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@-webkit-keyframes updown{0%{top:-2px}30%{top:-1px}60%{top:0}100%{top:2px}}@keyframes updown{0%{top:-2px}30%{top:-1px}60%{top:0}100%{top:2px}}.notification{overflow:hidden}#csdn-userTooltip a:link,a:focus,a:hover,a:visited{text-decoration:none!important}@-webkit-keyframes buyside-scale-down-tr{0%{-webkit-transform:scale(1);transform:scale(1);-webkit-transform-origin:100%0;transform-origin:100%0}100%{-webkit-transform:scale(0);transform:scale(0);-webkit-transform-origin:100%0;transform-origin:100%0}}@keyframes buyside-scale-down-tr{0%{-webkit-transform:scale(1);transform:scale(1);-webkit-transform-origin:100%0;transform-origin:100%0}100%{-webkit-transform:scale(0);transform:scale(0);-webkit-transform-origin:100%0;transform-origin:100%0}}@-webkit-keyframes buyside-scale-up-tr{0%{-webkit-transform:scale(0);transform:scale(0);-webkit-transform-origin:100%0;transform-origin:100%0}100%{-webkit-transform:scale(1);transform:scale(1);-webkit-transform-origin:100%0;transform-origin:100%0}}@keyframes buyside-scale-up-tr{0%{-webkit-transform:scale(0);transform:scale(0);-webkit-transform-origin:100%0;transform-origin:100%0}100%{-webkit-transform:scale(1);transform:scale(1);-webkit-transform-origin:100%0;transform-origin:100%0}}@-moz-keyframes spin{from{transform:rotate(0)}to{transform:rotate(-360deg)}}@-webkit-keyframes spin{from{transform:rotate(0)}to{transform:rotate(-360deg)}}@-o-keyframes spin{from{transform:rotate(0)}to{transform:rotate(-360deg)}}@keyframes spin{from{transform:rotate(0)}to{transform:rotate(-360deg)}}@-moz-keyframes spin{from{transform:rotate(0)}to{transform:rotate(-360deg)}}@-webkit-keyframes spin{from{transform:rotate(0)}to{transform:rotate(-360deg)}}@-o-keyframes spin{from{transform:rotate(0)}to{transform:rotate(-360deg)}}@keyframes spin{from{transform:rotate(0)}to{transform:rotate(-360deg)}}@-webkit-keyframes rotating{from{-webkit-transform:rotate(0)}to{-webkit-transform:rotate(360deg)}}@keyframes rotating{from{transform:rotate(0)}to{transform:rotate(360deg)}}#MathJax_Message{position:fixed;left:1px;bottom:2px;background-color:#E6E6E6;border:1px solid #959595;margin:0px;padding:2px 8px;z-index:102;color:black;font-size:80%;width:auto;white-space:nowrap}</style><link href="data:image/x-icon;base64,AAABAAEAICAAAAEAIACoEAAAFgAAACgAAAAgAAAAQAAAAAEAIAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAxVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zda/P9qhPz/mKr9/7bC/f/Fz/7/ydL+/8HM/v+tu/3/jaH9/156/P8zV/z/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/z9h/P+gsP3/8fP+/////////////////////////////////////////////////+ru/v+Zqv3/PV/8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P9lgPz/6+/+///////////////////////////////////////////////////////////////////////s7/7/Y378/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/aoT8//r6/v///////////////////////v7+/+Po/v/R2f7/y9T+/9rg/v/3+f7////////////////////////////j6P7/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/0Zm/P/w8/7/////////////////5+v+/4ab/f9AYvz/MVX8/zFV/P8xVfz/MVX8/zVY/P9kf/z/tsP9//39/v////////////T2/v8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/sL79/////////////////87W/v8/Yfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/ZYD8//L0/v//////n7D9/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/0Bh/P/6+/7////////////v8v7/QmP8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/TWz8/3GJ/P8yVvz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/e5L8/////////////////5qr/f8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P+mtv3/////////////////XHn8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/7/L/f////////////////87Xfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/ydL+////////////+/v+/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P/Ezv7////////////9/f7/M1b8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/7G//f////////////////9HZ/z/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/kqX9/////////////////22H/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P9kf/z/////////////////pbX9/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zRX/P/v8v7////////////s7/7/Nln8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/6Ky/f////////////////+Inf3/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/RWb8//f4/v////////////H0/v9Kafz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/PV/8/1Jw/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/kKT9/////////////////9vh/v9DZPz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/1Fv/P/m6/7//v7+/3aO/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8zVvz/xM79/////////////////+fr/v9viPz/MVX8/zFV/P8xVfz/MVX8/zRX/P+Emf3/8/X+////////////xc/+/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P87Xfz/ztf+///////////////////////i5/7/sL79/5+w/f+ywP3/6u3+//////////////////////+uvP3/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P83Wvz/sL79//7+/v//////////////////////////////////////////////////////3OL+/0Vl/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/aYP8/9Pb/v//////////////////////////////////////9fb+/5yu/f84W/z/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/1d0/P+Spf3/t8T9/8fR/v/Dzv7/qrn9/3uS/P88Xvz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/MVX8/zFV/P8xVfz/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" rel="shortcut icon" type=image/x-icon><style>.sf-hidden{display:none!important}</style><meta http-equiv=content-security-policy content="default-src 'none'; font-src 'self' data:; img-src 'self' data:; style-src 'unsafe-inline'; media-src 'self' data:; script-src 'unsafe-inline' data:;"><style>img[src="data:,"],source[src="data:,"]{display:none!important}</style></head>
+ <body class=nodata><div id=MathJax_Message style=display:none></div><div id=csdn-toolbar style=position:fixed;top:0px;left:0px;z-index:1993;width:100%>
+ <div class=toolbar-inside>
+ <div class="toolbar-container sf-hidden">
+ 
+ 
+ 
+ </div>
+ </div>
+ </div>
+ 
+ 
+ 
+<style>@media screen{.tag{color:#008}.dec{color:#606}}</style>
+<div class="main_father clearfix d-flex justify-content-center" style=height:100%> 
+ <div class="container clearfix" id=mainBox>
+ 
+ <main>
+<div class=blog-content-box>
+ <div class=article-header-box>
+ <div class=article-header>
+ <div class=article-title-box>
+ <h1 class=title-article id=articleContentId>批处理文件 bat 后台运行</h1>
+ </div>
+ <div class=article-info-box>
+ <div class=article-bar-top>
+ <img class=article-type-img src="data:image/png;base64,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" alt>
+ <div class=bar-content>
+ <a class=follow-nickName href=https://blog.csdn.net/diyu122222 target=_blank rel=noopener>North_Spark</a>
+ <img class="article-time-img article-heard-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAV1BMVEUAAAD///+qqqqlpbSbm6qdna6cnKyanqqanq2Znaubm6yZnKqbm6qamqyamquamqqamqqZmqqam6qZm6uZm6qam6qZmquZmqqZm6uam6uZmqqZmqqZmqocTKxIAAAAHHRSTlMAAgYRIS8xP0RGSktUZXeBsb7Hy9jZ5uvs8vP6gnGibgAAALJJREFUOMutU10TwiAMizo3P6YIgiLL//+dPji3AuPYeeaR5GibpsA/0SrtQnBatYt0bznB9hndGEYwTcx3ngl8F/EDMwxC0XguwM9V5vqns+xj6n9+A+Qf31lsSWBHf1gS8OOYKgsUAECXBRoA4MoCBwAIZUGoCV7rSsRN3vMm5Zh7bC7PdExpVLhusbslRkmrSXvEIbFaLoskzSNdFgwXYdYHphq5emjrsa8fzorT+xVvBvo/CHL6PycAAAAASUVORK5CYII=" alt>
+ <span class=time>于&nbsp;2017-09-06 21:17:34&nbsp;发布</span>
+ <img class="article-read-img article-heard-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAA1VBMVEUAAAD///+qqqqfn7+qqqqiormZprObm7Gfn6qZo62bm62cnKqfn6yenqqamqycnK2Znaqanqqbm6uZna2bm6qcnKuanq2ZnKqamqucnKyanaqZnKuamqyanKuZm6qamquZm6uanKuZm6uZm6uanKqamqqZm6uamqqZmqqZmqqam6qZmquam6qZm6uam6qam6uam6qam6uZmqqam6qZmquZmquZm6qam6qZmquZmqqam6qZmqqZmqqZmqqam6uam6qZmquZmquam6qZmqqZmquam6qZmqp0HY+DAAAARnRSTlMAAgMICQsUFxgZHCQlKis7PD9AQUJDREtMTU5VVlh7fIKDhYyNkJGsr7S1ubq8vcLP0dXW1+bn6Onr7e7w8fL09fj5+vv8FkqdHwAAANZJREFUOMvNU0cCgjAQHGwYe1fsYu+9i1jz/yd5UNmIgFfnNjubbMkE+CtI8WZ/ph3ng1bSZSH76mtuYNuUTbK7rPEP6FWvqAcn/AuzMOm5A7eAXnjrypVb4l586ukzt8EtCwDyhiJjhTFlTHwXANAlrkoAIKkUGQJR4bz02phwRwJtIorRNcU6WBJh7wRGsdWvhOXvEjHnJpNAz2nMEQC/w6L2AQDIXGxXnXvWzNs9VsnoWrPST0UyRGj6rS8ioqU8FbPlal6zaRvCNNuW7Gj7lOu/PuQDAVCD57wDxCYAAAAASUVORK5CYII=" alt>
+ <span class=read-count>12470</span>
+ <a id=blog_detail_zk_collection class=un-collection data-report-click='{"mod":"popu_823","spm":"1001.2101.3001.4232","ab":"new"}'>
+ <img class="article-collect-img article-heard-img un-collect-status isdefault" style=display:inline-block src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAABfVBMVEUAAAD///////+qqqq/v7+ZzMyqqqq2trafn7+Zs7OqqqqdnbGkpLaZqqqfn6+cnKqhoa6ZprOenqqioq6fn6qZo62bm62enrCZoqqfn6+enq2ZoK+fn6yamq6dnaqZn6ybm6ydna6amqqcnKqbm62dnaqcnK2Zna2bm6qbm6qcnKyanaqbm6uamqqbm6qanKqZnKyamqqbm6uanKybm6qZnKuamqybm6qanKubm6yZnKqZm6yanKqZnKyamqqanKuZnKubm6uZm6qbm6qZm6uZm6uamqqZm6uam6uamquanKuZm6uZm6uZm6qam6uZm6uam6qZm6qam6qamquZm6qZm6uam6uamqqZm6qZmqqam6qamqqZm6uZmqqZm6uam6qZmqqam6uZmqqam6uZmqqam6qam6qZmquZmqqZm6uZmqqZmqqZm6qam6uam6qZm6qam6qZmqqZm6uZmqqam6uam6uam6qZmqqam6qZmqqZmquam6qZmqqam6uZmqqrcsWbAAAAfnRSTlMAAQIDBAUGBwgKDA0ODxASExQVFhgZHB0eICIjJSYnKC4vMDY4OTtBQkVNTk9RVF1fYGFiY2RlZmprbG5vcXJ0dnp7hIWPkJGSlZqeoKWpqquytba3vL/AwcPJysvNzs/Q0dLU1dbZ2tzd3+Hi4+Xn6uvs7u/y9Pb3+vv8/f4nQpgoAAABPElEQVQYGa3B1UICQQAF0GuBWGB3i50Y2N1dGKBidwcm99vdZXfGMeDJc/Df+lY6EUkbSTfCs1yQvIlHWG7qehBO3Dl111aE0UpDF/4We0bDpQV/SZimMJuEbxzO5pH5nWfq3MPUvPgXRlsq0xBimw9SCkTDS8mTDE0vVXWoeqM0CM0AVT4Lam8o9EOTfEzVTDSsDUcMOUuALuOQqs1CoJG6kywY0vaoCm4M+6k5yoTg2OZv++n4krLFn3YdUOV9UHpZdLWOBQrw3SOF24qocme8HSitsUNKpFSVvU9e1Rd7yEATBCcFH5YpvefD1E5hykZFN0zjFCZtQX5xweSh6c6LVUpPGTBdUxecK0S+NfeOQgeEA2qWShBS9kDDECTXK9ecEIpOqXlthyI1B4rUdfK+GhHETvhzEVkMDJ+/OdRnsTCMfwAAAABJRU5ErkJggg==" alt>
+ <img class="article-collect-img article-heard-img collect-status isactive" style=display:none src=data:, alt>
+ <span class=name>收藏</span>
+ <span class=get-collection>
+ 8
+ </span>
+ </a>
+ </div>
+ </div>
+ <div class=blog-tags-box>
+ <div class="tags-box artic-tag-box">
+ <span class=label>分类专栏：</span>
+ <a class=tag-link href=https://blog.csdn.net/diyu122222/category_7903845.html target=_blank rel=noopener>脚本</a>
+ <span class=label>文章标签：</span>
+ <a data-report-click='{"mod":"popu_626","spm":"1001.2101.3001.4223","strategy":"批处理文件","ab":"new"}' class=tag-link href="https://so.csdn.net/so/search/s.do?q=%E6%89%B9%E5%A4%84%E7%90%86%E6%96%87%E4%BB%B6&amp;t=blog&amp;o=vip&amp;s=&amp;l=&amp;f=&amp;viparticle=" target=_blank rel=noopener>批处理文件</a>
+ </div>
+ </div>
+ <div class="slide-content-box sf-hidden">
+ 
+ </div>
+ <div class=operating>
+ <a class="href-article-edit slide-toggle">版权</a>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div id=blogColumnPayAdvert>
+ <div class=column-group>
+ <div class="column-group-item column-group0 column-group-item-one">
+ <div class=item-l>
+ <a class=item-target href=https://blog.csdn.net/diyu122222/category_7903845.html target=_blank title=脚本 data-report-click='{"spm":"1001.2101.3001.6332"}'>
+ <img class=item-target src="data:image/png;base64,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" alt>
+ <span class="title item-target">
+ <span>
+ <span class=tit>脚本</span>
+ <span class=dec>专栏收录该内容</span>
+ </span>
+ </span>
+ </a>
+ </div>
+ <div class=item-m>
+ <span>2 篇文章</span>
+ <span>0 订阅</span>
+ </div>
+ <div class=item-r>
+ <a class="item-target article-column-bt articleColumnFreeBt" data-id=7903845>订阅专栏</a>
+ </div>
+ </div>
+ </div>
+ </div>
+ <article class=baidu_pl>
+ <div id=article_content class="article_content clearfix">
+ 
+ <div id=content_views class=markdown_views>
+ <svg xmlns=http://www.w3.org/2000/svg style=display:none>
+ <path stroke-linecap=round d="M5,0 0,2.5 5,5z" id=raphael-marker-block style=-webkit-tap-highlight-color:rgba(0,0,0,0)></path>
+ </svg>
+ <p>需求:</p> 
+<blockquote> 
+ <p>当运行 批处理文件bat 时 , 会有一个黑窗口显示 , 对于不懂的人来说, 还是很吓人的; <br> 有两种办法,可以让bat后台运行,不出现黑窗口</p> 
+</blockquote> 
+<ul><li>第一种解决办法(推荐) :</ul> 
+<blockquote> 
+ <p>在你写的批处理文件,开头加上以下三行代码即可</p> 
+</blockquote> 
+<pre class=prettyprint name=code><code class="hljs perl has-numbering" style=position:unset><span class=hljs-keyword>if</span> <span class=hljs-string>"<span class=hljs-variable>%1</span>"</span>==<span class=hljs-string>"hide"</span> <span class=hljs-keyword>goto</span> CmdBegin
+start mshta vbscript:createobject(<span class=hljs-string>"wscript.shell"</span>).run(<span class=hljs-string>""</span><span class=hljs-string>"<span class=hljs-variable>%~</span>0"</span><span class=hljs-string>" hide"</span>,<span class=hljs-number>0</span>)(window.<span class=hljs-keyword>close</span>)&amp;&amp;<span class=hljs-keyword>exit</span>
+:CmdBegin<div class="hljs-button {2} sf-hidden" data-title=复制 data-report-click='{"spm":"1001.2101.3001.4259"}'></div></code><ul class=pre-numbering><li style=color:rgb(153,153,153)>1<li style=color:rgb(153,153,153)>2<li style=color:rgb(153,153,153)>3</ul></pre> 
+<ul><li>第二种解决办法:</ul> 
+<blockquote> 
+ <p>比如你的批处理文件, 名字为 test.bat <br> 再创建一个txt文件 , 比如叫 backrun.txt <br> 再该文件中写入以下代码</p> 
+</blockquote> 
+<pre class=prettyprint name=code><code class="hljs avrasm has-numbering" style=position:unset>createobject(<span class=hljs-string>"wscript.shell"</span>)<span class=hljs-preprocessor>.run</span> <span class=hljs-string>"test.bat"</span>,<span class=hljs-number>0</span><div class="hljs-button {2} sf-hidden" data-title=复制 data-report-click='{"spm":"1001.2101.3001.4259"}'></div></code><ul class=pre-numbering><li style=color:rgb(153,153,153)>1</ul></pre> 
+<blockquote> 
+ <p>此时再把该txt文件的后缀名改为.vbs ; <br> backrun.vbs <br> 此时双击该该vbs文件, 我们的批处理文件,就已经进入后台运行模式了; <br> 可以打开资源管理器, 会发现有一个 叫cmd的进程在运行,就是我们批处理文件的进程了; <br> 结束进程的话,直接再资源管理器上,结束该cmd进程即可</p> 
+</blockquote>
+ </div><div><div></div></div>
+ <style>.markdown_views pre>code.hljs{background-color:#f6f8fa}.markdown_views .hljs{display:block;padding:8px}.markdown_views .hljs-keyword{color:#008!important}.markdown_views .hljs-number{color:#066!important}.markdown_views .hljs-variable{color:#4f4f4f!important}.markdown_views .hljs-preprocessor,.markdown_views .hljs-string{color:#090!important}.markdown_views .hljs{color:#4f4f4f!important}.markdown_views .hljs-preprocessor,.markdown_views .hljs-string{color:#090!important}.markdown_views pre code{font-size:14px;line-height:22px;padding:0!important;border-radius:4px}.markdown_views pre code::-webkit-scrollbar{height:5px}.markdown_views pre code::-webkit-scrollbar-thumb{background:rgba(142,149,154,.2);border-radius:2px}@media screen and (-webkit-min-device-pixel-ratio:0){.markdown_views pre code{min-width:94%}}.markdown_views pre.prettyprint{margin:0 0 24px;padding:8px 16px 6px 56px;background-color:#f6f8fa;border:none}#article_content .markdown_views pre.prettyprint *{word-wrap:normal;word-break:break-all}.prettyprint{position:relative;overflow-y:hidden;overflow-x:auto}.markdown_views .prettyprint .pre-numbering{position:absolute;width:48px;background-color:#eef0f4;top:0;left:0;margin:0;padding:8px 0;list-style:none;text-align:right}.markdown_views .pre-numbering li{padding:0 8px;list-style:none;margin:0}</style>
+ <style>textarea{overflow:auto}input{overflow:visible}/*! normalize-scss | MIT/GPLv2 License | bit.ly/normalize-scss */html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,main{display:block}.markdown_views *{box-sizing:border-box}a{background-color:transparent;-webkit-text-decoration-skip:objects}img{border-style:none}svg:not(:root){overflow:hidden}input,textarea{font-family:sans-serif;margin:0}html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:ButtonText dotted 1px}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}.markdown_views,body,html{font-family:-apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif;-webkit-font-smoothing:antialiased}body,html{color:rgba(0,0,0,.75);font-variant-ligatures:common-ligatures;line-height:1.625;-moz-osx-font-smoothing:grayscale;tab-size:4;-moz-tab-size:4;-o-tab-size:4}.markdown_views code *,.markdown_views pre *{font-size:inherit}.markdown_views blockquote{color:rgba(0,0,0,.5);padding-left:1.5em}.markdown_views pre>code{-webkit-text-size-adjust:none;overflow-x:auto;white-space:pre}.markdown_views{word-break:break-word!important;-moz-osx-font-smoothing:antialiased;font-variant-ligatures:no-common-ligatures}.markdown_views p{font-size:16px;color:#4d4d4d;font-weight:400;line-height:26px;margin:0 0 16px;overflow:hidden;overflow-x:auto}.markdown_views ul{margin:0 0 24px;padding:0;font-size:16px;overflow:hidden;overflow-x:auto}.markdown_views ul li{list-style-type:disc;margin:8px 0 0 32px}.markdown_views blockquote{display:block;padding:16px;margin:0 0 24px;border-left:8px solid #dddfe4;background:#eef0f4;overflow:auto;word-break:break-word!important}.markdown_views blockquote p{font-size:14px;line-height:22px;color:#555666;font-weight:400;margin-bottom:0}.markdown_views pre{margin-bottom:24px}.markdown_views code,.markdown_views pre{font-family:Source Code Pro,DejaVu Sans Mono,Ubuntu Mono,Anonymous Pro,Droid Sans Mono,Menlo,Monaco,Consolas,Inconsolata,Courier,monospace,PingFang SC,Microsoft YaHei,sans-serif;font-size:14px;line-height:22px;color:#000}</style>
+ </div>
+ 
+ </article>
+ 
+</div>
+<div class="more-toolbox-new sf-hidden" id=toolBarBox>
+ 
+</div>
+ <div class="first-recommend-box recommend-box">
+<div class="recommend-item-box type_blog clearfix" data-url=https://blog.csdn.net/weixin_30300523/article/details/98412143>
+ <div class=content-box>
+ <div class="content-blog display-flex">
+ <div class=title-box>
+ <a href=https://blog.csdn.net/weixin_30300523/article/details/98412143 class=tit target=_blank data-report-click='{"ab":"new","spm":"1001.2101.3001.6661.1","mod":"popu_871","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~Rate-1-98412143-blog-77871585.pc_relevant_antiscanv2\",\"dist_request_id\":\"1655772284508_55246\"}","dist_request_id":"1655772284508_55246","ab_strategy":"antiscanv2","index":"1","strategy":"2~default~CTRLIST~Rate","dest":"https://blog.csdn.net/weixin_30300523/article/details/98412143"}' data-report-query="spm=1001.2101.3001.6661.1&amp;utm_medium=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-98412143-blog-77871585.pc_relevant_antiscanv2&amp;depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-98412143-blog-77871585.pc_relevant_antiscanv2">
+ <div class="left ellipsis-online ellipsis-online-1">Windows如何<em>后台运行</em><em>bat</em><em>文件</em>（没有命令提示符框）</div>
+ </a>
+ </div>
+ <div class="info-box display-flex">
+ <div class=info>
+ <a href=https://blog.csdn.net/weixin_30300523 target=_blank><span class=blog-title>weixin_30300523的博客</span></a>
+ </div>
+ <div class="info display-flex">
+ <span class="info-block time sf-hidden">01-10</span>
+ <span class="info-block read"><img class=read-img src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"><rect fill-opacity="0"/></svg>' alt style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-7)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important">
+ 326
+ </span>
+ </div>
+ </div>
+ </div>
+ <div class=desc-box>
+ <a href=https://blog.csdn.net/weixin_30300523/article/details/98412143 target=_blank data-report-click='{"ab":"new","spm":"1001.2101.3001.6661.1","mod":"popu_871","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~Rate-1-98412143-blog-77871585.pc_relevant_antiscanv2\",\"dist_request_id\":\"1655772284508_55246\"}","dist_request_id":"1655772284508_55246","ab_strategy":"antiscanv2","index":"1","strategy":"2~default~CTRLIST~Rate","dest":"https://blog.csdn.net/weixin_30300523/article/details/98412143"}' data-report-query="spm=1001.2101.3001.6661.1&amp;utm_medium=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-98412143-blog-77871585.pc_relevant_antiscanv2&amp;depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-98412143-blog-77871585.pc_relevant_antiscanv2">
+ <div class="desc ellipsis-online ellipsis-online-1">怎么让<em>bat</em><em>文件</em>在<em>后台</em>无声无息无影无形地<em>运行</em>呢？
+用start/min命令去<em>运行</em><em>bat</em><em>文件</em>，电脑的任务栏下仍然会有相关的图标，以下的办法可以达到目的。
+方法一：　　<em>bat</em>里有隐藏窗口的命令，很简单，只需要在代码头部加一段代码就可以了。　　@echooff　　if"%1"=="h"gotobegin　　mshtavbscript:createobject("wscript.s...</div>
+ </a>
+ </div>
+ </div>
+</div>
+ </div>
+ 
+ <div class="second-recommend-box recommend-box">
+<div class="recommend-item-box type_blog clearfix" data-url=https://blog.csdn.net/ShiJian_ShaLou/article/details/84892385>
+ <div class=content-box>
+ <div class="content-blog display-flex">
+ <div class=title-box>
+ <a href=https://blog.csdn.net/ShiJian_ShaLou/article/details/84892385 class=tit target=_blank data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.1","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~CTRLIST~Rate-1-84892385-blog-77871585.pc_relevant_antiscanv2\",\"dist_request_id\":\"1655772284508_55246\"}","dist_request_id":"1655772284508_55246","ab_strategy":"antiscanv2","index":"1","strategy":"2~default~CTRLIST~Rate","dest":"https://blog.csdn.net/ShiJian_ShaLou/article/details/84892385"}' data-report-query="spm=1001.2101.3001.6650.1&amp;utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-84892385-blog-77871585.pc_relevant_antiscanv2&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-84892385-blog-77871585.pc_relevant_antiscanv2">
+ <div class="left ellipsis-online ellipsis-online-1">Windows<em>批处理</em>：<em>文件</em><em>后台运行</em></div>
+ </a>
+ </div>
+ <div class="info-box display-flex">
+ <div class=info>
+ <a href=https://blog.csdn.net/ShiJian_ShaLou target=_blank><span class=blog-title>ShiJian_ShaLou的博客</span></a>
+ </div>
+ <div class="info display-flex">
+ <span class="info-block time sf-hidden">12-08</span>
+ <span class="info-block read"><img class=read-img src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"><rect fill-opacity="0"/></svg>' alt style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-7)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important">
+ 1159
+ </span>
+ </div>
+ </div>
+ </div>
+ <div class=desc-box>
+ <a href=https://blog.csdn.net/ShiJian_ShaLou/article/details/84892385 target=_blank data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.1","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~CTRLIST~Rate-1-84892385-blog-77871585.pc_relevant_antiscanv2\",\"dist_request_id\":\"1655772284508_55246\"}","dist_request_id":"1655772284508_55246","ab_strategy":"antiscanv2","index":"1","strategy":"2~default~CTRLIST~Rate","dest":"https://blog.csdn.net/ShiJian_ShaLou/article/details/84892385"}' data-report-query="spm=1001.2101.3001.6650.1&amp;utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-84892385-blog-77871585.pc_relevant_antiscanv2&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-84892385-blog-77871585.pc_relevant_antiscanv2">
+ <div class="desc ellipsis-online ellipsis-online-1">.<em>bat</em><em>批处理</em><em>文件</em>在<em>后台运行</em>，需要在代码头部加一段代码。
+@echo off 
+if &amp;quot;%1&amp;quot; == &amp;quot;h&amp;quot; goto begin 
+mshta vbscript:createobject(&amp;quot;wscript.shell&amp;quot;).run(&amp;quot;%~nx0 h&amp;quot;,0)(window.close)&amp;amp;amp;&amp;amp;amp;exit 
+:begin</div>
+ </a>
+ </div>
+ </div>
+</div>
+ </div>
+<a id=commentBox name=commentBox></a>
+<div id=pcCommentBox class="comment-box comment-box-new">
+ <div class=comment-title>参与评论</div>
+ <div class="comment-edit-box d-flex">
+ <div class=user-img>
+ <a href=https://blog.csdn.net/diyu122222 target=_blank>
+ <img src="data:image/png;base64,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">
+ </a>
+ </div>
+ <form id=commentform>
+ <img class=comment-sofa-flag src="data:image/png;base64,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">
+ <textarea class=comment-content name=comment_content id=comment_content placeholder="请发表有价值的评论， 博客评论不欢迎灌水，良好的社区氛围需大家一起维护。" maxlength=1000></textarea>
+ <div class="comment-operate-box active">
+ <div class="comment-operate-l sf-hidden">
+ 
+ </div>
+ <div class=comment-operate-c>
+ &nbsp;
+ </div>
+ <div class=comment-operate-r>
+ <div class="comment-operate-item comment-emoticon">
+ <img class=comment-operate-img data-url=https://csdnimg.cn/release/blogv2/dist/pc/img/ src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAABiVBMVEUAAAD///////+qqqqAgL+ZzMyfn7+qqqqZs7OiormqqqqdnbGkpLaZqqqfn6+lpbSenqqZo62dnbGhoaqbm62enrCcnK2fn6+bm6qenq2cnKqfn6yamq6dnaqenqqcnK6Zn6qdnayanqqbm6uZna2bm6qcnKuanq2bm6qanaucnK2amqucnKyZnKyamqybm6ybm6yanKqbm6uZnKyamqqbm6qZnKubm6qZnKubm6yanKqZnKyZm6uanKuamquanKubm6ubm6uZm6uamqqZm6uZm6uamquZm6qamquamqqam6uZm6uZm6qam6uZm6qam6qamquanKqam6uZm6qamquam6uam6qZm6uam6qZm6qam6uZmqqZmquam6qamqqam6qam6uam6qamquZm6qZmquZm6uam6uZmqqam6uZmqqZmquZm6uam6qam6uZmqqZmquZm6qam6qZmqqZm6uZmqqam6uZmqqZmqqam6uam6qZmquZmqqam6qZmquZmquam6qZmqqam6uZmqoduq2pAAAAgnRSTlMAAQIDBAUICQoLDA0ODxARFRkaGxwdHyAhIiQlJicqLC00P0BBQkNERUlLTE1QVllcXV5fYGNkZmdrb3FzdHd5en+AgYKFhoeLkJKUlpeZnJ2fpKWnqautrrKztLm6u73CxMXGyM7R0tTV2t3e4+Tm5+jr7O7v8PHy9PX29/j7/P3+uiJDSgAAAiBJREFUOMudlelbElEYxX9CWYZZljqWpTXaJrQbtGgqFZaRxWjbtNoi0GpgiwUJ5y/vA3OBUVTyfrpzn/O8y3nPewa2eLqGR0anpkZHhrs2QvUnsqqebKJ/HVh3qiTlnXgsHInFnbxUSnU3gAXiBRWTg0HzHRxMFlWIB1bjQq7KjuV/s5yy3JD/rSejnL02jZ1TpscXL6O01ahuK61MXcyAq3SocYehtNxanXHlrPUos3KKV3kplG2Alj09HS11mLYggF0uGJZScgAOvJX0an8VF/3zEABHKW8epaIFbFvQ58eLeuNVtCMlTVSSF0uVGSWUBBhQpo2OTxoC4OCCfp/zQieVACArG+CkbgB3dBWAD/oyYGoYVBagS/kgwFE9A17rtFd3+aahJZhXHzBcaYXQkmYvPdHibgBaxlf0cq+HdBQFRgxPkV+Slo6bhEPf9KLK8yQwqpgZ+PX7Y501GvfNXvNuMc0AUwpvJvuwXCChyGbAiJ76Uq97KqmrzbSuEcauzvpmDD1Mr5xZhUsvt9fRYwjngpb9e/dI74N1hJsRwgN9PVaDtc9pqbd+hEYU0PpcpelDnnjOf9SPE35ReDIDAuN/pfm7Y5dvzX2X3vXil5kRLsCR5E/PKOYvbq9OOrVqFQDYeerK7XvjZw/XVra2Ck0vV/Pr2rQBNG8pzZuUsT27Znt2Y9vzGWl4IyP9D2sGoC86OeO6M5PRvq3+Lv4BFJKlQRVGtSIAAAAASUVORK5CYII=" alt=表情包>
+ <span class="comment-operate-tip sf-hidden">插入表情</span>
+ <div class="comment-emoticon-box comment-operate-isshow" style=display:none>
+ 
+ </div>
+ </div>
+ <div class="comment-operate-item comment-code">
+ <img class=comment-operate-img data-url=https://csdnimg.cn/release/blogv2/dist/pc/img/ src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAAn1BMVEUAAAD///+Zs7OiormdnbGlpbScnKqenqqioq6bm7Gbm62cnKqenqqZnaqZna2ZnKyanKuZnKyamqqbm6ubm6qZnKuZm6yZm6uamquZm6uanKqamqqZm6qam6uamqqZm6qZmqqam6qZmquam6qZm6qZmqqam6qamquZmquZm6qam6uam6qZmqqZmquZmquam6qZmqqZmquZmqqam6uZmqp/G1cQAAAANHRSTlMAAQoLDRESFRYXHCQqPEFQWF9gYWZnboWOj5+ipaassrS1ubrBw8TFyNPU2/P1+Pn6+/3+RG2KrgAAARFJREFUOMvV1NlSwzAMBdAbltqQshZoWEJZXeKUFPD9/2/joW4cO5uHmT6gV59RLEUysJOY5qVhT5gyn27drOJgVDObrzJZmvR9LUkzU21y5syGb5YxBwCUTIdhyhIAQCbDMKGxcKwrVuwSCvXkTp+V6IOioAIAnNxNAMVCdENRUG+OPngKCF1LH4qCWgIAjs3nHgBZSw86hxs+Ak3ZhA2HN57Dk02onDv6qQ5Qy/cALl2N11zA9WEZQHdzvPLCOS3DYmo5+f469F3Qnq285EvgwoZb+cCrwLV+odRUwNn9PuD3oTUUMnIoxsbMxK5C9HKNruutXdfoByD6SYl/pP5NzNddpaznLbjqLnr194xj8Qu0ZlBO4AyjSAAAAABJRU5ErkJggg==" alt=表情包>
+ <span class="comment-operate-tip sf-hidden">代码片</span>
+ <div class="comment-code-box comment-operate-isshow" style=display:none>
+ 
+ </div>
+ </div>
+ <div class=comment-operate-item>
+ 
+ 
+ 
+ 
+ <a data-report-click='{"mod":"1582594662_003","spm":"1001.2101.3001.4227","ab":"new"}'><input type=submit class="btn-comment btn-comment-input sf-hidden" value=评论><input type=button class="btn-comment-input btn-comment-defualt" value=评论></a>
+ </div>
+ </div>
+ </div>
+ </form>
+ </div>
+ <div class="comment-list-container sf-hidden">
+ 
+ 
+ 
+ </div>
+</div>
+ <div class="recommend-box insert-baidu-box recommend-box-style">
+ <div class="recommend-item-box clearfix no-index" style=display:none></div>
+<div class="recommend-item-box type_download clearfix" data-url=https://download.csdn.net/download/sunshine6166/2477332>
+ <div class=content-box>
+ <div class="content-blog display-flex">
+ <div class=title-box>
+ <a href=https://download.csdn.net/download/sunshine6166/2477332 class=tit target=_blank data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.2","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-download-2~default~CTRLIST~AntiPaid-2-2477332-blog-77871585.pc_relevant_antiscanv2\",\"dist_request_id\":\"1655772284508_55246\"}","dist_request_id":"1655772284508_55246","ab_strategy":"antiscanv2","index":"2","strategy":"2~default~CTRLIST~AntiPaid","dest":"https://download.csdn.net/download/sunshine6166/2477332"}' data-report-query="spm=1001.2101.3001.6650.2&amp;utm_medium=distribute.pc_relevant.none-task-download-2%7Edefault%7ECTRLIST%7EAntiPaid-2-2477332-blog-77871585.pc_relevant_antiscanv2&amp;depth_1-utm_source=distribute.pc_relevant.none-task-download-2%7Edefault%7ECTRLIST%7EAntiPaid-2-2477332-blog-77871585.pc_relevant_antiscanv2">
+ <div class="left ellipsis-online ellipsis-online-1"><em>bat</em><em>后台</em>执行实现<em>bat</em><em>后台</em>执行实现</div>
+ </a>
+ </div>
+ <div class="info-box display-flex">
+ <div class="info display-flex">
+ <span class=info-block>06-22</span>
+ </div>
+ </div>
+ </div>
+ <div class=desc-box>
+ <a href=https://download.csdn.net/download/sunshine6166/2477332 target=_blank data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.2","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-download-2~default~CTRLIST~AntiPaid-2-2477332-blog-77871585.pc_relevant_antiscanv2\",\"dist_request_id\":\"1655772284508_55246\"}","dist_request_id":"1655772284508_55246","ab_strategy":"antiscanv2","index":"2","strategy":"2~default~CTRLIST~AntiPaid","dest":"https://download.csdn.net/download/sunshine6166/2477332"}' data-report-query="spm=1001.2101.3001.6650.2&amp;utm_medium=distribute.pc_relevant.none-task-download-2%7Edefault%7ECTRLIST%7EAntiPaid-2-2477332-blog-77871585.pc_relevant_antiscanv2&amp;depth_1-utm_source=distribute.pc_relevant.none-task-download-2%7Edefault%7ECTRLIST%7EAntiPaid-2-2477332-blog-77871585.pc_relevant_antiscanv2">
+ <div class="desc ellipsis-online ellipsis-online-1"><em>bat</em><em>后台</em>执行<em>bat</em><em>后台</em>执行<em>bat</em><em>后台</em>执行<em>bat</em><em>后台</em>执行<em>bat</em><em>后台</em>执行</div>
+ </a>
+ </div>
+ </div>
+</div>
+<div class="recommend-item-box type_blog clearfix" data-url=https://blog.csdn.net/yuanpan1987/article/details/17204695>
+ <div class=content-box>
+ <div class="content-blog display-flex">
+ <div class=title-box>
+ <a href=https://blog.csdn.net/yuanpan1987/article/details/17204695 class=tit target=_blank data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.3","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~CTRLIST~Rate-3-17204695-blog-77871585.pc_relevant_antiscanv2\",\"dist_request_id\":\"1655772284508_55246\"}","dist_request_id":"1655772284508_55246","ab_strategy":"antiscanv2","index":"3","strategy":"2~default~CTRLIST~Rate","dest":"https://blog.csdn.net/yuanpan1987/article/details/17204695"}' data-report-query="spm=1001.2101.3001.6650.3&amp;utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-3-17204695-blog-77871585.pc_relevant_antiscanv2&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-3-17204695-blog-77871585.pc_relevant_antiscanv2">
+ <div class="left ellipsis-online ellipsis-online-1"><em>BAT</em><em>后台运行</em>的方法</div>
+ </a>
+ </div>
+ <div class="info-box display-flex">
+ <div class=info>
+ <a href=https://blog.csdn.net/yuanpan1987 target=_blank><span class=blog-title>yuanpan1987的专栏</span></a>
+ </div>
+ <div class="info display-flex">
+ <span class="info-block time sf-hidden">12-08</span>
+ <span class="info-block read"><img class=read-img src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"><rect fill-opacity="0"/></svg>' alt style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-7)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important">
+ 6656
+ </span>
+ </div>
+ </div>
+ </div>
+ <div class=desc-box>
+ <a href=https://blog.csdn.net/yuanpan1987/article/details/17204695 target=_blank data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.3","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~CTRLIST~Rate-3-17204695-blog-77871585.pc_relevant_antiscanv2\",\"dist_request_id\":\"1655772284508_55246\"}","dist_request_id":"1655772284508_55246","ab_strategy":"antiscanv2","index":"3","strategy":"2~default~CTRLIST~Rate","dest":"https://blog.csdn.net/yuanpan1987/article/details/17204695"}' data-report-query="spm=1001.2101.3001.6650.3&amp;utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-3-17204695-blog-77871585.pc_relevant_antiscanv2&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-3-17204695-blog-77871585.pc_relevant_antiscanv2">
+ <div class="desc ellipsis-online ellipsis-online-1"><em>bat</em><em>文件</em><em>后台运行</em>且自动删除
+让<em>bat</em><em>文件</em><em>后台运行</em>且自动删除自己
+　<em>bat</em><em>文件</em><em>运行</em>时会有一个黑黑的cmd.exe窗口，电脑的任务栏下仍然会有相关的图标，怎么让<em>bat</em><em>文件</em>在<em>后台</em>无声无息无影无形地<em>运行</em>？
+方法一
+　　<em>bat</em>里有隐藏窗口的命令，很简单，只需要在代码头部加一段代码就可以了。 
+@echo off 
+if "%1" == "h" goto begin 
+mshta vbscri</div>
+ </a>
+ </div>
+ </div>
+</div>
+ 
+<div class="recommend-item-box type_download clearfix" data-url=https://download.csdn.net/download/qq_21351021/10870721>
+ <div class=content-box>
+ <div class="content-blog display-flex">
+ <div class=title-box>
+ <a href=https://download.csdn.net/download/qq_21351021/10870721 class=tit target=_blank data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.4","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-download-2~default~CTRLIST~AntiPaid-4-10870721-blog-77871585.pc_relevant_antiscanv2\",\"dist_request_id\":\"1655772284508_55246\"}","dist_request_id":"1655772284508_55246","ab_strategy":"antiscanv2","index":"4","strategy":"2~default~CTRLIST~AntiPaid","dest":"https://download.csdn.net/download/qq_21351021/10870721"}' data-report-query="spm=1001.2101.3001.6650.4&amp;utm_medium=distribute.pc_relevant.none-task-download-2%7Edefault%7ECTRLIST%7EAntiPaid-4-10870721-blog-77871585.pc_relevant_antiscanv2&amp;depth_1-utm_source=distribute.pc_relevant.none-task-download-2%7Edefault%7ECTRLIST%7EAntiPaid-4-10870721-blog-77871585.pc_relevant_antiscanv2">
+ <div class="left ellipsis-online ellipsis-online-1">让制作的<em>bat</em><em>文件</em><em>后台运行</em></div>
+ </a>
+ </div>
+ <div class="info-box display-flex">
+ <div class="info display-flex">
+ <span class=info-block>12-23</span>
+ </div>
+ </div>
+ </div>
+ <div class=desc-box>
+ <a href=https://download.csdn.net/download/qq_21351021/10870721 target=_blank data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.4","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-download-2~default~CTRLIST~AntiPaid-4-10870721-blog-77871585.pc_relevant_antiscanv2\",\"dist_request_id\":\"1655772284508_55246\"}","dist_request_id":"1655772284508_55246","ab_strategy":"antiscanv2","index":"4","strategy":"2~default~CTRLIST~AntiPaid","dest":"https://download.csdn.net/download/qq_21351021/10870721"}' data-report-query="spm=1001.2101.3001.6650.4&amp;utm_medium=distribute.pc_relevant.none-task-download-2%7Edefault%7ECTRLIST%7EAntiPaid-4-10870721-blog-77871585.pc_relevant_antiscanv2&amp;depth_1-utm_source=distribute.pc_relevant.none-task-download-2%7Edefault%7ECTRLIST%7EAntiPaid-4-10870721-blog-77871585.pc_relevant_antiscanv2">
+ <div class="desc ellipsis-online ellipsis-online-1">让制作的<em>bat</em><em>文件</em>在windows下<em>后台运行</em>，比如frp服务器，通常在cmd或者Powershell中打开，会保留命令窗口，一关掉就停止了，这个就可以很好的帮助你解决这个问题</div>
+ </a>
+ </div>
+ </div>
+</div>
+<div class="recommend-item-box type_blog clearfix" data-url=https://blog.csdn.net/fen_fen/article/details/124584786>
+ <div class=content-box>
+ <div class="content-blog display-flex">
+ <div class=title-box>
+ <a href=https://blog.csdn.net/fen_fen/article/details/124584786 class=tit target=_blank data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.5","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~Rate-5-124584786-blog-77871585.pc_relevant_antiscanv2\",\"dist_request_id\":\"1655772284508_55246\"}","dist_request_id":"1655772284508_55246","ab_strategy":"antiscanv2","index":"5","strategy":"2~default~BlogCommendFromBaidu~Rate","dest":"https://blog.csdn.net/fen_fen/article/details/124584786"}' data-report-query="spm=1001.2101.3001.6650.5&amp;utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-5-124584786-blog-77871585.pc_relevant_antiscanv2&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-5-124584786-blog-77871585.pc_relevant_antiscanv2">
+ <div class="left ellipsis-online ellipsis-online-1">Windows如何<em>后台运行</em><em>bat</em><em>文件</em></div>
+ <div class=tag>最新发布</div>
+ </a>
+ </div>
+ <div class="info-box display-flex">
+ <div class=info>
+ <a href=https://blog.csdn.net/fen_fen target=_blank><span class=blog-title>fen_fen的专栏</span></a>
+ </div>
+ <div class="info display-flex">
+ <span class="info-block time sf-hidden">05-05</span>
+ <span class="info-block read"><img class=read-img src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"><rect fill-opacity="0"/></svg>' alt style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-7)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important">
+ 1587
+ </span>
+ </div>
+ </div>
+ </div>
+ <div class=desc-box>
+ <a href=https://blog.csdn.net/fen_fen/article/details/124584786 target=_blank data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.5","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~Rate-5-124584786-blog-77871585.pc_relevant_antiscanv2\",\"dist_request_id\":\"1655772284508_55246\"}","dist_request_id":"1655772284508_55246","ab_strategy":"antiscanv2","index":"5","strategy":"2~default~BlogCommendFromBaidu~Rate","dest":"https://blog.csdn.net/fen_fen/article/details/124584786"}' data-report-query="spm=1001.2101.3001.6650.5&amp;utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-5-124584786-blog-77871585.pc_relevant_antiscanv2&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-5-124584786-blog-77871585.pc_relevant_antiscanv2">
+ <div class="desc ellipsis-online ellipsis-online-1">Windows如何<em>后台运行</em><em>bat</em><em>文件</em>
+<em>Bat</em>脚本里有隐藏窗口的命令，很简单，只需要在代码头部加一段代码就可以了。
+@echo off
+if "%1"=="h" goto begin
+start mshta vbscript:createobject("wscript.shell").run("""%~nx0"" h",0)(window.close)&amp;&amp;exit
+:begin
+::下面是你自己的代码。
+举例：sdkPerf.<em>bat</em>
+@echo off
+if "%1"=="h" got.</div>
+ </a>
+ </div>
+ </div>
+</div>
+<div class="recommend-item-box type_blog clearfix" data-url=https://blog.csdn.net/CSDN_Ty/article/details/123326334>
+ <div class=content-box>
+ <div class="content-blog display-flex">
+ <div class=title-box>
+ <a href=https://blog.csdn.net/CSDN_Ty/article/details/123326334 class=tit target=_blank data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.6","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~Rate-6-123326334-blog-77871585.pc_relevant_antiscanv2\",\"dist_request_id\":\"1655772284508_55246\"}","dist_request_id":"1655772284508_55246","ab_strategy":"antiscanv2","index":"6","strategy":"2~default~BlogCommendFromBaidu~Rate","dest":"https://blog.csdn.net/CSDN_Ty/article/details/123326334"}' data-report-query="spm=1001.2101.3001.6650.6&amp;utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-6-123326334-blog-77871585.pc_relevant_antiscanv2&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-6-123326334-blog-77871585.pc_relevant_antiscanv2">
+ <div class="left ellipsis-online ellipsis-online-1">Windows配置<em>bat</em>脚本<em>后台运行</em></div>
+ </a>
+ </div>
+ <div class="info-box display-flex">
+ <div class=info>
+ <a href=https://blog.csdn.net/CSDN_Ty target=_blank><span class=blog-title>CSDN_Ty的博客</span></a>
+ </div>
+ <div class="info display-flex">
+ <span class="info-block time sf-hidden">03-07</span>
+ <span class="info-block read"><img class=read-img src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"><rect fill-opacity="0"/></svg>' alt style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-7)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important">
+ 1323
+ </span>
+ </div>
+ </div>
+ </div>
+ <div class=desc-box>
+ <a href=https://blog.csdn.net/CSDN_Ty/article/details/123326334 target=_blank data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.6","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~Rate-6-123326334-blog-77871585.pc_relevant_antiscanv2\",\"dist_request_id\":\"1655772284508_55246\"}","dist_request_id":"1655772284508_55246","ab_strategy":"antiscanv2","index":"6","strategy":"2~default~BlogCommendFromBaidu~Rate","dest":"https://blog.csdn.net/CSDN_Ty/article/details/123326334"}' data-report-query="spm=1001.2101.3001.6650.6&amp;utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-6-123326334-blog-77871585.pc_relevant_antiscanv2&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-6-123326334-blog-77871585.pc_relevant_antiscanv2">
+ <div class="desc ellipsis-online ellipsis-online-1">1.新建start.txt<em>文件</em>，输入如下命令：
+@echo off
+if "%1" == "h" goto begin
+mshta vbscript:createobject("wscript.shell").run("%~nx0 h",0)(window.close)&amp;&amp;exit
+:begin
+cd "C:\Users\kai\Desktop"
+test.exe
+注意：不要添加多余的指令<em>运行</em>123.exe，例如start cmd.exe /k "123.exe"，进入对应的路径后直</div>
+ </a>
+ </div>
+ </div>
+</div>
+<div class="recommend-item-box type_blog clearfix" data-url=https://chenyuan.blog.csdn.net/article/details/87616324>
+ <div class=content-box>
+ <div class="content-blog display-flex">
+ <div class=title-box>
+ <a href=https://chenyuan.blog.csdn.net/article/details/87616324 class=tit target=_blank data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.7","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~Rate-7-87616324-blog-77871585.pc_relevant_antiscanv2\",\"dist_request_id\":\"1655772284508_55246\"}","dist_request_id":"1655772284508_55246","ab_strategy":"antiscanv2","index":"7","strategy":"2~default~BlogCommendFromBaidu~Rate","dest":"https://chenyuan.blog.csdn.net/article/details/87616324"}' data-report-query="spm=1001.2101.3001.6650.7&amp;utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-7-87616324-blog-77871585.pc_relevant_antiscanv2&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-7-87616324-blog-77871585.pc_relevant_antiscanv2">
+ <div class="left ellipsis-online ellipsis-online-1">让<em>bat</em><em>文件</em><em>后台运行</em></div>
+ </a>
+ </div>
+ <div class="info-box display-flex">
+ <div class=info>
+ <a href=https://blog.csdn.net/achenyuan target=_blank><span class=blog-title>陈袁的博客</span></a>
+ </div>
+ <div class="info display-flex">
+ <span class="info-block time sf-hidden">02-18</span>
+ <span class="info-block read"><img class=read-img src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"><rect fill-opacity="0"/></svg>' alt style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-7)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important">
+ 1万+
+ </span>
+ </div>
+ </div>
+ </div>
+ <div class=desc-box>
+ <a href=https://chenyuan.blog.csdn.net/article/details/87616324 target=_blank data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.7","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~Rate-7-87616324-blog-77871585.pc_relevant_antiscanv2\",\"dist_request_id\":\"1655772284508_55246\"}","dist_request_id":"1655772284508_55246","ab_strategy":"antiscanv2","index":"7","strategy":"2~default~BlogCommendFromBaidu~Rate","dest":"https://chenyuan.blog.csdn.net/article/details/87616324"}' data-report-query="spm=1001.2101.3001.6650.7&amp;utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-7-87616324-blog-77871585.pc_relevant_antiscanv2&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-7-87616324-blog-77871585.pc_relevant_antiscanv2">
+ <div class="desc ellipsis-online ellipsis-online-1">让<em>bat</em><em>文件</em><em>后台运行</em>
+文章目录让<em>bat</em><em>文件</em><em>后台运行</em>前言方法一方法二
+前言
+<em>bat</em><em>文件</em><em>运行</em>时会有一个黑黑的cmd.exe窗口，很吓人，就算用start/min命令去<em>运行</em><em>bat</em><em>文件</em>，电脑的任务栏下仍然会有相关的图标，怎么让<em>bat</em><em>文件</em>在<em>后台</em>无声无息无影无形地<em>运行</em>呢？以下的办法可以达到你的目的。
+方法一
+<em>bat</em>里有隐藏窗口的命令，很简单，只需要在代码头部加一段代码就可以了。
+@echo off 
+　　if...</div>
+ </a>
+ </div>
+ </div>
+</div>
+<div class="recommend-item-box type_blog clearfix" data-url=https://blog.csdn.net/shadow20080578/article/details/121978479>
+ <div class=content-box>
+ <div class="content-blog display-flex">
+ <div class=title-box>
+ <a href=https://blog.csdn.net/shadow20080578/article/details/121978479 class=tit target=_blank data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.8","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~Rate-8-121978479-blog-77871585.pc_relevant_antiscanv2\",\"dist_request_id\":\"1655772284508_55246\"}","dist_request_id":"1655772284508_55246","ab_strategy":"antiscanv2","index":"8","strategy":"2~default~BlogCommendFromBaidu~Rate","dest":"https://blog.csdn.net/shadow20080578/article/details/121978479"}' data-report-query="spm=1001.2101.3001.6650.8&amp;utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-8-121978479-blog-77871585.pc_relevant_antiscanv2&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-8-121978479-blog-77871585.pc_relevant_antiscanv2">
+ <div class="left ellipsis-online ellipsis-online-1">IDA官网发布的每周技巧8----以<em>批处理</em>模式在<em>后台运行</em>IDA</div>
+ </a>
+ </div>
+ <div class="info-box display-flex">
+ <div class=info>
+ <a href=https://blog.csdn.net/shadow20080578 target=_blank><span class=blog-title>一个热爱逆向，喜爱学习、分享的猿。</span></a>
+ </div>
+ <div class="info display-flex">
+ <span class="info-block time sf-hidden">12-16</span>
+ <span class="info-block read"><img class=read-img src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"><rect fill-opacity="0"/></svg>' alt style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-7)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important">
+ 55
+ </span>
+ </div>
+ </div>
+ </div>
+ <div class=desc-box>
+ <a href=https://blog.csdn.net/shadow20080578/article/details/121978479 target=_blank data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.8","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~Rate-8-121978479-blog-77871585.pc_relevant_antiscanv2\",\"dist_request_id\":\"1655772284508_55246\"}","dist_request_id":"1655772284508_55246","ab_strategy":"antiscanv2","index":"8","strategy":"2~default~BlogCommendFromBaidu~Rate","dest":"https://blog.csdn.net/shadow20080578/article/details/121978479"}' data-report-query="spm=1001.2101.3001.6650.8&amp;utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-8-121978479-blog-77871585.pc_relevant_antiscanv2&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-8-121978479-blog-77871585.pc_relevant_antiscanv2">
+ <div class="desc ellipsis-online ellipsis-online-1">hex-rays官方发布了一套《Igor的IDA每周技巧》系列文章，内容不错，故进行跟踪翻译，期望对大家有所帮助。
+第8篇原文：Igor’s tip of the week #08: <em>Bat</em>ch mode under the hood
+在前面文章中，我们简单讨论了<em>批处理</em>模式，但有时这些基本用法不足以应付工作需要。这里我们讨论一下如何定制化<em>批处理</em>模式。
+基本使用
+<em>批处理</em>模式的基本命令行为：
+ida -B -Lida.log &lt;other switches&gt; &lt;filena</div>
+ </a>
+ </div>
+ </div>
+</div>
+<div class="recommend-item-box type_blog clearfix" data-url=https://blog.csdn.net/weixin_29655399/article/details/116553041>
+ <div class=content-box>
+ <div class="content-blog display-flex">
+ <div class=title-box>
+ <a href=https://blog.csdn.net/weixin_29655399/article/details/116553041 class=tit target=_blank data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.9","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~CTRLIST~Rate-9-116553041-blog-77871585.pc_relevant_antiscanv2\",\"dist_request_id\":\"1655772284508_55246\"}","dist_request_id":"1655772284508_55246","ab_strategy":"antiscanv2","index":"9","strategy":"2~default~CTRLIST~Rate","dest":"https://blog.csdn.net/weixin_29655399/article/details/116553041"}' data-report-query="spm=1001.2101.3001.6650.9&amp;utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-9-116553041-blog-77871585.pc_relevant_antiscanv2&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-9-116553041-blog-77871585.pc_relevant_antiscanv2">
+ <div class="left ellipsis-online ellipsis-online-1">linux如何让<em>批处理</em><em>文件</em><em>后台运行</em>,科学网—如何在Linux中做<em>批处理</em>和<em>后台</em>计算 - 张彦的博文...</div>
+ </a>
+ </div>
+ <div class="info-box display-flex">
+ <div class=info>
+ <a href=https://blog.csdn.net/weixin_29655399 target=_blank><span class=blog-title>weixin_29655399的博客</span></a>
+ </div>
+ <div class="info display-flex">
+ <span class="info-block time sf-hidden">04-28</span>
+ <span class="info-block read"><img class=read-img src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"><rect fill-opacity="0"/></svg>' alt style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-7)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important">
+ 65
+ </span>
+ </div>
+ </div>
+ </div>
+ <div class=desc-box>
+ <a href=https://blog.csdn.net/weixin_29655399/article/details/116553041 target=_blank data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.9","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~CTRLIST~Rate-9-116553041-blog-77871585.pc_relevant_antiscanv2\",\"dist_request_id\":\"1655772284508_55246\"}","dist_request_id":"1655772284508_55246","ab_strategy":"antiscanv2","index":"9","strategy":"2~default~CTRLIST~Rate","dest":"https://blog.csdn.net/weixin_29655399/article/details/116553041"}' data-report-query="spm=1001.2101.3001.6650.9&amp;utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-9-116553041-blog-77871585.pc_relevant_antiscanv2&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-9-116553041-blog-77871585.pc_relevant_antiscanv2">
+ <div class="desc ellipsis-online ellipsis-online-1">单个计算任务的提交How to compute by Gaussian 03?1. Upload "xxx.gjf" to your folder.2. Perform "g03 xxx.gjf &amp;" in your folder.3. See your tasks by "jobs", it's running. Ok!How to run a Fortran code?1. Uploa...</div>
+ </a>
+ </div>
+ </div>
+</div>
+<div class="recommend-item-box type_blog clearfix" data-url=https://blog.csdn.net/weixin_34233679/article/details/91812462>
+ <div class=content-box>
+ <div class="content-blog display-flex">
+ <div class=title-box>
+ <a href=https://blog.csdn.net/weixin_34233679/article/details/91812462 class=tit target=_blank data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.10","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~CTRLIST~Rate-10-91812462-blog-77871585.pc_relevant_antiscanv2\",\"dist_request_id\":\"1655772284508_55246\"}","dist_request_id":"1655772284508_55246","ab_strategy":"antiscanv2","index":"10","strategy":"2~default~CTRLIST~Rate","dest":"https://blog.csdn.net/weixin_34233679/article/details/91812462"}' data-report-query="spm=1001.2101.3001.6650.10&amp;utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-10-91812462-blog-77871585.pc_relevant_antiscanv2&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-10-91812462-blog-77871585.pc_relevant_antiscanv2">
+ <div class="left ellipsis-online ellipsis-online-1"><em>批处理</em>命令<em>后台运行</em></div>
+ </a>
+ </div>
+ <div class="info-box display-flex">
+ <div class=info>
+ <a href=https://blog.csdn.net/weixin_34233679 target=_blank><span class=blog-title>weixin_34233679的博客</span></a>
+ </div>
+ <div class="info display-flex">
+ <span class="info-block time sf-hidden">07-01</span>
+ <span class="info-block read"><img class=read-img src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"><rect fill-opacity="0"/></svg>' alt style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-7)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important">
+ 139
+ </span>
+ </div>
+ </div>
+ </div>
+ <div class=desc-box>
+ <a href=https://blog.csdn.net/weixin_34233679/article/details/91812462 target=_blank data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.10","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~CTRLIST~Rate-10-91812462-blog-77871585.pc_relevant_antiscanv2\",\"dist_request_id\":\"1655772284508_55246\"}","dist_request_id":"1655772284508_55246","ab_strategy":"antiscanv2","index":"10","strategy":"2~default~CTRLIST~Rate","dest":"https://blog.csdn.net/weixin_34233679/article/details/91812462"}' data-report-query="spm=1001.2101.3001.6650.10&amp;utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-10-91812462-blog-77871585.pc_relevant_antiscanv2&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-10-91812462-blog-77871585.pc_relevant_antiscanv2">
+ <div class="desc ellipsis-online ellipsis-online-1">为什么80%的码农都做不了架构师？&gt;&gt;&gt; 
+ 
+ ...</div>
+ </a>
+ </div>
+ </div>
+</div>
+<div class="recommend-item-box type_blog clearfix" data-url=https://blog.csdn.net/jeefchen/article/details/5644450>
+ <div class=content-box>
+ <div class="content-blog display-flex">
+ <div class=title-box>
+ <a href=https://blog.csdn.net/jeefchen/article/details/5644450 class=tit target=_blank data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.11","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~CTRLIST~Rate-11-5644450-blog-77871585.pc_relevant_antiscanv2\",\"dist_request_id\":\"1655772284508_55246\"}","dist_request_id":"1655772284508_55246","ab_strategy":"antiscanv2","index":"11","strategy":"2~default~CTRLIST~Rate","dest":"https://blog.csdn.net/jeefchen/article/details/5644450"}' data-report-query="spm=1001.2101.3001.6650.11&amp;utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-11-5644450-blog-77871585.pc_relevant_antiscanv2&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-11-5644450-blog-77871585.pc_relevant_antiscanv2">
+ <div class="left ellipsis-online ellipsis-online-1">几种隐藏<em>批处理</em><em>运行</em>窗口的方法</div>
+ <div class=tag>热门推荐</div>
+ </a>
+ </div>
+ <div class="info-box display-flex">
+ <div class=info>
+ <a href=https://blog.csdn.net/jeefchen target=_blank><span class=blog-title>魔拉宝</span></a>
+ </div>
+ <div class="info display-flex">
+ <span class="info-block time sf-hidden">06-03</span>
+ <span class="info-block read"><img class=read-img src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"><rect fill-opacity="0"/></svg>' alt style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-7)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important">
+ 5万+
+ </span>
+ </div>
+ </div>
+ </div>
+ <div class=desc-box>
+ <a href=https://blog.csdn.net/jeefchen/article/details/5644450 target=_blank data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.11","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~CTRLIST~Rate-11-5644450-blog-77871585.pc_relevant_antiscanv2\",\"dist_request_id\":\"1655772284508_55246\"}","dist_request_id":"1655772284508_55246","ab_strategy":"antiscanv2","index":"11","strategy":"2~default~CTRLIST~Rate","dest":"https://blog.csdn.net/jeefchen/article/details/5644450"}' data-report-query="spm=1001.2101.3001.6650.11&amp;utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-11-5644450-blog-77871585.pc_relevant_antiscanv2&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-11-5644450-blog-77871585.pc_relevant_antiscanv2">
+ <div class="desc ellipsis-online ellipsis-online-1">（1）通过<em>批处理</em>命令实现。缺点：会看到一个窗口一闪而逝。优点：简单，直接添加即可。
+@echo off 
+if "%1"=="h" goto begin 
+start mshta vbscript:createobject("wscript.shell").run("""%~nx0"" h",0)(window.close)&amp;&amp;exit 
+:begin
+::以下为正常<em>批处理</em>命令，不可含有pause set/p等交互命令
+pause
+ 
+（2）利用vbs脚本实现隐藏。缺点：调用麻烦</div>
+ </a>
+ </div>
+ </div>
+</div>
+<div class="recommend-item-box type_blog clearfix" data-url=https://blog.csdn.net/weixin_30849403/article/details/99325854>
+ <div class=content-box>
+ <div class="content-blog display-flex">
+ <div class=title-box>
+ <a href=https://blog.csdn.net/weixin_30849403/article/details/99325854 class=tit target=_blank data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.12","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~CTRLIST~Rate-12-99325854-blog-77871585.pc_relevant_antiscanv2\",\"dist_request_id\":\"1655772284508_55246\"}","dist_request_id":"1655772284508_55246","ab_strategy":"antiscanv2","index":"12","strategy":"2~default~CTRLIST~Rate","dest":"https://blog.csdn.net/weixin_30849403/article/details/99325854"}' data-report-query="spm=1001.2101.3001.6650.12&amp;utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-12-99325854-blog-77871585.pc_relevant_antiscanv2&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-12-99325854-blog-77871585.pc_relevant_antiscanv2">
+ <div class="left ellipsis-online ellipsis-online-1">[转]让<em>bat</em><em>文件</em><em>后台运行</em></div>
+ </a>
+ </div>
+ <div class="info-box display-flex">
+ <div class=info>
+ <a href=https://blog.csdn.net/weixin_30849403 target=_blank><span class=blog-title>weixin_30849403的博客</span></a>
+ </div>
+ <div class="info display-flex">
+ <span class="info-block time sf-hidden">11-19</span>
+ <span class="info-block read"><img class=read-img src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"><rect fill-opacity="0"/></svg>' alt style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-7)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important">
+ 1083
+ </span>
+ </div>
+ </div>
+ </div>
+ <div class=desc-box>
+ <a href=https://blog.csdn.net/weixin_30849403/article/details/99325854 target=_blank data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.12","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~CTRLIST~Rate-12-99325854-blog-77871585.pc_relevant_antiscanv2\",\"dist_request_id\":\"1655772284508_55246\"}","dist_request_id":"1655772284508_55246","ab_strategy":"antiscanv2","index":"12","strategy":"2~default~CTRLIST~Rate","dest":"https://blog.csdn.net/weixin_30849403/article/details/99325854"}' data-report-query="spm=1001.2101.3001.6650.12&amp;utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-12-99325854-blog-77871585.pc_relevant_antiscanv2&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-12-99325854-blog-77871585.pc_relevant_antiscanv2">
+ <div class="desc ellipsis-online ellipsis-online-1">原文：http://guijiang.cn/showblog.asp?blog_id=536
+---------------------------　　<em>bat</em><em>文件</em><em>运行</em>时会有一个黑黑的cmd.exe窗口，很吓人，就算用start/min命令去<em>运行</em><em>bat</em><em>文件</em>，电脑的任务栏下仍然会有相关的图标，怎么让<em>bat</em><em>文件</em>在<em>后台</em>无声无息无影无形地<em>运行</em>呢？以下的办法可以达到你的目的。方法一　　<em>bat</em>里有隐藏窗口的命...</div>
+ </a>
+ </div>
+ </div>
+</div>
+<div class="recommend-item-box type_download clearfix" data-url=https://download.csdn.net/download/gxjlbf/3984094>
+ <div class=content-box>
+ <div class="content-blog display-flex">
+ <div class=title-box>
+ <a href=https://download.csdn.net/download/gxjlbf/3984094 class=tit target=_blank data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.13","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-download-2~default~BlogCommendFromBaidu~AntiPaid-13-3984094-blog-77871585.pc_relevant_antiscanv2\",\"dist_request_id\":\"1655772284508_55246\"}","dist_request_id":"1655772284508_55246","ab_strategy":"antiscanv2","index":"13","strategy":"2~default~BlogCommendFromBaidu~AntiPaid","dest":"https://download.csdn.net/download/gxjlbf/3984094"}' data-report-query="spm=1001.2101.3001.6650.13&amp;utm_medium=distribute.pc_relevant.none-task-download-2%7Edefault%7EBlogCommendFromBaidu%7EAntiPaid-13-3984094-blog-77871585.pc_relevant_antiscanv2&amp;depth_1-utm_source=distribute.pc_relevant.none-task-download-2%7Edefault%7EBlogCommendFromBaidu%7EAntiPaid-13-3984094-blog-77871585.pc_relevant_antiscanv2">
+ <div class="left ellipsis-online ellipsis-online-1">windows<em>后台</em>执行<em>BAT</em>程序</div>
+ </a>
+ </div>
+ <div class="info-box display-flex">
+ <div class="info display-flex">
+ <span class=info-block>12-30</span>
+ </div>
+ </div>
+ </div>
+ <div class=desc-box>
+ <a href=https://download.csdn.net/download/gxjlbf/3984094 target=_blank data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.13","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-download-2~default~BlogCommendFromBaidu~AntiPaid-13-3984094-blog-77871585.pc_relevant_antiscanv2\",\"dist_request_id\":\"1655772284508_55246\"}","dist_request_id":"1655772284508_55246","ab_strategy":"antiscanv2","index":"13","strategy":"2~default~BlogCommendFromBaidu~AntiPaid","dest":"https://download.csdn.net/download/gxjlbf/3984094"}' data-report-query="spm=1001.2101.3001.6650.13&amp;utm_medium=distribute.pc_relevant.none-task-download-2%7Edefault%7EBlogCommendFromBaidu%7EAntiPaid-13-3984094-blog-77871585.pc_relevant_antiscanv2&amp;depth_1-utm_source=distribute.pc_relevant.none-task-download-2%7Edefault%7EBlogCommendFromBaidu%7EAntiPaid-13-3984094-blog-77871585.pc_relevant_antiscanv2">
+ <div class="desc ellipsis-online ellipsis-online-1">还为<em>bat</em>程序不能<em>后台</em>执行烦恼吗？还为dos那黑黑的窗口烦恼吗？
+只需将附件中的代码复制到你<em>bat</em><em>文件</em>代码的最前面，即可解决你的这些烦恼。</div>
+ </a>
+ </div>
+ </div>
+</div>
+<div class="recommend-item-box type_blog clearfix" data-url=https://blog.csdn.net/freezeriver/article/details/81879538 data-report-view='{"ab":"new","spm":"1001.2101.3001.6650.14","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~Rate-14-81879538-blog-77871585.pc_relevant_antiscanv2\",\"dist_request_id\":\"1655772284508_55246\"}","dist_request_id":"1655772284508_55246","ab_strategy":"antiscanv2","index":"14","strategy":"2~default~BlogCommendFromBaidu~Rate","dest":"https://blog.csdn.net/freezeriver/article/details/81879538"}'>
+ <div class=content-box>
+ <div class="content-blog display-flex">
+ <div class=title-box>
+ <a href=https://blog.csdn.net/freezeriver/article/details/81879538 class=tit target=_blank data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.14","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~Rate-14-81879538-blog-77871585.pc_relevant_antiscanv2\",\"dist_request_id\":\"1655772284508_55246\"}","dist_request_id":"1655772284508_55246","ab_strategy":"antiscanv2","index":"14","strategy":"2~default~BlogCommendFromBaidu~Rate","dest":"https://blog.csdn.net/freezeriver/article/details/81879538"}' data-report-query="spm=1001.2101.3001.6650.14&amp;utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-14-81879538-blog-77871585.pc_relevant_antiscanv2&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-14-81879538-blog-77871585.pc_relevant_antiscanv2">
+ <div class="left ellipsis-online ellipsis-online-1"><em>bat</em><em>文件</em><em>后台运行</em>方法</div>
+ </a>
+ </div>
+ <div class="info-box display-flex">
+ <div class=info>
+ <a href=https://blog.csdn.net/freezeriver target=_blank><span class=blog-title>freezeriver的博客</span></a>
+ </div>
+ <div class="info display-flex">
+ <span class="info-block time sf-hidden">08-20</span>
+ <span class="info-block read"><img class=read-img src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"><rect fill-opacity="0"/></svg>' alt style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-7)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important">
+ 1万+
+ </span>
+ </div>
+ </div>
+ </div>
+ <div class=desc-box>
+ <a href=https://blog.csdn.net/freezeriver/article/details/81879538 target=_blank data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.14","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~Rate-14-81879538-blog-77871585.pc_relevant_antiscanv2\",\"dist_request_id\":\"1655772284508_55246\"}","dist_request_id":"1655772284508_55246","ab_strategy":"antiscanv2","index":"14","strategy":"2~default~BlogCommendFromBaidu~Rate","dest":"https://blog.csdn.net/freezeriver/article/details/81879538"}' data-report-query="spm=1001.2101.3001.6650.14&amp;utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-14-81879538-blog-77871585.pc_relevant_antiscanv2&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-14-81879538-blog-77871585.pc_relevant_antiscanv2">
+ <div class="desc ellipsis-online ellipsis-online-1">平常我们跑<em>bat</em>程序，会发现有一个黑乎乎的命令行窗口，很影响美观性，同时如果我在当前<em>bat</em>脚本里面<em>运行</em>程序的话，一旦关闭这个黑乎乎的窗口，就会将启动的程序连带着关闭。 
+这里我总结了网上几个解决该问题的方法 
+1.利用<em>bat</em>隐藏窗口的命令
+@echo off
+if “%1” == “h” goto begin
+mshta vbscript:createobject(“wscript.shel...</div>
+ </a>
+ </div>
+ </div>
+</div>
+<div class="recommend-item-box type_blog clearfix" data-url=https://blog.csdn.net/u012431703/article/details/100583877 data-report-view='{"ab":"new","spm":"1001.2101.3001.6650.15","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~Rate-15-100583877-blog-77871585.pc_relevant_antiscanv2\",\"dist_request_id\":\"1655772284508_55246\"}","dist_request_id":"1655772284508_55246","ab_strategy":"antiscanv2","index":"15","strategy":"2~default~BlogCommendFromBaidu~Rate","dest":"https://blog.csdn.net/u012431703/article/details/100583877"}'>
+ <div class=content-box>
+ <div class="content-blog display-flex">
+ <div class=title-box>
+ <a href=https://blog.csdn.net/u012431703/article/details/100583877 class=tit target=_blank data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.15","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~Rate-15-100583877-blog-77871585.pc_relevant_antiscanv2\",\"dist_request_id\":\"1655772284508_55246\"}","dist_request_id":"1655772284508_55246","ab_strategy":"antiscanv2","index":"15","strategy":"2~default~BlogCommendFromBaidu~Rate","dest":"https://blog.csdn.net/u012431703/article/details/100583877"}' data-report-query="spm=1001.2101.3001.6650.15&amp;utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-15-100583877-blog-77871585.pc_relevant_antiscanv2&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-15-100583877-blog-77871585.pc_relevant_antiscanv2">
+ <div class="left ellipsis-online ellipsis-online-1">如何让<em>bat</em><em>文件</em>在windows的<em>后台运行</em></div>
+ </a>
+ </div>
+ <div class="info-box display-flex">
+ <div class=info>
+ <a href=https://blog.csdn.net/u012431703 target=_blank><span class=blog-title>Welcome to loveuui's blog</span></a>
+ </div>
+ <div class="info display-flex">
+ <span class="info-block time sf-hidden">09-06</span>
+ <span class="info-block read"><img class=read-img src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"><rect fill-opacity="0"/></svg>' alt style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-7)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important">
+ 5123
+ </span>
+ </div>
+ </div>
+ </div>
+ <div class=desc-box>
+ <a href=https://blog.csdn.net/u012431703/article/details/100583877 target=_blank data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.15","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~Rate-15-100583877-blog-77871585.pc_relevant_antiscanv2\",\"dist_request_id\":\"1655772284508_55246\"}","dist_request_id":"1655772284508_55246","ab_strategy":"antiscanv2","index":"15","strategy":"2~default~BlogCommendFromBaidu~Rate","dest":"https://blog.csdn.net/u012431703/article/details/100583877"}' data-report-query="spm=1001.2101.3001.6650.15&amp;utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-15-100583877-blog-77871585.pc_relevant_antiscanv2&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-15-100583877-blog-77871585.pc_relevant_antiscanv2">
+ <div class="desc ellipsis-online ellipsis-online-1">@echo off
+if "%1" == "h" goto begin
+start mshta vbscript:createobject("wscript.shell").run("%~nx0 h",0)(window.close)&amp;&amp;exit
+:begin
+##前四行是隐藏cmd窗口必不可少代码##
+##下一句引号中内容【随便写，其语法相当于描述说明】
+echo...</div>
+ </a>
+ </div>
+ </div>
+</div>
+<div class="recommend-item-box type_blog clearfix" data-url=https://blog.csdn.net/ben9518chen/article/details/88387586 data-report-view='{"ab":"new","spm":"1001.2101.3001.6650.16","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~Rate-16-88387586-blog-77871585.pc_relevant_antiscanv2\",\"dist_request_id\":\"1655772284508_55246\"}","dist_request_id":"1655772284508_55246","ab_strategy":"antiscanv2","index":"16","strategy":"2~default~BlogCommendFromBaidu~Rate","dest":"https://blog.csdn.net/ben9518chen/article/details/88387586"}'>
+ <div class=content-box>
+ <div class="content-blog display-flex">
+ <div class=title-box>
+ <a href=https://blog.csdn.net/ben9518chen/article/details/88387586 class=tit target=_blank data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.16","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~Rate-16-88387586-blog-77871585.pc_relevant_antiscanv2\",\"dist_request_id\":\"1655772284508_55246\"}","dist_request_id":"1655772284508_55246","ab_strategy":"antiscanv2","index":"16","strategy":"2~default~BlogCommendFromBaidu~Rate","dest":"https://blog.csdn.net/ben9518chen/article/details/88387586"}' data-report-query="spm=1001.2101.3001.6650.16&amp;utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-16-88387586-blog-77871585.pc_relevant_antiscanv2&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-16-88387586-blog-77871585.pc_relevant_antiscanv2">
+ <div class="left ellipsis-online ellipsis-online-1">如何让<em>批处理</em>命令在<em>后台</em>执行</div>
+ </a>
+ </div>
+ <div class="info-box display-flex">
+ <div class=info>
+ <a href=https://blog.csdn.net/ben9518chen target=_blank><span class=blog-title>ben9518chen的博客</span></a>
+ </div>
+ <div class="info display-flex">
+ <span class="info-block time sf-hidden">03-11</span>
+ <span class="info-block read"><img class=read-img src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"><rect fill-opacity="0"/></svg>' alt style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-7)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important">
+ 1243
+ </span>
+ </div>
+ </div>
+ </div>
+ <div class=desc-box>
+ <a href=https://blog.csdn.net/ben9518chen/article/details/88387586 target=_blank data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.16","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~Rate-16-88387586-blog-77871585.pc_relevant_antiscanv2\",\"dist_request_id\":\"1655772284508_55246\"}","dist_request_id":"1655772284508_55246","ab_strategy":"antiscanv2","index":"16","strategy":"2~default~BlogCommendFromBaidu~Rate","dest":"https://blog.csdn.net/ben9518chen/article/details/88387586"}' data-report-query="spm=1001.2101.3001.6650.16&amp;utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-16-88387586-blog-77871585.pc_relevant_antiscanv2&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-16-88387586-blog-77871585.pc_relevant_antiscanv2">
+ <div class="desc ellipsis-online ellipsis-online-1">Set ws = CreateObject("Wscript.Shell") ws.run "cmd /c test",vbhide
+</div>
+ </a>
+ </div>
+ </div>
+</div>
+<div class="recommend-item-box type_blog clearfix" data-url=https://blog.csdn.net/u012369749/article/details/79268930 data-report-view='{"ab":"new","spm":"1001.2101.3001.6650.17","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~Rate-17-79268930-blog-77871585.pc_relevant_antiscanv2\",\"dist_request_id\":\"1655772284508_55246\"}","dist_request_id":"1655772284508_55246","ab_strategy":"antiscanv2","index":"17","strategy":"2~default~BlogCommendFromBaidu~Rate","dest":"https://blog.csdn.net/u012369749/article/details/79268930"}'>
+ <div class=content-box>
+ <div class="content-blog display-flex">
+ <div class=title-box>
+ <a href=https://blog.csdn.net/u012369749/article/details/79268930 class=tit target=_blank data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.17","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~Rate-17-79268930-blog-77871585.pc_relevant_antiscanv2\",\"dist_request_id\":\"1655772284508_55246\"}","dist_request_id":"1655772284508_55246","ab_strategy":"antiscanv2","index":"17","strategy":"2~default~BlogCommendFromBaidu~Rate","dest":"https://blog.csdn.net/u012369749/article/details/79268930"}' data-report-query="spm=1001.2101.3001.6650.17&amp;utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-17-79268930-blog-77871585.pc_relevant_antiscanv2&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-17-79268930-blog-77871585.pc_relevant_antiscanv2">
+ <div class="left ellipsis-online ellipsis-online-1">让<em>bat</em><em>文件</em><em>后台运行</em>，dos命令<em>后台运行</em></div>
+ </a>
+ </div>
+ <div class="info-box display-flex">
+ <div class=info>
+ <a href=https://blog.csdn.net/u012369749 target=_blank><span class=blog-title>夜之寐 的技术博客</span></a>
+ </div>
+ <div class="info display-flex">
+ <span class="info-block time sf-hidden">02-06</span>
+ <span class="info-block read"><img class=read-img src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"><rect fill-opacity="0"/></svg>' alt style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-7)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important">
+ 3万+
+ </span>
+ </div>
+ </div>
+ </div>
+ <div class=desc-box>
+ <a href=https://blog.csdn.net/u012369749/article/details/79268930 target=_blank data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.17","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~Rate-17-79268930-blog-77871585.pc_relevant_antiscanv2\",\"dist_request_id\":\"1655772284508_55246\"}","dist_request_id":"1655772284508_55246","ab_strategy":"antiscanv2","index":"17","strategy":"2~default~BlogCommendFromBaidu~Rate","dest":"https://blog.csdn.net/u012369749/article/details/79268930"}' data-report-query="spm=1001.2101.3001.6650.17&amp;utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-17-79268930-blog-77871585.pc_relevant_antiscanv2&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-17-79268930-blog-77871585.pc_relevant_antiscanv2">
+ <div class="desc ellipsis-online ellipsis-online-1">经常遇到某些程序在windows系统下，需要dos命令才可以<em>运行</em>，但是一直启动显示CMD.EXE窗口也不太好看，所以希望能将DOS窗口隐藏在<em>后台运行</em>。解决方法：将dos命令写成<em>bat</em><em>批处理</em><em>文件</em>，然后进行以下操作。
+  <em>bat</em><em>文件</em><em>运行</em>时会有一个黑黑的cmd.exe窗口，很吓人，就算用start/min命令去<em>运行</em><em>bat</em><em>文件</em>，电脑的任务栏下仍然会有相关的图标，怎么让<em>bat</em><em>文件</em>在<em>后台</em>无声无息无影无形地运</div>
+ </a>
+ </div>
+ </div>
+</div>
+<div class="recommend-item-box type_blog clearfix" data-url=https://blog.csdn.net/lendq/article/details/80283268 data-report-view='{"ab":"new","spm":"1001.2101.3001.6650.18","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~Rate-18-80283268-blog-77871585.pc_relevant_antiscanv2\",\"dist_request_id\":\"1655772284508_55246\"}","dist_request_id":"1655772284508_55246","ab_strategy":"antiscanv2","index":"18","strategy":"2~default~BlogCommendFromBaidu~Rate","dest":"https://blog.csdn.net/lendq/article/details/80283268"}'>
+ <div class=content-box>
+ <div class="content-blog display-flex">
+ <div class=title-box>
+ <a href=https://blog.csdn.net/lendq/article/details/80283268 class=tit target=_blank data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.18","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~Rate-18-80283268-blog-77871585.pc_relevant_antiscanv2\",\"dist_request_id\":\"1655772284508_55246\"}","dist_request_id":"1655772284508_55246","ab_strategy":"antiscanv2","index":"18","strategy":"2~default~BlogCommendFromBaidu~Rate","dest":"https://blog.csdn.net/lendq/article/details/80283268"}' data-report-query="spm=1001.2101.3001.6650.18&amp;utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-18-80283268-blog-77871585.pc_relevant_antiscanv2&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-18-80283268-blog-77871585.pc_relevant_antiscanv2">
+ <div class="left ellipsis-online ellipsis-online-1">Windows下程序<em>后台</em>执行<em>文件</em></div>
+ </a>
+ </div>
+ <div class="info-box display-flex">
+ <div class=info>
+ <a href=https://blog.csdn.net/lendq target=_blank><span class=blog-title>lendq的Blog</span></a>
+ </div>
+ <div class="info display-flex">
+ <span class="info-block time sf-hidden">05-11</span>
+ <span class="info-block read"><img class=read-img src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"><rect fill-opacity="0"/></svg>' alt style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-7)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important">
+ 1万+
+ </span>
+ </div>
+ </div>
+ </div>
+ <div class=desc-box>
+ <a href=https://blog.csdn.net/lendq/article/details/80283268 target=_blank data-report-click='{"ab":"new","spm":"1001.2101.3001.6650.18","mod":"popu_387","extra":"{\"highlightScore\":0.0,\"utm_medium\":\"distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~Rate-18-80283268-blog-77871585.pc_relevant_antiscanv2\",\"dist_request_id\":\"1655772284508_55246\"}","dist_request_id":"1655772284508_55246","ab_strategy":"antiscanv2","index":"18","strategy":"2~default~BlogCommendFromBaidu~Rate","dest":"https://blog.csdn.net/lendq/article/details/80283268"}' data-report-query="spm=1001.2101.3001.6650.18&amp;utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-18-80283268-blog-77871585.pc_relevant_antiscanv2&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-18-80283268-blog-77871585.pc_relevant_antiscanv2">
+ <div class="desc ellipsis-online ellipsis-online-1">控制台程序需要在<em>后台运行</em>时,可以采用如下方式:
+1.<em>后台运行</em>
+一个简单的.vbs<em>文件</em>就可以。 
+实现方法如下：
+set wscriptObj = CreateObject(&amp;amp;amp;amp;amp;quot;Wscript.Shell&amp;amp;amp;amp;amp;quot;) 
+wscriptObj.run &amp;amp;amp;amp;amp;quot;cmd&amp;amp;amp;amp;amp;quot;,0 
+保存成.vbs<em>文件</em>，直接<em>运行</em>.vbs文</div>
+ </a>
+ </div>
+ </div>
+</div>
+ </div>
+<div id=recommendNps class="recommend-nps-box common-nps-box" style=display:block>
+ <h3 class=aside-title>“相关推荐”对你有帮助么？</h3>
+ <div class=aside-content>
+ <ul class=newnps-list>
+ <li class=newnps-item data-type=非常没帮助>
+ <div class=newnps-img-box>
+ <img class="newnps-img active" src=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAA4CAMAAACfWMssAAABU1BMVEUAAAD///9/f3///1X//2b/41V0Ri5qVUD/6lWxkEOxm0NdOypmRCr/51BhPC3/4lL/41BdOypePCn/41D/4k1fOyf/402+oEF6Wi7/4k5dOiddOyb/4U5eOyheOib/4k//4U7/4U3/4U7/4U3/4k7cvUaVcjP/4k7/4k7/4U7/4U7/4k34203/4U7/4k7/4U7/4U5cOSVgPCZgPSZlQidlQydsSiltSil5Vix/XC6MajGTcTKXdjOYdzSbejSgfjWgfzalhDemhTepiDeujTmxkDq0kzu1lDq3lju3lzu7mzy+njzBoD7BoT7Doz7Eoz7EpD7Hp0DJqUDMrEDPrkLQr0HTtEPUtEPVtUPZuUPZukPZukTevkThwkbiw0fjxEbszEjszUjtzknuz0nv0Urw0Enx0kry00r01kr01kv11kv210v73Ez83Uz83k3+4E3/4U0wX/vkAAAAMXRSTlMAAQIDBQkLDAwXFx4eICI1NjxESU9jY2ZvcnZ4eXqAhZqbq6ywvcLC0tXf5Onp7PD55e+XxQAAAqJJREFUSMe1V/lT2kAYXRq19ECwIBpFTjUcJRKroNKKyqpUFBWL2npUi0eLB/v//9Tc1y5k44xvmIG3+d7sJvmOBwAEMH42zmX5QoHPcnHWzwAqDISSc8iCuWRowFE2GOERAXxksK+MCedQD+TCDHgDpA8BwQzqg8zY1PDQxCdc5omh/jiZHfkYHcV03mkHXXcXzryPTr616Xzp/rLLvRqsPabHo5OjltP68g77HUK4c4vQ5/FodML0hLwO+yH0fP1X/k6/+zBkei5O94fQ/dnFg/T9ODMybAhjjjp0AOHmb4Rua3B2Sj9q0FmHbk6bcPMB7cDdkzE9XzKICk148Q/WuiijZX2YTodO4dk13BN/hNW8zlEKbw7unw8vpbxVMj6CXCMi1x/vXshL9Rky+Fa50ekV22mUtwwWEoUpnf0UBOHLCknbaazMixd/6QtJ8V0YfaJdEiTM27SqShBKbaObMCBgCrnbXhZU7ZG2dqSqhOXtO1OoH7DWQ11p2n2F72uqK2scCxLYDVXk0LpC6jKpYEEJwGFrRSl0UWOLEitiQRzIkoVFMtORBfjrr0qhVTIzUgAUsLWnarFYfSIzHQWCkAoFwL9MyBMeDhWyhNdBBY6QAFSI21OOFizw95oU583a9+Z5t8dlv7msTPizoZSYUNpok66LZWUqZAP1BUHHQp0QkLS2Du2UX+W9yuvrZXnfb/h5Q8RmtSoGLx3L0d3jJZGsEpsV1h5/iKFrRq6uibRFao9YQ27ZCreCCdWGjI2AVqs/10YA9dDR7QfjZsyZEHQ1WA3EgKtRrmPaYzE5aVpd2muzOXk6Xd4HXBokdT8fcG/JpPvzkryjowlEMU8Pu+pgO4MvNrqvYK0VM5+ym/kUhZlXThxgE9rfhwQbIJ7xPz645tb82xHsAAAAAElFTkSuQmCC alt>
+ <img class="newnps-img default sf-hidden" src=data:, alt>
+ </div>
+ <div class=newnps-text>非常没帮助</div>
+ </li>
+ <li class=newnps-item data-type=没帮助>
+ <div class=newnps-img-box>
+ <img class="newnps-img active" src=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAA4CAMAAACfWMssAAABIFBMVEUAAAD//////1X//2b/41X/6lX/51D/4lL/41D/41D/4k3/403/4k7/4U7/4k//4U7/4U3/4U7/4U3/4k7/4k7/4k7/4U7/4U7/4k3/4U7/4k7/4U7/4U5cOSVdOSVeOiVgPCZgPSZjPydrSChsSSlsSilwTSpyTyqAXS6AXi2HZS+UcjOVczOZdjSbejSgfzaigTapiDepiDitjTmwjjqykzqzkzu1lDu1lTu2lju2ljy3lzu4mTy6mT29nT2+nj3DpD7Eoz7SskLVtUPXuEPYuEPYuETZuUPZukPbu0TcvUXdvkTfwEXhwUbjxEbkxUflxkfmxkbszUjtzknw0En520v620z73Ev73Ez73Uz83Uz93kz9303+303+4E3/4U34yWqeAAAAHXRSTlMAAQMFCQwgNTZJT2NyeYWam6ussMLS1d/k6ezw+ZtQLqkAAAH8SURBVEjHrZdnY4IwEIYjbgFXUWzEbrsXpdPuvbS1u7W1+f//oiCCgURM0z7fDLx6ubvkXgGgIMSljKJCTYOqkpHiAmAinMqVkYdyLhUeKIvIEFGAciRQJogl1IeSGBBxsogCKCb7yEJpNIB0iKaLDqGBDEVJXayAGCjECN0wYmLYp4wWECMFT7Sh3v6+7+v+d5uNFr5PPENuPr8a+4Zx4dXdGUbtBpOmsfo5svqeYXLl+0FrDZe69RTsun/e7lqvbJz5Q63XvNKi00Oi/XjHerx58UompHVjS53di92+LrkBbV290XPZlTa7fWt3vOykYPv6o38ZOtK77ge5c/4gLek0aaPpnjLrfKYQBylTmOcR5sxalHmEZQEkEBdxIPlToFereit4xUQCWd+KXjHRg1dMskDxrVSt16rBKyYKUPmEKoB8oUKg8SVHI4SMaADyCSGRHEZUohyMKEQDMJIhWo4RCcR5m5z7WAUe5PbT5fH6yin1IFOvjvbj+dH68vzMmNVtlYl36tURJltgdbyCM90myh/uXY8YL65kZHJ2QT98Jr5Zxi5knKXRqbnFtYOTh9c+RiKCj4BfIHqHDjPu0HHHHCNJymBlIU0f5YMtS+g/zAO/XeE3SPyWjN8E8tvOPxhdfmttm/m838znGcy8HXFCyjp/H7JSghrjD6XZS8McAte9AAAAAElFTkSuQmCC alt>
+ <img class="newnps-img default sf-hidden" src=data:, alt>
+ </div>
+ <div class=newnps-text>没帮助</div>
+ </li>
+ <li class=newnps-item data-type=一般>
+ <div class=newnps-img-box>
+ <img class="newnps-img active" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAA4CAMAAACfWMssAAAAbFBMVEUAAAD//////1X//2b/41X/6lX/51D/4lL/41D/41D/4k3/403/4k7/4U7/4k//4U7/4U3/4U7/4U3/4k7/4k7/4k7/4U7/4U7/4k3/4U7/4k7/4U7/4U5cOSVsSimpiDeujTnFpT/83Uz/4U2D8A1lAAAAHXRSTlMAAQMFCQwgNTZJT2NyeYWam6ussMLS1d/k6ezw+ZtQLqkAAAFWSURBVEjHpZfbsoIwDEVjUUEoF+VqoXBw//8/ngfUUS6ljeuxM8vJ0DTZEq0gfJkWteo6VRep9AVZ4YXXFl+019Db1Y6xwgoqPho1ETXYoIkMFV8qGKguG9ohwQ7JYc075dglPy29cwkLyvPCu8OK+8w8lbCk/Kr2kMOa/PMLJXAg+bg/OPG+T1G5idWrhyI4Ej37unEVm6njYzgTExF5yl1UHhGFYBAS0Y0jXonEbE48hr4fHuYToBUUzH5r0FrrwXwCwCc5O+m11ro3nwCQlPHEjApeqQXV4Hwc1KTAQlHHEzu+yC615on14josKRYNYEm6aDlLJPk80V88KztasfWQx78n49ZDXh8do34zbo2O1WG1IypvczyaS41/G8jsFcBfOuw1x1+s/FXODg/8uMIPSPxIxg+B/Nj5Q9DlR+spzN/mYf5mEeanigOZvf4+ZDJYrfEfMjVK7C1/36oAAAAASUVORK5CYII=" alt>
+ <img class="newnps-img default sf-hidden" src=data:, alt>
+ </div>
+ <div class=newnps-text>一般</div>
+ </li>
+ <li class=newnps-item data-type=有帮助>
+ <div class=newnps-img-box>
+ <img class="newnps-img active" src=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAA4CAMAAACfWMssAAAAn1BMVEUAAAD//////1X//2b/41X/6lX/51D/4lL/41D/41D/4k3/403/4k7/4U7/4k//4U7/4U3/4U7/4U3/4k7/4k7/4k7/4U7/4U7/4k3/4U7/4k7/4U7/4U5cOSVdOSVeOiVgPSZsSiluSylvTClwTiqLaTGpiDe3lzvHpj/Hpz/OrkHSskLVtELZukPszEj620z73Ez83Uz83kz+303/4U29C7t3AAAAHXRSTlMAAQMFCQwgNTZJT2NyeYWam6ussMLS1d/k6ezw+ZtQLqkAAAGTSURBVEjHpZfZkoIwEEUjLiibIKsRF1wQ1xm1///bBodxSpOASXseUx6ry3S6r4QI0HRrGMQ0TWkcDC1dI1K0DW8CL0w8o/1W69gUBFC706hpZgI1JGZDxYMIGogGNVrLgTc4LZHX9eEtfpf3eiFIEPY4bwxSjBmzG4Ik4Uu1LR+k8Z9/IQcUcJ7uD5T4v08tUhOjRw+ZoIj519eJqphUHW+DMvbv+6PqIr2/TwMQGKU4woheeRfMnLjkWZZfmk/KaaKRPvNd+bQkbz4p0YnFnGT3j2XNJyUWcXGiSwJcqQGJAfPjQEwooKAkxYkpXkSXGuPEmLsOSQKuASQZci0niUV09uiwnnKsD8A1OfusQOCVJnDPinvIUqInGB1bkbgVjA52WH0teW/5LRhW3HgsZqw3K0TjkR/IxeLVWxTigcyvgOPq2Vsda1aAYOnc9pt5Zc03+1vt0hGuuev5tNudztemNYdfrPhVjg4P+LiCD0j4SIYPgfjY+UHQxUfrKsyP2DA/kgjzVcV9y338fXCtvrDGH8zB1O/tBTH2AAAAAElFTkSuQmCC alt>
+ <img class="newnps-img default sf-hidden" src=data:, alt>
+ </div>
+ <div class=newnps-text>有帮助</div>
+ </li>
+ <li class=newnps-item data-type=非常有帮助>
+ <div class=newnps-img-box>
+ <img class="newnps-img active" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAA4CAMAAACfWMssAAABTVBMVEUAAAD//////1X//2b/41X/6lX/51D/4lL/41D/41D/4k3/403/4k7/4U7/4k//4U7/4U3/4U7/4U3/4k7/4k7/4k7/4U7/4U7/4k3/4U7/4k7/4U7/4U5cOSVdOSVdOiZePChfPSphPytiPyZkQCdlQidmRTJnRShnRjRpRilqSjhsSSlwTipxTipyVEJ1Uyt2WUh3Wkl4W0t7WC17WS17X058YFB9Wy2EYi+LaDCLaTGObDGQbjKQc1CRdE+ScTKTcTKZdjSaeDSdfkmffTWigTajgjemhTenhjitjDmtj0+ujTmykjq2lju3lzvBoT7Coj7DpD7MrEDMrknMrk7SskLTtUrUtULWtkPXt0PaukTbvUvbvU7fwEXgwEXgwEbixErkxUfqy0fszUjuz0nx0kr11kr32E342Uv520v620z83Uz83kz93kz/4U17KgvYAAAAHXRSTlMAAQMFCQwgNTZJT2NyeYWam6ussMLS1d/k6ezw+ZtQLqkAAAJpSURBVEjHpVfpX9pAEA1RBCHcp5HF+1Y8WiLWW9tarJVWrbVqi8a76P7/H5sQU3Y2y5Js37eZ33sw7JxIEgNyQImlc2qhoObSMSUgS67QFUr0Y4D+RKiro6w7omIG1Eg3VyaH87gN8mFOxL1ZzEG2t43MF8UdEPWxdP4U7oiU36nryWAXyPQ4dH3YFfoopT+DXSIDovWlsGukyBeKYg+IEvnDnvAvn3LWmzBr11AYe0T4ta7zXoV5q+IjhOt2deeMRT3bWb0lzEiz/8g+OkAIzVZ1qNKrs4b7gOwysz9DJOdm2aCgYqX2ZHueahXThZZvSF7IECbhx//+MGXy3tr2G9Oa+liHrISRC2pOPB+tmNSJF8t8mTCtlaNnaprIUhA4GnvN7xvdvrY919ujze/cawBiQFKAfWj9wkfS91irFA33ISAqUhzY52Nz9Jta7zo3dg48cSmNhZCWcmLCnKSKCVWpICYsiAtBqPpPDnQYKvk434uIg+I38DhkOj4hLt6BdJAFUOULNwlqDJTcF77wPSi5AGF95Qs/gyIn2+pXizQwWVoslxdLkwMt3w/QVmQjN0ZsznRZe0V52vaN/AGNDEbHmkUZWtAILAxZ3jVqdJDDqt5M5PCSBrA03ExjnRpWYDxuGYxBSmcoBw33Fj0ewUC+n0eopDlQQmj+3jGQwQrQZ8Y1BsZndOcKgEvnbpcl3L1jLR1qzZ1s0LKNE/aacyzWy/31lmp9/7LtYmWs8oeri9Pj49OLqwfuKhc+HsTPFfEDSfwkEz8Cxc/O/zh0xU9r65hP0sd80sUxb0UcVOL234e4EmTG+BdxBnAPqe+A8wAAAABJRU5ErkJggg==" alt>
+ <img class="newnps-img default sf-hidden" src=data:, alt>
+ </div>
+ <div class=newnps-text>非常有帮助</div>
+ </li>
+ </ul>
+ <div class="newnps-form-box sf-hidden">
+ 
+ </div>
+ </div>
+</div> <div class=template-box>
+ <span>©️2022 CSDN</span>
+ <span>皮肤主题：书香水墨</span>
+ <span> 设计师：CSDN官方博客</span>
+ <span>
+ <a href=https://blog.csdn.net/ class="back-home c-blue c-blue-hover c-blue-focus">返回首页</a>
+ </span>
+ </div>
+<div class=blog-footer-bottom style=margin-top:10px>
+ <div id=copyright-box class=sf-hidden>
+ 
+ </div>
+ </div>
+ </main>
+<aside class="blog_container_aside sf-hidden" style=position:fixed;top:0px;z-index:99;left:104.6px;width:300px;bottom:auto>
+ 
+ <div id=footerRightAds class="isShowFooterAds sf-hidden">
+ <div class="aside-box sf-hidden">
+ <div id=kp_box_57 data-pid=57 class=sf-hidden>
+</div>
+ </div>
+ </div>
+ 
+</aside>
+ </div>
+<div class="recommend-right align-items-stretch clearfix sf-hidden" id=rightAside data-type=recommend>
+ <aside class="recommend-right_aside sf-hidden">
+ <div id=recommend-right style=position:fixed;top:8px class=sf-hidden>
+ <div class="programmer1Box sf-hidden">
+ <div id=kp_box_530 data-pid=530 class=sf-hidden>
+</div>
+ </div>
+ 
+ <div id=recommendAdBox class=sf-hidden>
+ <div id=kp_box_479 data-pid=479 class=sf-hidden>
+ 
+ </div>
+ 
+ </div>
+ </div></aside>
+</div>
+</div>
+<div class="mask-dark sf-hidden"></div>
+<div class="skin-boxshadow sf-hidden"></div>
+<div class="directory-boxshadow sf-hidden"></div>
+<div id=rewardNew class="reward-popupbox-new sf-hidden">
+ 
+ 
+ 
+ 
+ 
+ 
+</div>
+<div class="pay-code sf-hidden">
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+</div>
+<div style=display:none>
+ 
+</div>
+<div class="keyword-dec-box sf-hidden" id=keywordDecBox></div>
+<style>.hljs{background:#282c34}</style>
+ 
+<div id=pointDivs><div class="point-outer point-pre sf-hidden"></div><div class="point-outer point-pre sf-hidden"></div><div class="point-outer point-pre sf-hidden"></div><div class="point-outer point-pre sf-hidden"></div><div class="point-outer point-pre sf-hidden"></div></div><div id=st_mask style="width:100%;height:100%;background:rgba(0,0,0,0.4) none repeat scroll 0% 0%;position:fixed;left:0px;top:0px;display:none;z-index:1"></div><div id=st_confirmBox style=width:360px;position:fixed;text-align:left;display:none;z-index:100;inset:0px;height:208px;margin:auto></div><div id=st_alertBox style=width:100%;position:fixed;left:0px;top:34%;text-align:center;display:none;z-index:2></div><div id=st_toastBox style=width:100%;position:fixed;left:0px;bottom:10%;text-align:center;display:none></div> <div class="report-box sf-hidden"> </div><svg aria-hidden=true style=position:absolute;width:0px;height:0px;overflow:hidden><symbol id=sousuo viewBox="0 0 1024 1024"><path d="M719.6779726 653.55865555l0.71080936 0.70145709 191.77828505 191.77828506c18.25658185 18.25658185 18.25658185 47.86273439 0 66.12399318-18.26593493 18.26125798-47.87208744 18.26125798-66.13334544 0l-191.77828505-191.77828506c-0.2338193-0.2338193-0.4676378-0.4676378-0.69678097-0.71081014-58.13206223 44.25257003-130.69075187 70.51978897-209.38952657 70.51978894C253.06424184 790.19776156 98.14049639 635.27869225 98.14049639 444.17380511S253.06424184 98.14049639 444.16912898 98.14049639c191.10488633 0 346.02863258 154.92374545 346.02863259 346.02863259 0 78.6987747-26.27189505 151.25746514-70.51978897 209.38952657z m-275.50884362 43.11621045c139.45428506 0 252.50573702-113.05145197 252.50573702-252.50573702s-113.05145197-252.50573702-252.50573702-252.50573783-252.50573702 113.05145197-252.50573783 252.50573783 113.05145197 252.50573702 252.50573783 252.50573702z"></path></symbol><symbol id=gonggong_csdnlogo_ viewBox="0 0 4096 1024"><path d="M1234.16069807 690.46341551c62.96962316 23.02318413 194.30703694 45.91141406 300.51598128 45.91141406 114.44114969 0 178.13952547-31.68724287 183.2407937-80.86454822 4.642424-44.8587714-42.21366937-50.93170978-171.44579784-81.53931916-178.57137886-43.77913792-292.49970264-111.55313011-281.32549604-219.86735976 12.9825927-125.75031047 181.27046257-220.78504823 439.49180199-220.78504822 125.88526465 0 247.93783044 8.87998544 311.17736197 29.60894839l-21.7006331 158.57116851c-41.05306337-14.27815288-198.1937175-34.11641822-304.48363435-34.11641822-107.7744129 0-163.56447339 33.90049151-167.42416309 71.06687432-4.85835069 47.04502922 51.14763648 49.23128703 191.14910897 86.50563321 189.58364043 48.09767188 272.47250144 115.81768239 261.6221849 220.81203906-12.71268432 123.51007099-164.13128096 228.53141851-466.48263918 228.53141851-125.85827383 0-234.33444849-22.96920244-294.09216204-45.93840492l19.730302-157.86940672zM3010.8325562 172.75216735c688.40130256-129.79893606 747.80813523 103.42888812 726.53935551 309.80082928l-40.08139323 381.78539207h-218.51781789l36.57258439-348.20879061c7.90831529-76.68096846 57.13960232-226.66905073-180.54170997-221.05495659-82.26807176 1.99732195-123.05122675 13.2794919-123.05122677 13.27949188s-7.15257186 92.65954408-15.81663059 161.13529804l-41.43093509 394.84895728h-214.3072473l42.53755943-389.15389062 28.09746151-302.43233073z m-869.48282929-18.05687008c49.12332368-5.34418577 124.58970448-10.76934404 228.45044598-10.76934405 173.38913812 0 313.57954648 30.17575597 400.38207891 93.63121421 77.94953781 59.16391512 129.82592689 154.95439631 115.4668015 293.74128117-13.25250106 129.15115596-80.405704 219.57046055-178.16651631 275.4954752-89.44763445 52.74009587-202.16137055 75.27744492-371.66382812 75.27744493-99.94707012 0-195.27870708-5.39816743-267.77609576-16.14052064L2141.37671774 154.69529727z m143.26736381 569.85754561c16.70732823 3.23890047 38.67786969 6.45081009 81.99816339 6.45081009 173.44311979 0 295.7386031-85.23706385 308.01943403-205.07638097 17.84094339-173.2271931-90.63523129-233.79463176-273.39018992-232.74198912-23.67096422 0-56.57279475 0-73.98188473 3.1849188l-42.6725136 428.15565036z" fill=#262626></path><path d="M1109.8678928 870.30336371c-41.10704503 14.25116203-126.26313639 23.96786342-245.23874671 23.96786342-342.13585224 0-526.8071603-160.59548129-504.97157302-372.90540663C385.78470347 268.40769434 659.36382925 126.08500985 958.9081404 126.08500985c116.00661824 0 184.32042718 9.33882968 248.31570215 24.99351522l-20.5400271 170.42014604c-42.56455024-14.33213455-142.32268451-27.50366309-223.07926938-27.50366311-176.25016686 0-325.94134993 52.49717834-343.10752238 218.57179958-15.30380469 148.50358623 89.7715245 219.48948804 288.04621451 219.48948804 69.0155707 0 170.77102691-9.8786464 217.81605614-24.15679928l-16.49140154 162.40386737z" fill=#CA0C16></path></symbol><symbol id=gonggong_csdnlogodanse_ viewBox="0 0 4096 1024"><path d="M1229.41995733 690.46341551c62.96962316 23.02318413 194.30703694 45.91141406 300.51598128 45.91141406 114.44114969 0 178.13952547-31.68724287 183.2407937-80.86454822 4.642424-44.8587714-42.21366937-50.93170978-171.44579784-81.53931916-178.57137886-43.77913792-292.49970264-111.55313011-281.32549604-219.86735976 12.9825927-125.75031047 181.27046257-220.78504823 439.49180199-220.78504822 125.88526465 0 247.93783044 8.87998544 311.17736197 29.60894839l-21.7006331 158.57116851c-41.05306337-14.27815288-198.1937175-34.11641822-304.48363435-34.11641822-107.7744129 0-163.56447339 33.90049151-167.42416309 71.06687432-4.85835069 47.04502922 51.14763648 49.23128703 191.14910897 86.50563321 189.58364043 48.09767188 272.47250144 115.81768239 261.6221849 220.81203906-12.71268432 123.51007099-164.13128096 228.53141851-466.48263918 228.53141851-125.85827383 0-234.33444849-22.96920244-294.09216204-45.93840492l19.730302-157.86940672zM3006.09181546 172.75216735c688.40130256-129.79893606 747.80813523 103.42888812 726.53935551 309.80082928l-40.08139323 381.78539207h-218.51781789l36.57258439-348.20879061c7.90831529-76.68096846 57.13960232-226.66905073-180.54170997-221.05495659-82.26807176 1.99732195-123.05122675 13.2794919-123.05122677 13.27949188s-7.15257186 92.65954408-15.81663059 161.13529804l-41.43093509 394.84895728h-214.3072473l42.53755943-389.15389062 28.09746151-302.43233073z m-869.48282929-18.05687008c49.12332368-5.34418577 124.58970448-10.76934404 228.45044598-10.76934405 173.38913812 0 313.57954648 30.17575597 400.38207891 93.63121421 77.94953781 59.16391512 129.82592689 154.95439631 115.4668015 293.74128117-13.25250106 129.15115596-80.405704 219.57046055-178.16651631 275.4954752-89.44763445 52.74009587-202.16137055 75.27744492-371.66382812 75.27744493-99.94707012 0-195.27870708-5.39816743-267.77609576-16.14052064L2136.635977 154.69529727z m143.26736381 569.85754561c16.70732823 3.23890047 38.67786969 6.45081009 81.99816339 6.45081009 173.44311979 0 295.7386031-85.23706385 308.01943403-205.07638097 17.84094339-173.2271931-90.63523129-233.79463176-273.39018992-232.74198912-23.67096422 0-56.57279475 0-73.98188473 3.1849188l-42.6725136 428.15565036z m-1174.74919792 145.75052083c-41.10704503 14.25116203-126.26313639 23.96786342-245.23874671 23.96786342-342.13585224 0-526.8071603-160.59548129-504.97157303-372.90540663C381.04396273 268.40769434 654.62308851 126.08500985 954.16739966 126.08500985c116.00661824 0 184.32042718 9.33882968 248.31570215 24.99351522l-20.5400271 170.42014604c-42.56455024-14.33213455-142.32268451-27.50366309-223.07926938-27.50366311-176.25016686 0-325.94134993 52.49717834-343.10752238 218.57179958-15.30380469 148.50358623 89.7715245 219.48948804 288.04621451 219.48948804 69.0155707 0 170.77102691-9.8786464 217.81605614-24.15679928l-16.49140154 162.40386737z"></path></symbol><symbol id=xieboke1 viewBox="0 0 1024 1024"><path d="M204.70021457 751.89799169h657.99199211a33.6932867 33.6932867 0 0 1 0 67.33536736H163.68452703a33.53966977 33.53966977 0 0 1-18.74125054-5.68382181c-18.63883902-9.4218307-18.17798882-29.44322156-15.20806401-39.17228615C199.0675982 570.27171976 309.41567149 409.58853908 435.38145354 290.12586836A243.22661203 243.22661203 0 0 1 536.97336934 234.20935065c138.10150976-33.79569759 228.3257813-29.95527721 318.60125827-28.52152054-17.15387692 20.48224105-36.20236071 41.6301547-57.29906892 62.93168529-3.1747472 3.22595323-164.67721739 19.91897936-187.97576692 47.05794871-23.29854894 27.13896932 129.60138005 7.37360691 125.19769798 11.11161576-21.6599699 18.33160576-44.90731339 36.4071831-69.94685287 53.8682939-4.50609297 3.1747472-149.52035944-0.35843931-174.61110436 27.85584737-25.19315641 28.16308124 101.89914903 18.12678338 96.0617103 21.40394206-67.43777825 37.63611797-125.96578207 64.62147036-212.70807253 93.8086635-57.65750823 19.4069231-121.8181284 133.13456658-146.5504346 179.06599187a435.75967738 435.75967738 0 0 0-23.04252112 49.10617311z" fill=#CA0C16></path></symbol><symbol id=gitchat viewBox="0 0 1024 1024"><path d="M892.08971773 729.08552746h-108.597062v-162.89559374H403.40293801v-108.59706198h488.68677972v271.49265572z m-651.58237345 54.298531V783.49265572h488.68678045v108.59706201H131.91028227V131.91028227h760.17943546v217.19412473h-108.597062V240.50734428H240.50734428v542.87671418z m542.98531145 0h108.597062v108.59706199h-108.597062v-108.59706199z" fill=#FF9100></path></symbol><symbol id=toolbar-memberhead viewBox="0 0 1303 1024"><path d="M1061.51168438 433.79527648A78.51879902 78.51879902 0 1 1 1129.35192643 472.74060007h-1.80593246l-48.05350474 403.97922198c-4.55409058 38.16013652-39.41643684 67.133573-80.79584389 67.13357302H319.35199503c-41.30088817 0-76.00619753-28.81639958-80.717325-66.97653526L189.01078861 472.74060007H187.12633728a78.51879902 78.51879902 0 1 1 67.76172401-38.86680556l193.31328323 119.81968805 158.13686148-336.06046024A78.5973179 78.5973179 0 0 1 658.23913228 80.14660493a78.51879902 78.51879902 0 0 1 51.58685077 137.721974l158.13686147 335.82490362 193.54883986-119.89820607z" fill=#FDD840></path><path d="M1050.8331274 394.22180104a78.51879902 78.51879902 0 1 1 78.51879903 78.51879903h-1.80593246l-48.05350474 403.97922198c-4.55409058 38.16013652-39.41643684 67.133573-80.79584389 67.13357302H659.02432018C658.47468805 793.25433807 658.23913228 505.32590231 658.23913228 80.14660493a78.51879902 78.51879902 0 0 1 51.58685077 137.721974l158.13686147 335.82490362 193.54883986-119.89820607A78.51879902 78.51879902 0 0 1 1050.8331274 394.22180104z" fill=#FFBE00></path></symbol><symbol id=toolbar-m-memberhead viewBox="0 0 1303 1024"><path d="M1062.74839935 433.79527648A78.51879902 78.51879902 0 1 1 1130.58864141 472.74060007h-1.80593246l-48.05350474 403.97922198c-4.55409058 38.16013652-39.41643685 67.133573-80.79584389 67.13357302H320.58871c-41.30088817 0-76.00619753-28.81639958-80.71732499-66.97653526L190.24750358 472.74060007H188.36305226a78.51879902 78.51879902 0 1 1 67.761724-38.86680556l193.31328324 119.81968805 158.13686147-336.06046024A78.5973179 78.5973179 0 0 1 659.47584726 80.14660493a78.51879902 78.51879902 0 0 1 51.58685076 137.721974l158.13686148 335.82490362 193.54883985-119.89820607z" fill=#D6D6D6></path><path d="M1052.06984238 394.22180104a78.51879902 78.51879902 0 1 1 78.51879903 78.51879903h-1.80593246l-48.05350474 403.97922198c-4.55409058 38.16013652-39.41643685 67.133573-80.79584389 67.13357302H660.26103515C659.71140302 793.25433807 659.47584726 505.32590231 659.47584726 80.14660493a78.51879902 78.51879902 0 0 1 51.58685076 137.721974l158.13686148 335.82490362 193.54883985-119.89820607A78.51879902 78.51879902 0 0 1 1052.06984238 394.22180104z" fill=#C1C1C1></path></symbol><symbol id=csdnc-upload viewBox="0 0 1024 1024"><path d="M216.37466416 723.16095396v84.46438188h591.25067168v-84.46438188c0-23.32483876 18.90735218-42.23219094 42.23219093-42.23219021s42.23219094 18.90735218 42.23219096 42.23219021v84.46438188c0 46.64967827-37.81470362 84.46438188-84.46438189 84.46438189H216.37466416c-46.64967827 0-84.46438188-37.81470362-84.46438189-84.4643819v-84.46438187c0-23.32483876 18.90735218-42.23219094 42.23219096-42.23219021s42.23219094 18.90735218 42.23219094 42.23219021zM469.76780906 275.55040991L246.55378774 499.53305726a42.30820888 42.30820888 0 0 1-59.99082735 0c-16.56346508-16.62259056-16.56346508-43.57095155 0-60.19354139L480.51167818 144.38144832A42.21952103 42.21952103 0 0 1 512 131.93984464a42.20262858 42.20262858 0 0 1 31.48409853 12.44160369l293.95294108 294.95806754c16.56346508 16.62259056 16.56346508 43.57095155 0 60.19354139a42.30820888 42.30820888 0 0 1-59.99082735 0L554.23219094 275.55040991V680.92876375c0 23.32483876-18.90735218 42.23219094-42.23219094 42.23219021s-42.23219094-18.90735218-42.23219094-42.23219021V275.55040991z"></path></symbol></svg><div>
+ <div class="csdn-side-toolbar sf-hidden" style=left:1430.6px>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ </div>
+ </div> <div class=notification style=position:fixed;left:initial;right:24px;top:50px;bottom:initial;z-index:99999></div>

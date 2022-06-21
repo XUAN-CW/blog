@@ -47,7 +47,7 @@ https://blog.csdn.net/qq_18625805/article/details/109732122
 
 # WSL2设置静态IP
 
-参考 [WSL2设置静态IP.html](assets\references\WSL2设置静态IP.html)  [给wsl2的ubuntu分配固定IP，优化windows开发环境.html](assets\references\给wsl2的ubuntu分配固定IP，优化windows开发环境.html) ，设置
+参考 [WSL2设置静态IP.html](assets\references\WSL2设置静态IP.html)  [给wsl2的ubuntu分配固定IP，优化windows开发环境.html](assets\references\给wsl2的ubuntu分配固定IP，优化windows开发环境.html) 进行设置；参考 [批处理文件 bat 后台运行.html](assets\references\批处理文件 bat 后台运行.html) 使程序后台运行
 
 ## 脚本
 
@@ -99,8 +99,6 @@ rem     @echo off
 
 1. 触发器设置为登录时
 2. 15秒后执行，不延时 WSL2 可能还没起动
-
-
 
 # docker
 
