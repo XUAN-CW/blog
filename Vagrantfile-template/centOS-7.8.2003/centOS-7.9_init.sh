@@ -14,6 +14,8 @@ cd && rm -f anaconda-ks.cfg original-ks.cfg
 ############################## 私服 ##############################
 # 配置私服
 echo "192.168.0.10  ps" >> /etc/hosts
+echo "192.168.20.10  nexus3.it" >> /etc/hosts
+echo "192.168.20.10  docker.nexus3.it" >> /etc/hosts
 ############################## yum ##############################
 # yum 配置不删除缓存
 sudo sed -i 's/keepcache=0/keepcache=1/' /etc/yum.conf
