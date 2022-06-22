@@ -13,7 +13,6 @@ echo -e "root" | su root
 cd && rm -f anaconda-ks.cfg original-ks.cfg
 ############################## 私服 ##############################
 # 配置私服
-echo "192.168.0.10  ps" >> /etc/hosts
 echo "192.168.20.10  nexus3.it" >> /etc/hosts
 echo "192.168.20.10  docker.nexus3.it" >> /etc/hosts
 ############################## yum ##############################
