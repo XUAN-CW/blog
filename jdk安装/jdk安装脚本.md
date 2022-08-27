@@ -17,8 +17,9 @@ id: 1635214417153828400
 | 动作 | key       | value                                       |
 | ---- | --------- | ------------------------------------------- |
 | 新建 | JAVA_HOME | C:\Program Files\Java\jdk-11.0.4            |
-| 编辑 | Path      | %JAVA_HOME%\bin;%JAVA_HOME%\jre\bin;        |
 | 新建 | CLASSPATH | .;%JAVA_HOME%\lib;%JAVA_HOME%\lib\tools.jar |
+| 编辑 | Path      | %JAVA_HOME%\bin                             |
+| 编辑 | Path      | %JAVA_HOME%\jre\bin                         |
 
 ```
 java -version
