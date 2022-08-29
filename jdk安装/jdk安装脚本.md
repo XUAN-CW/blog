@@ -8,7 +8,9 @@ categories:
 id: 1635214417153828400
 ---
 
+# 下载
 
+https://www.oracle.com/java/technologies/downloads/archive/ 
 
 # Windows
 
