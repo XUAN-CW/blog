@@ -169,6 +169,9 @@ netsh interface portproxy add v4tov4 listenaddress=localhost listenport=1521 con
 
 rem kafka
 netsh interface portproxy add v4tov4 listenaddress=localhost listenport=9092 connectaddress=192.168.18.10 connectport=9092
+
+rem mongodb
+netsh interface portproxy add v4tov4 listenaddress=localhost listenport=27017 connectaddress=192.168.18.10 connectport=27017
 ```
 
 # references
