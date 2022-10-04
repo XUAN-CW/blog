@@ -19,3 +19,14 @@ id: 1646125653510991100
 7. 账号登录：[bilibili](https://www.bilibili.com/) 、[CSDN](https://passport.csdn.net/login?code=mobile)、[gitee](https://gitee.com/login) 、[github](https://github.com/)、[stackoverflow](https://stackoverflow.com/)、[吾爱破解](https://www.52pojie.cn/)、[processon](https://www.processon.com/)、[阿里巴巴矢量图标库](https://www.iconfont.cn/) 
 8. Decentraleyes - stackoverflow 加速
 9. 设置 → 主页 → 主页和新窗口： https://www.baidu.com/ 
+
+# 插件
+
+1. 质量 ：极好
+2. 下载文件名称
+
+```
+{id}-{title}_{authorId}-{author}_{year}-{month}-{day}
+```
+
+导出的设置： [pixiv_toolkit_settings-1664883058343.json](assets\data\pixiv_toolkit_settings-1664883058343.json) 
