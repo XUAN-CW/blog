@@ -43,7 +43,7 @@ mkdir -p /h/qbit
 docker run -d \
   --privileged=true \
   -u root \
-  --name=crazymax_qbittorrent \
+  --name=crazymax_qbittorrent_4 \
   -e WEBUI_PORT=8080 \
   -p 9821:6881 \
   -p 9821:6881/udp \
