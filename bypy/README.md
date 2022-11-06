@@ -34,26 +34,6 @@ docker run -d \
   crazymax/qbittorrent:4.1.9
 ```
 
-```sh
-
-docker pull crazymax/qbittorrent:4.1.9
-
-mkdir -p /h/qbit 
-
-docker run -d \
-  --privileged=true \
-  -u root \
-  --name=crazymax_qbittorrent_4 \
-  -e WEBUI_PORT=8080 \
-  -p 9821:6881 \
-  -p 9821:6881/udp \
-  -p 8080:8080 \
-  -v /share/qbit/qbit_download:/root/Downloads \
-  -v /share/ssd1_qbit:/root/ssd1_qbit \
-  --restart always \
-  crazymax/qbittorrent:4.1.9
-```
-
 
 
 ```sh
