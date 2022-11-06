@@ -16,3 +16,15 @@ docker run -itd \
   codeskyblue/gohttpserver
 ```
 
+
+
+```
+docker run -it --rm \
+-p 8081:80 \
+-v /media/xuan/新加卷/:/h5ai \
+-e PUID=$UID \
+-e PGID=$GID \
+-e TZ=Asia/Seoul \
+awesometic/h5ai
+```
+
