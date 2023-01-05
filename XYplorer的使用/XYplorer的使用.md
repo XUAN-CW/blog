@@ -22,7 +22,11 @@ https://github.com/violet7pan/XYplorer_Help
 
 # 自定义按钮
 
-## 打开父文件夹
+## 在新标签页中打开焦点项
+
+```
+# 352;#1007;
+```
 
 
 
