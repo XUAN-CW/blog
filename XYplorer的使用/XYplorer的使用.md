@@ -26,7 +26,7 @@ https://github.com/violet7pan/XYplorer_Help
 
 
 
-## 打开文件并关闭其他
+## 打开文件并关闭未锁定
 
 ![image-20230105204506150](assets/images/image-20230105204506150.png)
 
