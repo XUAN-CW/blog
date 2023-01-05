@@ -23,3 +23,10 @@ https://github.com/violet7pan/XYplorer_Help
 # 自定义按钮
 
 ## 打开父文件夹
+
+
+
+## 打开文件并关闭其他
+
+![image-20230105204506150](assets/images/image-20230105204506150.png)
+
