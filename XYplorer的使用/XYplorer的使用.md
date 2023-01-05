@@ -10,3 +10,16 @@ id: 1672563220496415700
 
 
 
+https://violet7pan.gitee.io/categories/XYplorer/
+
+https://github.com/violet7pan/XYplorer_Help
+
+
+
+
+
+
+
+# 自定义按钮
+
+## 打开父文件夹
