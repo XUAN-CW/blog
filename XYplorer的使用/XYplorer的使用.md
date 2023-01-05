@@ -34,3 +34,9 @@ tab("new","C:\importance");# 352;
 
 ![image-20230105204506150](assets/images/image-20230105204506150.png)
 
+# 运行脚本
+
+```
+run("C:\Users\33719\Desktop\test.sh");
+```
+
