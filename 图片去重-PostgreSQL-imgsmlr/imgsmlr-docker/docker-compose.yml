@@ -1,0 +1,52 @@
+version: '3.3'
+services:
+    prometheus:
+        container_name: prometheus
+        ports:
+            - '9092:9090'
+        volumes:
+            - './prometheus/:/etc/prometheus/'
+        network_mode: prometheus-network
+        image: 'prom/prometheus:v2.39.1'
+    node-exporter:
+        container_name: node-exporter
+        ports:
+            - '9100:9100'
+        network_mode: prometheus-network
+        image: 'prom/node-exporter:v1.4.0'
+    alertmanager:
+        container_name: alertmanager
+        ports:
+            - '9093:9093'
+        volumes:
+            - './alertmanager:/etc/alertmanager/'
+        network_mode: prometheus-network
+        image: 'prom/alertmanager:v0.22.2'
+    prometheus-alert:
+        container_name: prometheus-alert
+        ports:
+            - '8081:8080'
+        environment:
+            - PA_LOGIN_USER=prometheusalert
+            - PA_LOGIN_PASSWORD=prometheusalert
+            - PA_TITLE=PrometheusAlert
+            - PA_OPEN_FEISHU=1
+        volumes:
+            - './prometheus-alert/app.conf:/app/conf/app.conf'
+        network_mode: prometheus-network
+        image: 'feiyu563/prometheus-alert:v4.8.2'
+    grafana:
+        container_name: grafana
+        ports:
+            - '3000:3000'
+        network_mode: prometheus-network
+        image: 'grafana/grafana:8.1.1'
+        volumes:
+            - ./grafana/provisioning/:/etc/grafana/provisioning/
+            # - /Users/xuanchengwei/Desktop/coros/需求/spring-cloud-gateway-深入研究/kuboard_资源层监控套件v3.1.7/docker-prometheus/grafana/prod_us_grafana_202301061058.db:/var/lib/grafana/grafana.db
+        environment:
+            - GF_PATHS_PROVISIONING=/etc/grafana/provisioning
+
+networks:
+    prometheus-network:
+        driver: bridge
