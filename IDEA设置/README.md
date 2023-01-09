@@ -188,6 +188,7 @@ https://start.springboot.io/
 - Alibaba Java Coding Guidelines
 - MyBatisX
 - EasyCode
+- lombok
 
 # 加大内存
 
