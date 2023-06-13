@@ -96,3 +96,7 @@ docker run -itd -p 9000:8080 springboot-initializr:1.0
 # 自定义
 
  [搭建自己的Spring Initializr.html](assets\references\搭建自己的Spring Initializr.html) 
+
+# 现成的
+
+ [本地搭建Spring Initializr服务器.html](assets\references\本地搭建Spring Initializr服务器.html) 
