@@ -44,3 +44,14 @@ tab("new","C:\importance");# 352;
 run("C:\Users\33719\Desktop\test.sh");
 ```
 
+# 整行选择
+
+![image-20230819195313392](assets/images/image-20230819195313392.png)
+
+
+
+
+
+# 获取命令ID
+
+![image-20230819195422368](assets/images/image-20230819195422368.png)
