@@ -1,31 +1,31 @@
 # yum-proxy-opsx.alibaba.com
 [private-os]
 name=private-os
-baseurl=http://nexus3.xuanchengwei/repository/yum-proxy-opsx.alibaba.com/\$releasever/os/\$basearch/
+baseurl=http://nexus3.xuanchengwei:7135/repository/yum-proxy-opsx.alibaba.com/\$releasever/os/\$basearch/
 enabled=1
 gpgcheck=0
 
 [private-updates]
 name=private-updates
-baseurl=http://nexus3.xuanchengwei/repository/yum-proxy-opsx.alibaba.com/\$releasever/updates/\$basearch/
+baseurl=http://nexus3.xuanchengwei:7135/repository/yum-proxy-opsx.alibaba.com/\$releasever/updates/\$basearch/
 enabled=1
 gpgcheck=0
 
 [private-extras]
 name=private-extras
-baseurl=http://nexus3.xuanchengwei/repository/yum-proxy-opsx.alibaba.com/\$releasever/extras/\$basearch/
+baseurl=http://nexus3.xuanchengwei:7135/repository/yum-proxy-opsx.alibaba.com/\$releasever/extras/\$basearch/
 enabled=1
 gpgcheck=0
 
 [private-centosplus]
 name=private-centosplus
-baseurl=http://nexus3.xuanchengwei/repository/yum-proxy-opsx.alibaba.com/\$releasever/centosplus/\$basearch/
+baseurl=http://nexus3.xuanchengwei:7135/repository/yum-proxy-opsx.alibaba.com/\$releasever/centosplus/\$basearch/
 enabled=1
 gpgcheck=0
 
 [private-configmanagement]
 name=private-configmanagement
-baseurl=http://nexus3.xuanchengwei/repository/yum-proxy-opsx.alibaba.com/\$releasever/configmanagement/\$basearch/ansible-29/
+baseurl=http://nexus3.xuanchengwei:7135/repository/yum-proxy-opsx.alibaba.com/\$releasever/configmanagement/\$basearch/ansible-29/
 enabled=1
 gpgcheck=0
 
@@ -33,26 +33,26 @@ gpgcheck=0
 # yum-proxy-download.docker.com
 [private-docker-ce]
 name=private-docker-cedocker-ce
-baseurl=http://nexus3.xuanchengwei/repository/yum-proxy-download.docker.com/$releasever/$basearch/stable/
+baseurl=http://nexus3.xuanchengwei:7135/repository/yum-proxy-download.docker.com/$releasever/$basearch/stable/
 enabled=1
 gpgcheck=0
 
 # yum-proxy-mirrors.aliyun.com
 [private-base]
 name=private-base
-baseurl=http://nexus3.xuanchengwei/repository/yum-proxy-mirrors.aliyun.com/centos/7/os/x86_64/
+baseurl=http://nexus3.xuanchengwei:7135/repository/yum-proxy-mirrors.aliyun.com/centos/7/os/x86_64/
 enabled=1
 gpgcheck=0
 
 [private-epel]
 name=private-epel
-baseurl=http://nexus3.xuanchengwei/repository/yum-proxy-mirrors.aliyun.com/epel/7/x86_64/
+baseurl=http://nexus3.xuanchengwei:7135/repository/yum-proxy-mirrors.aliyun.com/epel/7/x86_64/
 enabled=1
 gpgcheck=0
 
 [private-kubernetes]
 name=kubernetes
-baseurl=http://nexus3.xuanchengwei/repository/yum-proxy-mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64
+baseurl=http://nexus3.xuanchengwei:7135/repository/yum-proxy-mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64
 enabled=1
 gpgcheck=0
 
