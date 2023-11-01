@@ -1,0 +1,51 @@
+---
+title: docker离线
+date: 2021-04-19 13:23:27
+tags: 
+- save
+- load
+categories: 
+id: 1629350607546620500
+---
+
+#  [save](https://docs.docker.com/engine/reference/commandline/save/) 
+
+```sh
+ docker save -o mysql.tar mysql:latest
+```
+
+#  [load](https://docs.docker.com/engine/reference/commandline/load/) 
+
+```sh
+docker load -i mysql.tar
+```
+
+
+
+# 脚本
+
+保存所有镜像
+
+```sh
+docker_images=`docker images | awk 'NR>1'`
+
+REPOSITORY_TAG_TAR=`echo "$docker_images" | awk '{print $1"_"$2}' | sed 's/[\x2F]/./g' | awk '{print $1".docker_image.tar"}'`
+IMAGE=`echo "$docker_images" | awk '{print $1":"$2}'`
+number=`echo "$docker_images" | awk 'END {print NR}'`
+
+for((i=1;i<=$number;i=i+1))
+do
+    current_REPOSITORY_TAG_TAR=`echo "$REPOSITORY_TAG_TAR" | head -n "$i" | tail -n 1`
+    current_IMAGE_ID=`echo "$IMAGE" | head -n "$i" | tail -n 1`
+    echo "$i/$number 保存 $current_IMAGE_ID 到 $current_REPOSITORY_TAG_TAR 中..."
+    docker save -o $current_REPOSITORY_TAG_TAR $current_IMAGE_ID
+done
+
+```
+
+# 离线安装
+
+ [Linux离线安装docker的过程.html](references\Linux离线安装docker的过程.html) 
+
+
+
