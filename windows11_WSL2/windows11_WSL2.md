@@ -53,6 +53,10 @@ sudo netplan apply
 
 
 
+```
+wsl -d Ubuntu hostname -I
+```
+
 
 
 ## (暂时无用)启用或关闭Windows功能
