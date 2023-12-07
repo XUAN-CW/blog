@@ -61,6 +61,16 @@ wsl -d Ubuntu hostname -I
 
 
 
+
+
+
+
+```sh
+ip addr show
+```
+
+
+
 ## (暂时无用)启用或关闭Windows功能
 
 控制面板 -> 程序和功能 -> 启用或关闭Windows功能
