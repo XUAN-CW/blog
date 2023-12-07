@@ -26,18 +26,6 @@ id: 1701957820709315200
 
 
 
-## 启用或关闭Windows功能
-
-控制面板 -> 程序和功能 -> 启用或关闭Windows功能
-
-![image-20231207223827828](assets/images/image-20231207223827828.png)
-
-
-
-## Hyper-V
-
-![image-20231207224338205](assets/images/image-20231207224338205.png)
-
 ## 固定IP
 
 ```sh
@@ -66,6 +54,18 @@ sudo netplan apply
 
 
 
+
+## (暂时无用)启用或关闭Windows功能
+
+控制面板 -> 程序和功能 -> 启用或关闭Windows功能
+
+![image-20231207223827828](assets/images/image-20231207223827828.png)
+
+
+
+## (暂时无用)Hyper-V
+
+![image-20231207224338205](assets/images/image-20231207224338205.png)
 
 
 
