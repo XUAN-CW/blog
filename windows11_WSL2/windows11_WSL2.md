@@ -34,9 +34,48 @@ id: 1701957820709315200
 
 
 
-# Hyper-V
+## Hyper-V
 
 ![image-20231207224338205](assets/images/image-20231207224338205.png)
+
+## 固定IP
+
+```sh
+sudo vi /etc/netplan/00-wsl2-dhcp.yaml
+```
+
+
+
+```yaml
+network:
+  version: 2
+  ethernets:
+    eth0:
+      dhcp4: false
+      addresses: [192.168.20.10/24]
+      gateway4: 192.168.20.1  # Replace with your actual gateway address
+      nameservers:
+        addresses: [8.8.8.8, 8.8.4.4]  # Replace with your DNS server addresses
+
+```
+
+```sh
+sudo netplan apply
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
