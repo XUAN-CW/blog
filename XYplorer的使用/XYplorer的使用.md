@@ -128,6 +128,62 @@ C:\core\blog\图标\正则式.ico
 
 ### 正则表达式重命名
 
+```
+正则表达式重命名
+C:\core\blog\图标\正则式.ico
+# 122
+```
+
+### 常用路径
+
+```
+core
+C:\core\index.ico
+tab("new","C:\core");# 352;
+```
+
+```
+java
+C:\core\java\index.ico
+tab("new","C:\core\java");# 352;
+```
+
+```
+vm
+C:\core\blog\图标\virtualBox.ico
+tab("new","C:\vm");# 352;
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
