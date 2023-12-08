@@ -55,3 +55,54 @@ run("C:\Users\33719\Desktop\test.sh");
 # 获取命令ID
 
 ![image-20230819195422368](assets/images/image-20230819195422368.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+# 显示列-显示标签
+
+![image-20231209051232653](assets/images/image-20231209051232653.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+# 整行选择
+
+![image-20231209051420430](assets/images/image-20231209051420430.png)
+
+
+
+# 自定义工具栏
+
+
+
+![image-20231209052058080](assets/images/image-20231209052058080.png)
+
+
+
+
+
+
+
+
+
+
+
