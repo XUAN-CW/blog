@@ -162,9 +162,9 @@ tab("new","C:\vm");# 352;
 
 ![image-20231209054924689](assets/images/image-20231209054924689.png)
 
+# 路径图表化、锁定位置
 
-
-
+![image-20231209060444538](assets/images/image-20231209060444538.png)
 
 
 
