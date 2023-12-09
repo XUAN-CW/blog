@@ -209,7 +209,7 @@ C:\core\blog\图标\排序.png
 ```
 [Thumbs]
 ; Tweak: comma-separated list of values used for width and height in pixels
-ThumbSizes=16,32,64,96,128,192,200,300,400,600,800,1200,1600
+ThumbSizes=16,32,64,96,108,128,192,200,300,400,600,800,1200,1600
 Width=192
 Height=108
 ```
