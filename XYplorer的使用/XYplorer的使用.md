@@ -64,9 +64,9 @@ https://github.com/violet7pan/XYplorer_Help
 
 ## 常用工具
 
-![image-20231209055524206](assets/images/image-20231209055524206.png)
+![image-20231209133722516](assets/images/image-20231209133722516.png)
 
-![image-20231209054641093](assets/images/image-20231209054641093.png)
+
 
 ## 自定义工具-添加按钮
 
@@ -186,5 +186,23 @@ tab("new","C:\vm");# 352;
 
 
 
+# 设置缩略图大小
 
+![image-20231209140233441](assets/images/image-20231209140233441.png)
+
+
+
+编辑配置文件
+
+![image-20231209140316155](assets/images/image-20231209140316155.png)
+
+设置宽度，记得先关闭 xyplorer 后修改
+
+```
+[Thumbs]
+; Tweak: comma-separated list of values used for width and height in pixels
+ThumbSizes=16,32,64,96,128,192,200,300,400,600,800,1200,1600
+Width=128
+Height=128
+```
 
