@@ -18,7 +18,13 @@ https://github.com/violet7pan/XYplorer_Help
 
 
 
+# 布局
 
+
+
+## 地址栏和工具栏堆叠
+
+![image-20231209054924689](assets/images/image-20231209054924689.png)
 
 
 
@@ -129,12 +135,6 @@ vm
 C:\core\blog\图标\virtualBox.ico
 tab("new","C:\vm");# 352;
 ```
-
-
-
-### 地址栏和工具栏堆叠
-
-![image-20231209054924689](assets/images/image-20231209054924689.png)
 
 
 
