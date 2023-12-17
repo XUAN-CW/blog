@@ -50,10 +50,10 @@ network:
   ethernets:
     eth0:
       dhcp4: false
-      addresses: [192.168.20.10/24]
+      addresses: [192.168.18.10/24]
       routes:
         - to: 0.0.0.0/0
-          via: 192.168.20.1  # Replace with your actual gateway address
+          via: 192.168.18.1  # Replace with your actual gateway address
       nameservers:
         addresses: [8.8.8.8, 8.8.4.4]  # Replace with your DNS server addresses
 
@@ -101,9 +101,13 @@ ip addr show
 
 
 
+# curl
 
+```
+curl http://localhost:8080
+curl http://192.168.18.10:8080
 
-
+```
 
 
 
