@@ -35,18 +35,3 @@ id: 1702750388114031600
 
 
 
-
-
-
-
-
-# WSL2
-
-
-
-```
-sudo docker run -d -p 80:80 --restart=always nginx:1.25
-```
-
-
-
