@@ -6,11 +6,7 @@ categories:
 id: 1629296880190252500
 ---
 
-# 环境
-
-centOS7.3
-
-# 安装 docker
+# centOS7.3 安装 docker
 
 ```
 sudo yum remove docker \
@@ -72,3 +68,4 @@ sudo systemctl restart docker
 
 
 
+# Ubuntu  安装 docker

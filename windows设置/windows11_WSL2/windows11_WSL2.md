@@ -20,6 +20,12 @@ wsl --install -d Ubuntu-22.04
 
 # 设置
 
+## 默认启动
+
+![image-20231217143706182](assets/images/image-20231217143706182.png)
+
+
+
 ## 在终端中打开
 
  [文件夹下右键在终端打开，希望从当前目录下打开wsl.html](assets\references\文件夹下右键在终端打开，希望从当前目录下打开wsl.html) 
