@@ -58,6 +58,28 @@ sudo docker run -d -p 80:80 --restart=always nginx:1.25
 
 
 
+## 固定IP
+
+### SwitchType External
+
+管理员运行 PowerShell
+
+```
+PS C:\Users\XUAN>
+PS C:\Users\XUAN> Get-VMSwitch -SwitchType External
+
+Name         SwitchType NetAdapterInterfaceDescription
+----         ---------- ------------------------------
+WSL2_network External   Realtek 8821CE Wireless LAN 802.11ac PCI-E NIC
+
+
+PS C:\Users\XUAN>
+```
+
+
+
+
+
 
 
 
