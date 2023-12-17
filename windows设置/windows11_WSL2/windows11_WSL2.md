@@ -20,6 +20,21 @@ wsl --install -d Ubuntu-22.04
 
 # 设置
 
+## networkingMode=mirrored
+
+1. Open or create the wsl configuration file (located at `%USERPROFILE%\.wslconfig`),  and enter the following content
+
+```
+[experimental]
+autoMemoryReclaim=gradual  # gradual  | dropcache | disabled
+networkingMode=mirrored
+dnsTunneling=true
+firewall=true
+autoProxy=true
+```
+
+2. Open the command prompt and execute `wsl --shutdown`
+
 ## 默认启动
 
 ![image-20231217143706182](assets/images/image-20231217143706182.png)
