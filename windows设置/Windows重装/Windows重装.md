@@ -111,6 +111,18 @@ id: 1639924641941536800
 18. PotPlayer
 19. QNAP
 20. GitHub Desktop
+21. Steam
+22. 网易有道翻译
+23. everything
+24. 115浏览器
+25. 百度网盘
+26. postman
+27. SumatraPDF
+28. vscode
+
+
+
+
 
 
 
