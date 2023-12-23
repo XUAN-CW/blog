@@ -12,8 +12,10 @@ id: 1701957820709315200
 
 # 安装
 
+https://zhuanlan.zhihu.com/p/475462241
+
 ```
-wsl --install -d Ubuntu-22.04
+wsl --install Ubuntu
 ```
 
 
@@ -64,6 +66,22 @@ autoProxy=true
 
 
 
+
+
+
+# 安装docker
+
+https://www.runoob.com/docker/ubuntu-docker-install.html
+
+```
+ curl -fsSL https://test.docker.com -o test-docker.sh
+ sudo sh test-docker.sh
+```
+
+```
+sudo curl -L "https://github.com/docker/compose/releases/download/v2.2.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+chmod 777 /usr/local/bin/docker-compose
+```
 
 
 
