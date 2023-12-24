@@ -71,6 +71,10 @@ autoProxy=true
 
 # 安装docker
 
+
+
+ [win10利用WSL2安装docker的2种方式.html](assets\references\win10利用WSL2安装docker的2种方式.html) 
+
 https://www.runoob.com/docker/ubuntu-docker-install.html
 
 ```
@@ -113,4 +117,6 @@ curl http://192.168.18.10:8080
 
 # WSL2桥接网络并固定IP方法
 
- [WIN11 22H2版本 WSL2桥接网络并固定IP方法.html](assets\references\WIN11 22H2版本 WSL2桥接网络并固定IP方法.html) 
+ [WIN11 22H2版本 WSL2桥接网络并固定IP方法.html](assets\references\WIN11 22H2版本 WSL2桥接网络并固定IP方法.html)  
+
+[用最复杂的方式为 WSL2 配置静态 IP.html](assets\references\用最复杂的方式为 WSL2 配置静态 IP.html) 
