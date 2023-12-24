@@ -133,6 +133,54 @@ IP地址：192.168.100.10
 备用DNS：114.114.114.114
 ```
 
+## .wslconfig
+
+```
+[wsl2]
+networkingMode=bridged
+vmSwitch=WSL2Bridge
+dhcp=false
+```
+
+
+
+## wsl_external.network
+
+在wsl2子系统上的/lib/systemd/network目录下添加wsl_external.network文件并配置
+
+```
+[Match]
+Name=eth0
+[Network]
+Description=bridge
+DHCP=false
+Address=192.168.100.10/24
+gateway=192.168.100.1
+```
+
+
+
+## /etc/resolv.conf
+
+```
+sudo vim /etc/resolv.conf
+```
+
+```
+nameserver 8.8.8.8
+nameserver 114.114.114.114
+```
+
+
+
+## windows上配置nat上网
+
+以管理员模式打开powershell，输入以下命令添加nat配置，注意修改对应的网段
+
+```
+New-NetNat -Name wslnat -InternalIPInterfaceAddressPrefix 192.168.100.0/24
+```
+
 
 
 # 始终运行在后台
