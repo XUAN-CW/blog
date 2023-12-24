@@ -108,17 +108,18 @@ id: 1639924641941536800
 15. Git
 16. Honeyview
 17. VirtualBox
-18. PotPlayer
-19. QNAP
-20. GitHub Desktop
-21. Steam
-22. 网易有道翻译
-23. everything
-24. 115浏览器
-25. 百度网盘
-26. postman
-27. SumatraPDF
-28. vscode
+18. vagrant
+19. PotPlayer
+20. QNAP
+21. GitHub Desktop
+22. Steam
+23. 网易有道翻译
+24. everything
+25. 115浏览器
+26. 百度网盘
+27. postman
+28. SumatraPDF
+29. vscode
 
 
 
