@@ -12,16 +12,15 @@ services:
       - nexus3
     networks:
       - nexus-network
-
   nexus3:
     image: sonatype/nexus3:3.62.0
+    networks:
+      - nexus-network
+
     volumes:
       - type: volume
         source: nexus-data
         target: /nexus-data
-    networks:
-      - nexus-network
-
 networks:
   nexus-network:
     driver: bridge
