@@ -113,3 +113,4 @@ curl http://192.168.18.10:8080
 
 
 
+ [WIN11 22H2版本 WSL2桥接网络并固定IP方法.html](assets\references\WIN11 22H2版本 WSL2桥接网络并固定IP方法.html) 
