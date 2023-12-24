@@ -120,3 +120,9 @@ curl http://192.168.18.10:8080
  [WIN11 22H2版本 WSL2桥接网络并固定IP方法.html](assets\references\WIN11 22H2版本 WSL2桥接网络并固定IP方法.html)  
 
 [用最复杂的方式为 WSL2 配置静态 IP.html](assets\references\用最复杂的方式为 WSL2 配置静态 IP.html) 
+
+
+
+# 始终运行在后台
+
+![image-20231224214503466](assets/images/image-20231224214503466.png)
