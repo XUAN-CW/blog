@@ -15,8 +15,6 @@ services:
 
   nexus3:
     image: sonatype/nexus3:3.62.0
-    volumes:
-      - nexus-data:/nexus-data
     networks:
       - nexus-network
 
@@ -24,5 +22,3 @@ networks:
   nexus-network:
     driver: bridge
 
-volumes:
-  nexus-data:
