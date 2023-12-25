@@ -17,6 +17,10 @@ Vagrant.configure("2") do |config|
   config.vm.box = "CentOS-7.8.2003"
   # config.vm.synced_folder "C:/cache/software-for-development/yum/x86_64/7", "/var/cache/yum/x86_64/7"
 
+  config.ssh.username = 'root'
+  config.ssh.password = 'root'
+  config.ssh.insert_key = false
+  
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
   # `vagrant box outdated`. This is not recommended.
