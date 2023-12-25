@@ -146,7 +146,7 @@ del vagrant-temp-box
 
 ```ruby
 Vagrant.configure("2") do |config|
-  config.vm.box = "my-box"
+  config.vm.box = "CentOS-7.8.2003"
   # 使用用户名登录
   config.ssh.username = 'root'
   config.ssh.password = 'root'
