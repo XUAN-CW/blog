@@ -103,23 +103,23 @@ id: 1639924641941536800
 10. [Firefox 火狐浏览器 - 全新、安全、快速 | 官方最新下载](https://www.firefox.com.cn/)
 11. [Chrome](https://www.google.com/chrome/) 
 12. [下载 Android Studio Giraffe | 2022.3.1 Patch 3 适用平台： Windows ](https://redirector.gvt1.com/edgedl/android/studio/install/2022.3.1.21/android-studio-2022.3.1.21-windows.exe)
-13. Notepad3 
-14. DBeaver 
+13. [Notepad3](https://github.com/rizonesoft/Notepad3/releases) 
+14. [DBeaver](https://dbeaver.io/) 
 15. Git
-16. Honeyview
-17. VirtualBox
-18. vagrant
-19. PotPlayer
+16. [Honeyview](https://www.bandisoft.com/honeyview/)
+17. [VirtualBox](https://www.virtualbox.org/wiki/Downloads)  | [Visual Studio 2015, 2017, 2019, and 2022](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170) 
+18. [vagrant](https://developer.hashicorp.com/vagrant/install?product_intent=vagrant)
+19. [PotPlayer](https://potplayer.daum.net/) 
 20. QNAP
-21. GitHub Desktop
-22. Steam
-23. 网易有道翻译
-24. everything
+21. [GitHub Desktop](https://desktop.github.com/) 
+22. [Steam](https://store.steampowered.com/about/) 
+23. [网易有道翻译](https://fanyi.youdao.com/download-Windows?keyfrom=fanyiweb_navigation) 
+24. [everything ](https://www.voidtools.com/zh-cn/downloads/) 
 25. 115浏览器
-26. 百度网盘
+26. [百度网盘](https://pan.baidu.com/download#win) 
 27. postman
-28. SumatraPDF
-29. vscode
+28. [SumatraPDF](https://www.sumatrapdfreader.org/download-free-pdf-viewer) 
+29. [vscode](https://code.visualstudio.com/) 
 
 
 
