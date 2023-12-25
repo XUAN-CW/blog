@@ -73,9 +73,6 @@ Vagrant.configure("2") do |config|
 
   config.vm.provision "file", source: "docker-load", destination: "/tmp/docker-load"
   config.vm.provision "shell", inline: "mv /tmp/docker-load /usr/local/bin/docker-load"
-
-  config.vm.provision "file", source: "yum-private-service.repo", destination: "/tmp/yum-private-service.repo"
-  config.vm.provision "shell", inline: "mv /tmp/yum-private-service.repo /etc/yum.repos.d/yum-private-service.repo"
   
   config.vm.provision "file", source: "daemon.json", destination: "/tmp/daemon.json"
   config.vm.provision "shell", inline: "sudo mkdir -p /etc/docker && mv /tmp/daemon.json /etc/docker/daemon.json"
