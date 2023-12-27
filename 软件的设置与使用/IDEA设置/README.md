@@ -9,16 +9,27 @@ id: 1640696206808145800
 
 
 
-
 # 字体设置
+
+```
+font
+```
 
 ![image-20200402230127351](assets/image/image-20200402230127351.png)
 
 # 编码设置
 
+```
+file encodings
+```
+
 ![image-20200402080220166](assets/image/image-20200402080220166.png)
 
 # 控制台字体设置
+
+```
+Console Font
+```
 
 ![image-20200402230442055](assets/image/image-20200402230442055.png)
 
