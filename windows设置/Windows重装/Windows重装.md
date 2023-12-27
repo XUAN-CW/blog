@@ -120,8 +120,7 @@ id: 1639924641941536800
 27. postman
 28. [SumatraPDF](https://www.sumatrapdfreader.org/download-free-pdf-viewer) 
 29. [vscode](https://code.visualstudio.com/) 
-
-
+30. [pycharm](https://www.jetbrains.com/pycharm/download/other.html) 
 
 
 
