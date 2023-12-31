@@ -1,5 +1,6 @@
 **/pending
 **/private
+**/.vagrant
 
 ### IntelliJ IDEA ###
 .idea
@@ -83,3 +84,4 @@ dist/
 WSL2/vagrant_2.2.19_x86_64.msi
 WSL2/Vagrantbox_virtualbox_centos-7.8/7e939743-3e46-4601-b7da-bbe45ca3b75e
 WSL2/VirtualBox-6.1.32-149290-Win.exe
+软件的设置与使用/Vagrantfile-template/localserver/.vagrant/machines/default/virtualbox/id

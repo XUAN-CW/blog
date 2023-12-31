@@ -14,13 +14,15 @@ Vagrant.configure("2") do |config|
   # boxes at https://vagrantcloud.com/search.
   
   # box 地址 https://app.vagrantup.com/centos/boxes/7/versions/2004.01
-  config.vm.box = "CentOS-7.8.2003"
+#  config.vm.box = "CentOS-7.8.2003"
+  config.vm.box = "generic_centos7"
+
   # config.vm.synced_folder "C:/cache/software-for-development/yum/x86_64/7", "/var/cache/yum/x86_64/7"
 
   # 使用用户名登录
-  config.ssh.username = 'root'
-  config.ssh.password = 'root'
-  config.ssh.insert_key = false
+#  config.ssh.username = 'root'
+#  config.ssh.password = 'root'
+#  config.ssh.insert_key = false
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
@@ -86,5 +88,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision "file", source: "docker-compose-Linux-x86_64", destination: "/tmp/docker-compose-Linux-x86_64"
   config.vm.provision "shell", inline: "sudo mkdir -p /usr/local/bin && mv /tmp/docker-compose-Linux-x86_64 /usr/local/bin/docker-compose"
   
-  config.vm.provision "shell", path: "CentOS-7.8.2003_init.sh"
+  config.vm.provision "file", source: "CentOS-7.8.2003_init.sh", destination: "/tmp/CentOS-7.8.2003_init.sh"
+  config.vm.provision "shell", inline: "chmod +x /tmp/CentOS-7.8.2003_init.sh &&  dos2unix /tmp/CentOS-7.8.2003_init.sh && /tmp/CentOS-7.8.2003_init.sh"
+  
 end
