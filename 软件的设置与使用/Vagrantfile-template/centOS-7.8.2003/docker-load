@@ -1,1 +1,0 @@
-ls *docker_image* | sed -r "s#(.*)#docker load -i \1#" | bash
