@@ -136,7 +136,7 @@ C:\core\blog\图标\virtualBox.ico
 tab("new","C:\vm");# 352;
 ```
 
-
+### 常用命令
 
 ```
 按标签排序
@@ -154,6 +154,14 @@ C:\core\blog\图标\排序.png
 缩略图
 C:\core\blog\图标\缩略图.png
 #308;
+```
+
+
+
+```
+打开父文件夹
+C:\core\blog\图标\文件夹.png
+# 352;#1007;
 ```
 
 
