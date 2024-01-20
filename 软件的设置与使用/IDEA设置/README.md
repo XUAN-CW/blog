@@ -227,5 +227,6 @@ Windows10、idea2021环境下修改 **C:\Program Files\JetBrains\IntelliJ IDEA 2
 
 
 
+# 不要扫描 node_modules
 
-
+![image-20240120160829996](assets/images/image-20240120160829996.png)
