@@ -18,3 +18,15 @@ id: 1655611895870368300
 
  [potplayer自动将文件夹目录视频加载到播放列表的设置方法.html](assets\references\potplayer自动将文件夹目录视频加载到播放列表的设置方法.html) 
 
+
+
+
+
+# 使用命令打开文件
+
+```
+"C:\Program Files\DAUM\PotPlayer\PotPlayerMini64.exe" exoplayer_not_work.mkv
+```
+
+
+
