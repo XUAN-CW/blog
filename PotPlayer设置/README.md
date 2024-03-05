@@ -25,7 +25,10 @@ id: 1655611895870368300
 # 使用命令打开文件
 
 ```
-"C:\Program Files\DAUM\PotPlayer\PotPlayerMini64.exe" exoplayer_not_work.mkv
+"C:\Program Files\DAUM\PotPlayer\PotPlayerMini64.exe"   large_file/4K_Tifa_Rave.mp4 
+
+"C:\Program Files\DAUM\PotPlayer\PotPlayerMini64.exe"  output/4K_Tifa_Rave_h.265_veryslow_libx265.mp4
+
 ```
 
 
