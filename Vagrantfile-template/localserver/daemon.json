@@ -1,0 +1,17 @@
+{
+  "registry-mirrors": [
+    "http://mirror.docker.localserver",
+    "http://hosted.docker.localserver",
+    "https://6ypv0a1a.mirror.aliyuncs.com",
+    "http://hub-mirror.c.163.com",
+    "https://registry.docker-cn.com",
+    "https://docker.mirrors.ustc.edu.cn"
+  ],
+  "insecure-registries": [
+    "192.168.0.0/16",
+    "172.16.0.0/12",
+    "10.0.0.0/8",
+    "mirror.docker.localserver",
+    "hosted.docker.localserver"
+  ]
+}

@@ -1,0 +1,37 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+  #https://app.vagrantup.com/generic/boxes/centos7/versions/4.3.8
+  config.vm.box = "CentOS-7.9.2009"
+
+  config.vm.network "private_network", ip: "192.168.20.10"
+
+ config.vm.provider "virtualbox" do |vb|
+   # Display the VirtualBox GUI when booting the machine
+    vb.gui = false
+   vb.cpus = 2
+   # Customize the amount of memory on the VM:
+   vb.memory = "8192"
+ end
+  
+  config.vm.provision "file", source: "docker-save", destination: "/tmp/docker-save"
+  config.vm.provision "shell", inline: "mv /tmp/docker-save /usr/local/bin/docker-save"
+
+  config.vm.provision "file", source: "docker-load", destination: "/tmp/docker-load"
+  config.vm.provision "shell", inline: "mv /tmp/docker-load /usr/local/bin/docker-load"
+  
+  config.vm.provision "file", source: "daemon.json", destination: "/tmp/daemon.json"
+  config.vm.provision "shell", inline: "sudo mkdir -p /etc/docker && mv /tmp/daemon.json /etc/docker/daemon.json"
+
+  config.vm.provision "file", source: "yum-private-service.repo", destination: "/tmp/yum-private-service.repo"
+  config.vm.provision "shell", inline: "mv /tmp/yum-private-service.repo /etc/yum.repos.d/yum-private-service.repo"
+  
+  # https://github.com/docker/compose/releases/download/1.29.2/docker-compose-Linux-x86_64
+  config.vm.provision "file", source: "docker-compose-Linux-x86_64", destination: "/tmp/docker-compose-Linux-x86_64"
+  config.vm.provision "shell", inline: "sudo mkdir -p /usr/local/bin && mv /tmp/docker-compose-Linux-x86_64 /usr/local/bin/docker-compose"
+  
+  config.vm.provision "file", source: "CentOS-7.9.2009_init.sh", destination: "/tmp/CentOS-7.9.2009_init.sh"
+  config.vm.provision "shell", inline: "chmod +x /tmp/CentOS-7.9.2009_init.sh &&  dos2unix /tmp/CentOS-7.9.2009_init.sh && /tmp/CentOS-7.9.2009_init.sh"
+  
+end

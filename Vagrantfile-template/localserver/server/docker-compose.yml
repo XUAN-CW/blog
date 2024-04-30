@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  nexus3:
+    image: sonatype/nexus3:3.63.0
+    volumes:
+      - /docker-v/nexus3/nexus-data:/nexus-data
+    ports:
+      - "8081:8081"
+    networks:
+      - localserver-net
+    restart: always
+  nginx:
+    image: nginx:1.25.3
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - nexus3
+    ports:
+      - "80:80"
+    networks:
+      - localserver-net
+    restart: always
+networks:
+  localserver-net:
